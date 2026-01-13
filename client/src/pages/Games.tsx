@@ -15,6 +15,7 @@ export default function Games() {
       description: 'Roll the dice and test your luck! Simple, exciting, and completely free.',
       details: 'Experience the thrill of rolling virtual dice with realistic physics and animations. Compete with other players on the leaderboard and track your rolling statistics. No real money involved - pure entertainment and skill-based gaming.',
       icon: Dice6,
+      image: '/images/game-dice-roller.webp',
       color: 'from-[#a855f7] to-[#ec4899]',
       features: ['Real-time Leaderboards', 'Stat Tracking', '100% Free', 'No Registration Required'],
     },
@@ -24,6 +25,7 @@ export default function Games() {
       description: 'Spin the reels and enjoy classic slot machine fun. Free coins every day!',
       details: 'Enjoy the excitement of slot machines without any financial risk. Earn free coins daily, unlock special achievements, and climb the global rankings. Our slots are designed purely for entertainment with fair odds and transparent mechanics.',
       icon: RotateCcw,
+      image: '/images/game-slots-master.webp',
       color: 'from-[#ec4899] to-[#f43f5e]',
       features: ['Daily Free Coins', 'Achievement System', 'Fair Odds', 'Social Sharing'],
     },
@@ -33,6 +35,7 @@ export default function Games() {
       description: 'Spin the wheel and predict the outcome. Fast-paced and thrilling!',
       details: 'Experience the suspense of roulette in a safe, entertainment-focused environment. Practice strategy, learn probability, and enjoy the rush of the game without any real-world consequences. Perfect for learning and having fun.',
       icon: Gamepad2,
+      image: '/images/game-roulette-rush.webp',
       color: 'from-[#f43f5e] to-[#fbbf24]',
       features: ['Strategy Learning', 'Instant Results', 'No Real Money', 'Instant Play'],
     },
@@ -42,6 +45,7 @@ export default function Games() {
       description: 'Play classic blackjack against the dealer. Master the strategy!',
       details: 'Test your card skills in our free blackjack game. Learn basic strategy, improve your decision-making, and enjoy competitive gameplay. All wins are virtual achievements that contribute to your profile and leaderboard position.',
       icon: Zap,
+      image: '/images/game-blackjack-pro.webp',
       color: 'from-[#fbbf24] to-[#a855f7]',
       features: ['Strategy Guide', 'Skill-Based', 'Achievement Badges', 'Multiplayer Challenges'],
     },
@@ -98,11 +102,19 @@ export default function Games() {
                 className="group"
               >
                 <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                  {/* Game Image */}
+                  <div className="relative h-64 overflow-hidden bg-gradient-to-br from-[#a855f7]/20 to-[#ec4899]/20">
+                    <img
+                      src={game.image}
+                      alt={game.name}
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+
                   {/* Game Header */}
                   <div className={`bg-gradient-to-r ${game.color} p-8 text-white relative overflow-hidden`}>
                     <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
                     <div className="relative z-10">
-                      <IconComponent size={48} className="mb-4" />
                       <h3 className="text-3xl font-bold mb-2">{game.name}</h3>
                       <p className="text-white/90 text-lg">{game.description}</p>
                     </div>
