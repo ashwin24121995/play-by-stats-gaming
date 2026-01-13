@@ -58,3 +58,9 @@
 
 ## Feature Removal
 - [x] Remove Leaderboard page and navigation links
+
+## Legal Pages Enhancement
+- [x] Write comprehensive Privacy Policy page
+- [ ] Write comprehensive Terms & Conditions page
+- [ ] Write comprehensive Disclaimer page
+- [ ] Write comprehensive Responsible Gaming page
