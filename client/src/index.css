@@ -197,35 +197,7 @@ body {
   position: relative;
 }
 
-}
-
-h2 {
-  font-size: 1.5rem !important;
-}
-
-h3 {
-  font-size: 1.25rem !important;
-}
-
-/* Reduce game element sizes */
-.text-6xl {
-  font-size: 3rem !important;
-}
-
-.text-5xl {
-  font-size: 2.5rem !important;
-}
-
-.text-4xl {
-  font-size: 2rem !important;
-}
-
 /* Fluid Typography with CSS clamp() - scales smoothly from mobile to desktop */
-
-/* Remove the fixed 0.95em scaling */
-* {
-  /* font-size: 0.95em; - REMOVED */
-}
 
 /* Base body font size - scales from 14px (mobile) to 16px (desktop) */
 body {
