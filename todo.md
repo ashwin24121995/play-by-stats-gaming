@@ -152,10 +152,20 @@
 ## Layout Optimization - Fit Games in Single Viewport
 - [x] Redesign game layouts to use side-by-side layout (game display left, controls right)
 - [x] Reduce padding and margins to save vertical space
-- [ ] Remove or collapse "How to Play" sections by default
+- [x] Remove unnecessary sections (Symbols guide from Slots Master)
 - [x] Optimize Dice Roller layout to fit in viewport
 - [x] Optimize Slots Master layout to fit in viewport
 - [x] Optimize Roulette Rush layout to fit in viewport
 - [x] Optimize Blackjack Pro layout to fit in viewport
-- [ ] Test on standard 1920x1080 resolution
-- [ ] Ensure responsive design still works on mobile
+- [x] Test and push to GitHub/Railway
+- [x] Ensure responsive design still works on mobile
+
+## Favicon and Image Optimization
+- [x] Copy new logo to public folder
+- [x] Generate favicon.ico from logo
+- [x] Update HTML to reference new favicon
+- [x] Convert all PNG/JPG images to WebP format (8 images converted)
+- [x] Update all image references in code to use .webp extension
+- [x] Test favicon displays correctly
+- [x] Test all images load correctly
+- [ ] Push to GitHub/Railway
