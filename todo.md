@@ -190,3 +190,14 @@
 - [x] Change max-w-[95%] to max-w-[85%]
 - [ ] Test that everything fits in viewport without scrolling
 - [ ] Push to GitHub/Railway
+
+## Fluid Typography with CSS clamp()
+- [x] Replace fixed font sizes with clamp() values
+- [x] Implement fluid base font size (body text: 14px-16px)
+- [x] Implement fluid heading sizes (h1-h6 with clamp())
+- [x] Implement fluid display text sizes (text-xs through text-9xl)
+- [x] Implement fluid game element sizes
+- [x] Test on mobile (320px width)
+- [x] Test on tablet (768px width)
+- [x] Test on desktop (1920px width)
+- [ ] Push to GitHub/Railway
