@@ -77,3 +77,6 @@
 - [x] Review all 4 game pages for misleading information
 - [x] Review all legal pages for consistency
 - [x] Fix any identified issues (None found - all content accurate)
+
+## UX Improvements
+- [x] Implement scroll-to-top on page navigation

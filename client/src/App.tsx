@@ -12,6 +12,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import CookieBanner from "./components/CookieBanner";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import Games from "./pages/Games";
 import About from "./pages/About";
@@ -25,6 +26,7 @@ function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <>
+      <ScrollToTop />
       <Header />
       <Switch>
         <Route path={"/"} component={Home} />
