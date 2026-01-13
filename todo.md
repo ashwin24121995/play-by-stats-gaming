@@ -86,3 +86,7 @@
 - [x] Rewrite Terms & Conditions with fresh content
 - [x] Rewrite Disclaimer with fresh content
 - [x] Rewrite Responsible Gaming with fresh content
+
+## Address Updates
+- [ ] Update Contact page with full company address
+- [ ] Update Footer component with full company address

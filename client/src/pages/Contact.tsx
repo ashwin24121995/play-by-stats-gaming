@@ -187,8 +187,10 @@ export default function Contact() {
                     Location
                   </h3>
                   <p className="text-[#cbd5e1]">
-                    SDSURABHI INFRA PRIVATE LIMITED<br />
-                    Lucknow, Uttar Pradesh, India
+                    <strong>SDSURABHI INFRA PRIVATE LIMITED</strong><br />
+                    Ram Acchayyar 48/2, Ayodhya Puri 2 Bijnour<br />
+                    Sarojini Nagar, Lucknow - 226008<br />
+                    Uttar Pradesh, India
                   </p>
                   <p className="text-[#cbd5e1] text-sm mt-1">
                     Global operations with local support

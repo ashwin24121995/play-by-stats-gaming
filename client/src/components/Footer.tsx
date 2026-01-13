@@ -104,7 +104,11 @@ export default function Footer() {
                 <MapPin size={20} className="text-[#22c55e] flex-shrink-0 mt-1" />
                 <div>
                   <p className="text-sm text-[#6b7280]">Location</p>
-                  <p className="text-[#a0a0b0]">Lucknow, Uttar Pradesh, India</p>
+                  <p className="text-[#a0a0b0] text-sm leading-relaxed">
+                    Ram Acchayyar 48/2, Ayodhya Puri 2 Bijnour<br />
+                    Sarojini Nagar, Lucknow - 226008<br />
+                    Uttar Pradesh, India
+                  </p>
                 </div>
               </div>
             </div>
