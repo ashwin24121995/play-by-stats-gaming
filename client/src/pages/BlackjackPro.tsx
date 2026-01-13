@@ -21,13 +21,13 @@ export default function BlackjackPro() {
   const [dealerValue, setDealerValue] = useState(0);
   const [result, setResult] = useState<any>(null);
 
-  // Get player profile
-
+  // Get player profile from localStorage
   useEffect(() => {
+    const playerData = localStorage.getItem('playerData');
     if (playerData) {
-      setPlayer(playerData);
+      setPlayer(JSON.parse(playerData));
     }
-  }, [playerData]);
+  }, []);
 
   // Play blackjack mutation
 

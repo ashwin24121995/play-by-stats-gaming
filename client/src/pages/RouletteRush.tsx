@@ -21,13 +21,13 @@ export default function RouletteRush() {
   const [showResult, setShowResult] = useState(false);
   const [wheelRotation, setWheelRotation] = useState(0);
 
-  // Get player profile
-
+  // Get player profile from localStorage
   useEffect(() => {
+    const playerData = localStorage.getItem('playerData');
     if (playerData) {
-      setPlayer(playerData);
+      setPlayer(JSON.parse(playerData));
     }
-  }, [playerData]);
+  }, []);
 
   // Play roulette mutation
 
@@ -49,8 +49,69 @@ export default function RouletteRush() {
 
     // Play roulette wheel spinning sound
     gameSounds.roulette.spin();
+    
+    // Play ball land sound after 2 seconds
+    // Ball lands after spin
 
-    // Game logic will be implemented here
+    // Simulate roulette spin
+    const winningNumber = Math.floor(Math.random() * 37);
+    const isRed = redNumbers.includes(winningNumber);
+    
+    let won = false;
+    let multiplier = 0;
+
+    if (betType === 'number' && winningNumber === betValue) {
+      won = true;
+      multiplier = 35;
+    } else if (betType === 'red' && isRed) {
+      won = true;
+      multiplier = 1;
+    } else if (betType === 'black' && !isRed && winningNumber !== 0) {
+      won = true;
+      multiplier = 1;
+    } else if (betType === 'even' && winningNumber > 0 && winningNumber % 2 === 0) {
+      won = true;
+      multiplier = 1;
+    } else if (betType === 'odd' && winningNumber > 0 && winningNumber % 2 === 1) {
+      won = true;
+      multiplier = 1;
+    }
+
+    const winAmount = won ? betAmount * (multiplier + 1) : 0;
+    const wheelRotationAngle = (winningNumber * 360) / 37 + 3600;
+    setWheelRotation(wheelRotationAngle);
+
+    const gameResult = {
+      winningNumber,
+      isRed,
+      won,
+      multiplier,
+      winAmount,
+    };
+
+    // Store result but don't show it yet
+    setResult(gameResult);
+    
+    // Update player stats
+    const updatedPlayer = {
+      ...player,
+      coins: player.coins - betAmount + winAmount,
+      totalWins: player.totalWins + (won ? 1 : 0),
+      totalLosses: player.totalLosses + (won ? 0 : 1),
+    };
+    
+    // Wait for wheel to stop spinning (3 seconds), then show result
+    setTimeout(() => {
+      setIsSpinning(false);
+      setShowResult(true);
+      setPlayer(updatedPlayer);
+      localStorage.setItem('playerData', JSON.stringify(updatedPlayer));
+      
+      // Play win/loss sound after showing result
+      if (won) {
+        gameSounds.roulette.win();
+      }
+    }, 3000);
   };
 
   const redNumbers = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36];
