@@ -17,8 +17,9 @@ export default function SlotsMaster() {
   const [isSpinning, setIsSpinning] = useState(false);
   const [result, setResult] = useState<any>(null);
   const [showResult, setShowResult] = useState(false);
+  const [gameHistory, setGameHistory] = useState<any[]>([]);
 
-  // Get player profile from localStorage
+  // Get player profile and game history from localStorage
   useEffect(() => {
     const playerData = localStorage.getItem('playerData');
     if (playerData) {
@@ -27,12 +28,18 @@ export default function SlotsMaster() {
       // Initialize default player data
       const defaultPlayer = {
         coins: 1000,
-        gamesWon: 0,
-        gamesLost: 0,
+        totalWins: 0,
+        totalLosses: 0,
         totalGames: 0
       };
       localStorage.setItem('playerData', JSON.stringify(defaultPlayer));
       setPlayer(defaultPlayer);
+    }
+
+    // Load game history
+    const history = localStorage.getItem('slotsHistory');
+    if (history) {
+      setGameHistory(JSON.parse(history));
     }
   }, []);
 
@@ -111,6 +118,21 @@ export default function SlotsMaster() {
       setShowResult(true);
       setPlayer(updatedPlayer);
       localStorage.setItem('playerData', JSON.stringify(updatedPlayer));
+      
+      // Save to game history (keep last 15 games)
+      const newHistory = [
+        {
+          timestamp: new Date().toISOString(),
+          symbols: `${reel1} ${reel2} ${reel3}`,
+          bet: betAmount,
+          won,
+          winAmount,
+          multiplier,
+        },
+        ...gameHistory,
+      ].slice(0, 15);
+      setGameHistory(newHistory);
+      localStorage.setItem('slotsHistory', JSON.stringify(newHistory));
       
       // Play win sound after showing result
       if (won) {

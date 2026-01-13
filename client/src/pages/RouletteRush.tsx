@@ -20,8 +20,9 @@ export default function RouletteRush() {
   const [result, setResult] = useState<any>(null);
   const [showResult, setShowResult] = useState(false);
   const [wheelRotation, setWheelRotation] = useState(0);
+  const [gameHistory, setGameHistory] = useState<any[]>([]);
 
-  // Get player profile from localStorage
+  // Get player profile and game history from localStorage
   useEffect(() => {
     const playerData = localStorage.getItem('playerData');
     if (playerData) {
@@ -30,12 +31,18 @@ export default function RouletteRush() {
       // Initialize default player data
       const defaultPlayer = {
         coins: 1000,
-        gamesWon: 0,
-        gamesLost: 0,
+        totalWins: 0,
+        totalLosses: 0,
         totalGames: 0
       };
       localStorage.setItem('playerData', JSON.stringify(defaultPlayer));
       setPlayer(defaultPlayer);
+    }
+
+    // Load game history
+    const history = localStorage.getItem('rouletteHistory');
+    if (history) {
+      setGameHistory(JSON.parse(history));
     }
   }, []);
 
@@ -116,6 +123,23 @@ export default function RouletteRush() {
       setShowResult(true);
       setPlayer(updatedPlayer);
       localStorage.setItem('playerData', JSON.stringify(updatedPlayer));
+      
+      // Save to game history (keep last 15 games)
+      const newHistory = [
+        {
+          timestamp: new Date().toISOString(),
+          winningNumber,
+          betType,
+          betValue,
+          bet: betAmount,
+          won,
+          winAmount,
+          multiplier,
+        },
+        ...gameHistory,
+      ].slice(0, 15);
+      setGameHistory(newHistory);
+      localStorage.setItem('rouletteHistory', JSON.stringify(newHistory));
       
       // Play win/loss sound after showing result
       if (won) {

@@ -20,8 +20,9 @@ export default function BlackjackPro() {
   const [playerValue, setPlayerValue] = useState(0);
   const [dealerValue, setDealerValue] = useState(0);
   const [result, setResult] = useState<any>(null);
+  const [gameHistory, setGameHistory] = useState<any[]>([]);
 
-  // Get player profile from localStorage
+  // Get player profile and game history from localStorage
   useEffect(() => {
     const playerData = localStorage.getItem('playerData');
     if (playerData) {
@@ -30,12 +31,18 @@ export default function BlackjackPro() {
       // Initialize default player data
       const defaultPlayer = {
         coins: 1000,
-        gamesWon: 0,
-        gamesLost: 0,
+        totalWins: 0,
+        totalLosses: 0,
         totalGames: 0
       };
       localStorage.setItem('playerData', JSON.stringify(defaultPlayer));
       setPlayer(defaultPlayer);
+    }
+
+    // Load game history
+    const history = localStorage.getItem('blackjackHistory');
+    if (history) {
+      setGameHistory(JSON.parse(history));
     }
   }, []);
 

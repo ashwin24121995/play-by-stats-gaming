@@ -18,8 +18,25 @@ export default function DiceRoller() {
   const [isRolling, setIsRolling] = useState(false);
   const [result, setResult] = useState<any>(null);
   const [showResult, setShowResult] = useState(false);
+  const [gameHistory, setGameHistory] = useState<any[]>([]);
+  const [showStats, setShowStats] = useState(false);
 
-  // Get player profile from localStorage
+  // Dice probability calculator
+  const diceProbabilities: Record<number, { ways: number; probability: string }> = {
+    2: { ways: 1, probability: '2.78%' },
+    3: { ways: 2, probability: '5.56%' },
+    4: { ways: 3, probability: '8.33%' },
+    5: { ways: 4, probability: '11.11%' },
+    6: { ways: 5, probability: '13.89%' },
+    7: { ways: 6, probability: '16.67%' },
+    8: { ways: 5, probability: '13.89%' },
+    9: { ways: 4, probability: '11.11%' },
+    10: { ways: 3, probability: '8.33%' },
+    11: { ways: 2, probability: '5.56%' },
+    12: { ways: 1, probability: '2.78%' },
+  };
+
+  // Get player profile and game history from localStorage
   useEffect(() => {
     const playerData = localStorage.getItem('playerData');
     if (playerData) {
@@ -28,12 +45,18 @@ export default function DiceRoller() {
       // Initialize default player data
       const defaultPlayer = {
         coins: 1000,
-        gamesWon: 0,
-        gamesLost: 0,
+        totalWins: 0,
+        totalLosses: 0,
         totalGames: 0
       };
       localStorage.setItem('playerData', JSON.stringify(defaultPlayer));
       setPlayer(defaultPlayer);
+    }
+
+    // Load game history
+    const history = localStorage.getItem('diceHistory');
+    if (history) {
+      setGameHistory(JSON.parse(history));
     }
   }, []);
 
@@ -82,6 +105,23 @@ export default function DiceRoller() {
       setShowResult(true);
       setPlayer(updatedPlayer);
       localStorage.setItem('playerData', JSON.stringify(updatedPlayer));
+      
+      // Save to game history (keep last 15 games)
+      const newHistory = [
+        {
+          timestamp: new Date().toISOString(),
+          prediction,
+          result: total,
+          dice1,
+          dice2,
+          bet: betAmount,
+          won,
+          winAmount,
+        },
+        ...gameHistory,
+      ].slice(0, 15);
+      setGameHistory(newHistory);
+      localStorage.setItem('diceHistory', JSON.stringify(newHistory));
       
       // Play win/loss sound after showing result
       if (won) {
@@ -339,6 +379,15 @@ export default function DiceRoller() {
                   <span>7</span>
                   <span>12</span>
                 </div>
+                {/* Probability Display */}
+                <div className="mt-3 p-3 bg-[#0f172a] rounded-lg border border-[#a855f7]/30">
+                  <p className="text-white text-sm">
+                    <span className="text-[#a855f7] font-bold">Odds:</span> {diceProbabilities[prediction].probability} chance
+                  </p>
+                  <p className="text-gray-400 text-xs mt-1">
+                    {diceProbabilities[prediction].ways} way{diceProbabilities[prediction].ways > 1 ? 's' : ''} to roll {prediction}
+                  </p>
+                </div>
               </div>
 
               {/* Roll Button */}
@@ -370,6 +419,53 @@ export default function DiceRoller() {
             </Card>
           </motion.div>
         </div>
+
+        {/* Game History */}
+        {gameHistory.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mt-8"
+          >
+            <Card className="bg-[#1e293b] border-[#a855f7]/30 p-6">
+              <h3 className="text-xl font-bold text-white mb-4">📊 Recent Games</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="text-gray-400 border-b border-[#a855f7]/30">
+                      <th className="text-left py-2">Time</th>
+                      <th className="text-center py-2">Prediction</th>
+                      <th className="text-center py-2">Result</th>
+                      <th className="text-center py-2">Dice</th>
+                      <th className="text-right py-2">Bet</th>
+                      <th className="text-right py-2">Win/Loss</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {gameHistory.slice(0, 10).map((game, index) => (
+                      <tr key={index} className="border-b border-[#a855f7]/10 text-gray-300">
+                        <td className="py-2">
+                          {new Date(game.timestamp).toLocaleTimeString()}
+                        </td>
+                        <td className="text-center">{game.prediction}</td>
+                        <td className="text-center font-bold">{game.result}</td>
+                        <td className="text-center text-xs">
+                          {game.dice1} + {game.dice2}
+                        </td>
+                        <td className="text-right">{game.bet}</td>
+                        <td className={`text-right font-bold ${
+                          game.won ? 'text-[#22c55e]' : 'text-[#ef4444]'
+                        }`}>
+                          {game.won ? `+${game.winAmount}` : `-${game.bet}`}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </Card>
+          </motion.div>
+        )}
 
         {/* Disclaimer */}
         <motion.div
