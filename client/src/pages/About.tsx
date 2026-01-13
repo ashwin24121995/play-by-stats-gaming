@@ -14,7 +14,7 @@ export default function About() {
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
         </div>
-        <div className="w-full max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="w-full max-w-[85%] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -29,7 +29,7 @@ export default function About() {
       </div>
 
       {/* Company Info */}
-      <div className="w-full max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="w-full max-w-[85%] mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -87,7 +87,7 @@ export default function About() {
 
       {/* Mission & Vision */}
       <div className="bg-gradient-to-r from-[#1a1a2e] to-[#2d2d44] text-white py-20">
-        <div className="w-full max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[85%] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -117,7 +117,7 @@ export default function About() {
       </div>
 
       {/* Core Values */}
-      <div className="w-full max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="w-full max-w-[85%] mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <motion.h2
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -197,7 +197,7 @@ export default function About() {
       </div>
 
       {/* Why Choose Us */}
-      <div className="w-full max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="w-full max-w-[85%] mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <motion.h2
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

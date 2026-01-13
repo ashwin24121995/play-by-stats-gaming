@@ -196,3 +196,33 @@ html, body {
 body {
   position: relative;
 }
+
+/* Make content more compact and fit better on screen */
+* {
+  font-size: 0.95em;
+}
+
+h1 {
+  font-size: 2rem !important;
+}
+
+h2 {
+  font-size: 1.5rem !important;
+}
+
+h3 {
+  font-size: 1.25rem !important;
+}
+
+/* Reduce game element sizes */
+.text-6xl {
+  font-size: 3rem !important;
+}
+
+.text-5xl {
+  font-size: 2.5rem !important;
+}
+
+.text-4xl {
+  font-size: 2rem !important;
+}

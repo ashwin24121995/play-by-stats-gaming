@@ -182,3 +182,11 @@
 - [x] Set max-width: 100vw on root elements
 - [ ] Test at different zoom levels
 - [ ] Push to GitHub/Railway
+
+## Make Content Smaller to Fit Screen
+- [x] Reduce base font sizes globally (0.95em)
+- [x] Make game elements smaller (reduced text-6xl, text-5xl, text-4xl)
+- [x] Reduce heading sizes (h1: 2rem, h2: 1.5rem, h3: 1.25rem)
+- [x] Change max-w-[95%] to max-w-[85%]
+- [ ] Test that everything fits in viewport without scrolling
+- [ ] Push to GitHub/Railway

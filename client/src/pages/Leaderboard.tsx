@@ -31,7 +31,7 @@ export default function Leaderboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0f172a] to-[#1e293b] pt-24 pb-12 px-4">
-      <div className="w-full max-w-[95%] mx-auto">
+      <div className="w-full max-w-[85%] mx-auto">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
