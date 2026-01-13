@@ -13,6 +13,7 @@ export default function Leaderboard() {
   const [period, setPeriod] = useState<'daily' | 'weekly' | 'monthly' | 'alltime'>('alltime');
 
   // Get leaderboard data
+  const leaderboard: any[] = [];
 
   const getRankIcon = (rank: number) => {
     if (rank === 1) return <Trophy className="w-8 h-8 text-[#fbbf24]" />;
