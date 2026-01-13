@@ -231,7 +231,7 @@ export default function DiceRoller() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0f172a] to-[#1e293b] pt-16 pb-4 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="w-full max-w-[95%] mx-auto">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}

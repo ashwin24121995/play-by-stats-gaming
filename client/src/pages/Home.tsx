@@ -58,7 +58,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#f5f3ff] via-[#f5f3ff]/80 to-transparent"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="relative z-10 w-full max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <motion.div
@@ -187,7 +187,7 @@ export default function Home() {
 
       {/* Why Play Our Casino Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <div className="w-full max-w-[95%] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
