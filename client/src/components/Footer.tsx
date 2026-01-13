@@ -10,17 +10,17 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-r from-[#1a0a2e] to-[#2d1b4e] border-t-2 border-[#f7a600] text-white mt-20">
+    <footer className="bg-gradient-to-r from-[#0f172a] to-[#1e293b] border-t-2 border-[#14b8a6] text-white mt-20">
       {/* Disclaimer Section */}
-      <div className="bg-[#2d1b4e]/80 border-b border-[#f7a600]/30 py-6">
+      <div className="bg-[#1e293b]/80 border-b border-[#14b8a6]/30 py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex gap-3 items-start">
-            <AlertCircle className="text-[#f7a600] flex-shrink-0 mt-1" size={24} />
+            <AlertCircle className="text-[#14b8a6] flex-shrink-0 mt-1" size={24} />
             <div>
-              <h3 className="font-bold text-[#f7a600] mb-2" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
+              <h3 className="font-bold text-[#14b8a6] mb-2" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
                 ⚠️ Age & Responsible Gaming Disclaimer
               </h3>
-              <p className="text-sm text-[#a0aec0] leading-relaxed">
+              <p className="text-sm text-[#cbd5e1] leading-relaxed">
                 This platform is intended for users 18 years of age or older. We provide free-to-play entertainment experiences with <strong>no real money involved</strong>. No real currency can be used or gained during gameplay. All achievements are for entertainment purposes only and do not translate into real-world financial activities. We promote responsible gaming and fair play in a safe, risk-free environment.
               </p>
             </div>
@@ -40,35 +40,35 @@ export default function Footer() {
                 className="h-10 w-auto"
               />
             </div>
-            <p className="text-[#a0aec0] text-sm">
+            <p className="text-[#cbd5e1] text-sm">
               Premium social gaming platform for entertainment and fun.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold text-[#f7a600] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
+            <h4 className="font-bold text-[#14b8a6] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
               Quick Links
             </h4>
             <ul className="space-y-2">
               <li>
                 <Link href="/">
-                  <a className="text-[#a0aec0] hover:text-[#f7a600] transition-colors text-sm">Home</a>
+                  <a className="text-[#cbd5e1] hover:text-[#14b8a6] transition-colors text-sm">Home</a>
                 </Link>
               </li>
               <li>
                 <Link href="/games">
-                  <a className="text-[#a0aec0] hover:text-[#f7a600] transition-colors text-sm">Games</a>
+                  <a className="text-[#cbd5e1] hover:text-[#14b8a6] transition-colors text-sm">Games</a>
                 </Link>
               </li>
               <li>
                 <Link href="/about">
-                  <a className="text-[#a0aec0] hover:text-[#f7a600] transition-colors text-sm">About</a>
+                  <a className="text-[#cbd5e1] hover:text-[#14b8a6] transition-colors text-sm">About</a>
                 </Link>
               </li>
               <li>
                 <Link href="/contact">
-                  <a className="text-[#a0aec0] hover:text-[#f7a600] transition-colors text-sm">Contact</a>
+                  <a className="text-[#cbd5e1] hover:text-[#14b8a6] transition-colors text-sm">Contact</a>
                 </Link>
               </li>
             </ul>
@@ -76,23 +76,23 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="font-bold text-[#f7a600] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
+            <h4 className="font-bold text-[#14b8a6] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
               Legal
             </h4>
             <ul className="space-y-2">
               <li>
                 <Link href="/privacy">
-                  <a className="text-[#a0aec0] hover:text-[#f7a600] transition-colors text-sm">Privacy Policy</a>
+                  <a className="text-[#cbd5e1] hover:text-[#14b8a6] transition-colors text-sm">Privacy Policy</a>
                 </Link>
               </li>
               <li>
                 <Link href="/terms">
-                  <a className="text-[#a0aec0] hover:text-[#f7a600] transition-colors text-sm">Terms & Conditions</a>
+                  <a className="text-[#cbd5e1] hover:text-[#14b8a6] transition-colors text-sm">Terms & Conditions</a>
                 </Link>
               </li>
               <li>
                 <Link href="/disclaimer">
-                  <a className="text-[#a0aec0] hover:text-[#f7a600] transition-colors text-sm">Disclaimer</a>
+                  <a className="text-[#cbd5e1] hover:text-[#14b8a6] transition-colors text-sm">Disclaimer</a>
                 </Link>
               </li>
             </ul>
@@ -100,24 +100,24 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-bold text-[#f7a600] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
+            <h4 className="font-bold text-[#14b8a6] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
               Contact
             </h4>
-            <ul className="space-y-2 text-sm text-[#a0aec0]">
-              <li>Email: <a href="mailto:support@playbystats.com" className="text-[#f7a600] hover:underline">support@playbystats.com</a></li>
-              <li>Phone: <a href="tel:+919876543210" className="text-[#f7a600] hover:underline">+91 (987) 654-3210</a></li>
+            <ul className="space-y-2 text-sm text-[#cbd5e1]">
+              <li>Email: <a href="mailto:support@playbystats.com" className="text-[#14b8a6] hover:underline">support@playbystats.com</a></li>
+              <li>Phone: <a href="tel:+919876543210" className="text-[#14b8a6] hover:underline">+91 (987) 654-3210</a></li>
               <li>Hours: 24/7 Support</li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-[#f7a600]/30 pt-8">
+        <div className="border-t border-[#14b8a6]/30 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-[#a0aec0] text-sm">
+            <p className="text-[#cbd5e1] text-sm">
               © {currentYear} Play By Stats. All rights reserved. Entertainment only. No real money involved.
             </p>
-            <div className="flex gap-4 text-xs text-[#a0aec0]">
+            <div className="flex gap-4 text-xs text-[#cbd5e1]">
               <span>CIN: U41002UP2023PTC194590</span>
               <span>•</span>
               <span>PAN: ABMCS3759A</span>

@@ -64,13 +64,13 @@ export default function Games() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#1a0a2e] to-[#2d1b4e]">
+    <div className="min-h-screen bg-gradient-to-b from-[#0f172a] to-[#1e293b]">
       {/* Hero Section */}
       <LazyBackgroundSection
         imageSrc="/images/games-showcase-bg.webp"
         className="relative h-96 overflow-hidden"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1a0a2e]/70 to-[#2d1b4e]/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a]/70 to-[#1e293b]/90"></div>
         <div className="relative h-full flex flex-col items-center justify-center text-center px-4">
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
@@ -85,7 +85,7 @@ export default function Games() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl text-[#a0aec0] max-w-2xl"
+            className="text-xl text-[#cbd5e1] max-w-2xl"
           >
             Choose from our collection of exciting free-to-play games. No real money, pure entertainment!
           </motion.p>
@@ -108,29 +108,29 @@ export default function Games() {
               whileHover={{ y: -10, transition: { duration: 0.3 } }}
               className="group"
             >
-              <div className="relative h-full bg-gradient-to-br from-[#2d1b4e] to-[#1a0a2e] rounded-xl border-2 border-[#f7a600]/30 hover:border-[#f7a600] transition-all duration-300 overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-[#f7a600]/20 p-6 flex flex-col"
+              <div className="relative h-full bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-xl border-2 border-[#14b8a6]/30 hover:border-[#14b8a6] transition-all duration-300 overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-[#14b8a6]/20 p-6 flex flex-col"
               >
                 {/* Animated Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#f7a600]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#14b8a6]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                 {/* Icon */}
-                <div className="relative z-10 mb-4 inline-flex w-16 h-16 bg-gradient-to-br from-[#f7a600]/20 to-[#d4860f]/20 rounded-lg items-center justify-center text-[#f7a600] group-hover:scale-110 transition-transform duration-300">
+                <div className="relative z-10 mb-4 inline-flex w-16 h-16 bg-gradient-to-br from-[#14b8a6]/20 to-[#0d9488]/20 rounded-lg items-center justify-center text-[#14b8a6] group-hover:scale-110 transition-transform duration-300">
                   {game.icon}
                 </div>
 
                 {/* Content */}
                 <h3
-                  className="relative z-10 text-xl font-bold text-white mb-2 group-hover:text-[#f7a600] transition-colors"
+                  className="relative z-10 text-xl font-bold text-white mb-2 group-hover:text-[#14b8a6] transition-colors"
                   style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}
                 >
                   {game.name}
                 </h3>
-                <p className="relative z-10 text-[#a0aec0] text-sm mb-6 flex-grow">
+                <p className="relative z-10 text-[#cbd5e1] text-sm mb-6 flex-grow">
                   {game.description}
                 </p>
 
                 {/* CTA Button */}
-                <button className="relative z-10 w-full px-4 py-2 bg-gradient-to-r from-[#f7a600] to-[#d4860f] text-[#1a0a2e] font-bold rounded-lg hover:shadow-lg hover:shadow-[#f7a600]/50 transition-all duration-300 transform group-hover:scale-105">
+                <button className="relative z-10 w-full px-4 py-2 bg-gradient-to-r from-[#14b8a6] to-[#0d9488] text-[#0f172a] font-bold rounded-lg hover:shadow-lg hover:shadow-[#14b8a6]/50 transition-all duration-300 transform group-hover:scale-105">
                   Play Now
                 </button>
               </div>
@@ -140,7 +140,7 @@ export default function Games() {
       </div>
 
       {/* Features Section */}
-      <div className="bg-[#2d1b4e]/50 py-20 border-t border-[#f7a600]/30">
+      <div className="bg-[#1e293b]/50 py-20 border-t border-[#14b8a6]/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold text-center text-white mb-12"
@@ -171,10 +171,10 @@ export default function Games() {
               <motion.div
                 key={idx}
                 whileHover={{ scale: 1.05 }}
-                className="bg-gradient-to-br from-[#2d1b4e] to-[#1a0a2e] rounded-lg border border-[#f7a600]/20 p-6 text-center hover:border-[#f7a600] transition-all duration-300"
+                className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border border-[#14b8a6]/20 p-6 text-center hover:border-[#14b8a6] transition-all duration-300"
               >
-                <h3 className="text-xl font-bold text-[#f7a600] mb-2">{feature.title}</h3>
-                <p className="text-[#a0aec0] text-sm">{feature.desc}</p>
+                <h3 className="text-xl font-bold text-[#14b8a6] mb-2">{feature.title}</h3>
+                <p className="text-[#cbd5e1] text-sm">{feature.desc}</p>
               </motion.div>
             ))}
           </div>

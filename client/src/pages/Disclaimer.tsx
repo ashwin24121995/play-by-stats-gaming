@@ -8,9 +8,9 @@ import { AlertCircle, CheckCircle } from 'lucide-react';
  */
 export default function Disclaimer() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#1a0a2e] to-[#2d1b4e]">
+    <div className="min-h-screen bg-gradient-to-b from-[#0f172a] to-[#1e293b]">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-[#f7a600]/10 to-[#d4860f]/10 border-b-2 border-[#f7a600] py-12 px-4 sm:px-6 lg:px-8">
+      <div className="bg-gradient-to-r from-[#14b8a6]/10 to-[#0d9488]/10 border-b-2 border-[#14b8a6] py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -18,7 +18,7 @@ export default function Disclaimer() {
             transition={{ duration: 0.6 }}
             className="flex gap-4 items-start"
           >
-            <AlertCircle className="text-[#f7a600] flex-shrink-0 mt-1" size={32} />
+            <AlertCircle className="text-[#14b8a6] flex-shrink-0 mt-1" size={32} />
             <div>
               <h1
                 className="text-5xl font-bold text-white mb-4"
@@ -26,7 +26,7 @@ export default function Disclaimer() {
               >
                 Play By Stats - Age & Responsible Gaming Disclaimer
               </h1>
-              <p className="text-[#a0aec0]">
+              <p className="text-[#cbd5e1]">
                 Important legal information about our platform and responsible gaming practices
               </p>
             </div>
@@ -43,17 +43,17 @@ export default function Disclaimer() {
           className="space-y-8"
         >
           {/* Age Restriction */}
-          <section className="bg-gradient-to-br from-[#2d1b4e] to-[#1a0a2e] rounded-lg border-2 border-[#f7a600]/30 p-8">
+          <section className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
             <div className="flex gap-3 items-start mb-4">
-              <AlertCircle className="text-[#f7a600] flex-shrink-0 mt-1" size={24} />
+              <AlertCircle className="text-[#14b8a6] flex-shrink-0 mt-1" size={24} />
               <h2
-                className="text-2xl font-bold text-[#f7a600]"
+                className="text-2xl font-bold text-[#14b8a6]"
                 style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}
               >
                 Age Restriction: 18+ Only
               </h2>
             </div>
-            <div className="text-[#a0aec0] space-y-4 ml-9">
+            <div className="text-[#cbd5e1] space-y-4 ml-9">
               <p>
                 <strong>This platform is intended exclusively for users who are 18 years of age or older.</strong> By accessing and using PlayHub, you confirm that you meet this age requirement.
               </p>
@@ -67,17 +67,17 @@ export default function Disclaimer() {
           </section>
 
           {/* No Real Money */}
-          <section className="bg-gradient-to-br from-[#2d1b4e] to-[#1a0a2e] rounded-lg border-2 border-[#f7a600]/30 p-8">
+          <section className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
             <div className="flex gap-3 items-start mb-4">
-              <CheckCircle className="text-[#f7a600] flex-shrink-0 mt-1" size={24} />
+              <CheckCircle className="text-[#14b8a6] flex-shrink-0 mt-1" size={24} />
               <h2
-                className="text-2xl font-bold text-[#f7a600]"
+                className="text-2xl font-bold text-[#14b8a6]"
                 style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}
               >
                 No Real Money Involved
               </h2>
             </div>
-            <div className="text-[#a0aec0] space-y-4 ml-9">
+            <div className="text-[#cbd5e1] space-y-4 ml-9">
               <p>
                 <strong>PlayHub is a free-to-play entertainment platform with absolutely no real money transactions.</strong>
               </p>
@@ -95,17 +95,17 @@ export default function Disclaimer() {
           </section>
 
           {/* Responsible Gaming */}
-          <section className="bg-gradient-to-br from-[#2d1b4e] to-[#1a0a2e] rounded-lg border-2 border-[#f7a600]/30 p-8">
+          <section className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
             <div className="flex gap-3 items-start mb-4">
-              <CheckCircle className="text-[#f7a600] flex-shrink-0 mt-1" size={24} />
+              <CheckCircle className="text-[#14b8a6] flex-shrink-0 mt-1" size={24} />
               <h2
-                className="text-2xl font-bold text-[#f7a600]"
+                className="text-2xl font-bold text-[#14b8a6]"
                 style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}
               >
                 Responsible Gaming Commitment
               </h2>
             </div>
-            <div className="text-[#a0aec0] space-y-4 ml-9">
+            <div className="text-[#cbd5e1] space-y-4 ml-9">
               <p>
                 <strong>We are committed to promoting responsible gaming practices.</strong>
               </p>
@@ -123,17 +123,17 @@ export default function Disclaimer() {
           </section>
 
           {/* Entertainment Only */}
-          <section className="bg-gradient-to-br from-[#2d1b4e] to-[#1a0a2e] rounded-lg border-2 border-[#f7a600]/30 p-8">
+          <section className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
             <div className="flex gap-3 items-start mb-4">
-              <CheckCircle className="text-[#f7a600] flex-shrink-0 mt-1" size={24} />
+              <CheckCircle className="text-[#14b8a6] flex-shrink-0 mt-1" size={24} />
               <h2
-                className="text-2xl font-bold text-[#f7a600]"
+                className="text-2xl font-bold text-[#14b8a6]"
                 style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}
               >
                 Entertainment Only
               </h2>
             </div>
-            <div className="text-[#a0aec0] space-y-4 ml-9">
+            <div className="text-[#cbd5e1] space-y-4 ml-9">
               <p>
                 <strong>All games and features on PlayHub are designed for entertainment purposes only.</strong>
               </p>
@@ -151,17 +151,17 @@ export default function Disclaimer() {
           </section>
 
           {/* Fair Play */}
-          <section className="bg-gradient-to-br from-[#2d1b4e] to-[#1a0a2e] rounded-lg border-2 border-[#f7a600]/30 p-8">
+          <section className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
             <div className="flex gap-3 items-start mb-4">
-              <CheckCircle className="text-[#f7a600] flex-shrink-0 mt-1" size={24} />
+              <CheckCircle className="text-[#14b8a6] flex-shrink-0 mt-1" size={24} />
               <h2
-                className="text-2xl font-bold text-[#f7a600]"
+                className="text-2xl font-bold text-[#14b8a6]"
                 style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}
               >
                 Fair Play & Transparency
               </h2>
             </div>
-            <div className="text-[#a0aec0] space-y-4 ml-9">
+            <div className="text-[#cbd5e1] space-y-4 ml-9">
               <p>
                 <strong>We are committed to fair play and transparent game mechanics.</strong>
               </p>
@@ -179,18 +179,18 @@ export default function Disclaimer() {
           </section>
 
           {/* Support Resources */}
-          <section className="bg-gradient-to-br from-[#2d1b4e] to-[#1a0a2e] rounded-lg border-2 border-[#f7a600]/30 p-8">
+          <section className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
             <h2
-              className="text-2xl font-bold text-[#f7a600] mb-4"
+              className="text-2xl font-bold text-[#14b8a6] mb-4"
               style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}
             >
               Support & Resources
             </h2>
-            <div className="text-[#a0aec0] space-y-4">
+            <div className="text-[#cbd5e1] space-y-4">
               <p>
                 If you need help or have concerns about gaming habits, please contact:
               </p>
-              <div className="bg-[#1a0a2e]/50 rounded p-4 space-y-2">
+              <div className="bg-[#0f172a]/50 rounded p-4 space-y-2">
                 <p><strong>PlayHub Support:</strong> support@playhub.com</p>
                 <p><strong>National Problem Gambling Helpline:</strong> 1-800-GAMBLER (1-800-426-2537)</p>
                 <p><strong>Gamblers Anonymous:</strong> www.gamblersanonymous.org</p>
@@ -203,12 +203,12 @@ export default function Disclaimer() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-[#f7a600]/20 to-[#d4860f]/20 border-2 border-[#f7a600] rounded-lg p-8 text-center"
+            className="bg-gradient-to-r from-[#14b8a6]/20 to-[#0d9488]/20 border-2 border-[#14b8a6] rounded-lg p-8 text-center"
           >
-            <p className="text-[#a0aec0] mb-4">
+            <p className="text-[#cbd5e1] mb-4">
               By using Play By Stats, you acknowledge that you have read, understood, and agree to this disclaimer.
             </p>
-            <p className="text-[#f7a600] font-bold">
+            <p className="text-[#14b8a6] font-bold">
               Last Updated: {new Date().toLocaleDateString()}
             </p>
           </motion.div>

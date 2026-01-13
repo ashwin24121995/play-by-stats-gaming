@@ -3,8 +3,8 @@ import { Shield } from 'lucide-react';
 
 export default function Privacy() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#1a0a2e] to-[#2d1b4e]">
-      <div className="bg-gradient-to-r from-[#f7a600]/10 to-[#d4860f]/10 border-b-2 border-[#f7a600] py-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-b from-[#0f172a] to-[#1e293b]">
+      <div className="bg-gradient-to-r from-[#14b8a6]/10 to-[#0d9488]/10 border-b-2 border-[#14b8a6] py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -12,7 +12,7 @@ export default function Privacy() {
             transition={{ duration: 0.6 }}
             className="flex gap-4 items-start"
           >
-            <Shield className="text-[#f7a600] flex-shrink-0 mt-1" size={32} />
+            <Shield className="text-[#14b8a6] flex-shrink-0 mt-1" size={32} />
             <div>
               <h1
                 className="text-4xl font-bold text-white mb-2"
@@ -20,7 +20,7 @@ export default function Privacy() {
               >
                 Privacy Policy
               </h1>
-              <p className="text-[#a0aec0]">
+              <p className="text-[#cbd5e1]">
                 How we protect and manage your personal information
               </p>
             </div>
@@ -33,10 +33,10 @@ export default function Privacy() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="space-y-8 text-[#a0aec0]"
+          className="space-y-8 text-[#cbd5e1]"
         >
-          <section className="bg-gradient-to-br from-[#2d1b4e] to-[#1a0a2e] rounded-lg border-2 border-[#f7a600]/30 p-8">
-            <h2 className="text-2xl font-bold text-[#f7a600] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
+          <section className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
+            <h2 className="text-2xl font-bold text-[#14b8a6] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
               1. Information We Collect
             </h2>
             <ul className="list-disc list-inside space-y-2">
@@ -47,8 +47,8 @@ export default function Privacy() {
             </ul>
           </section>
 
-          <section className="bg-gradient-to-br from-[#2d1b4e] to-[#1a0a2e] rounded-lg border-2 border-[#f7a600]/30 p-8">
-            <h2 className="text-2xl font-bold text-[#f7a600] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
+          <section className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
+            <h2 className="text-2xl font-bold text-[#14b8a6] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
               2. How We Use Your Information
             </h2>
             <ul className="list-disc list-inside space-y-2">
@@ -60,8 +60,8 @@ export default function Privacy() {
             </ul>
           </section>
 
-          <section className="bg-gradient-to-br from-[#2d1b4e] to-[#1a0a2e] rounded-lg border-2 border-[#f7a600]/30 p-8">
-            <h2 className="text-2xl font-bold text-[#f7a600] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
+          <section className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
+            <h2 className="text-2xl font-bold text-[#14b8a6] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
               3. Data Security
             </h2>
             <p className="mb-4">
@@ -76,8 +76,8 @@ export default function Privacy() {
             </ul>
           </section>
 
-          <section className="bg-gradient-to-br from-[#2d1b4e] to-[#1a0a2e] rounded-lg border-2 border-[#f7a600]/30 p-8">
-            <h2 className="text-2xl font-bold text-[#f7a600] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
+          <section className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
+            <h2 className="text-2xl font-bold text-[#14b8a6] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
               4. Cookies and Tracking
             </h2>
             <p className="mb-4">
@@ -91,8 +91,8 @@ export default function Privacy() {
             </ul>
           </section>
 
-          <section className="bg-gradient-to-br from-[#2d1b4e] to-[#1a0a2e] rounded-lg border-2 border-[#f7a600]/30 p-8">
-            <h2 className="text-2xl font-bold text-[#f7a600] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
+          <section className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
+            <h2 className="text-2xl font-bold text-[#14b8a6] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
               5. Third-Party Services
             </h2>
             <p className="mb-4">
@@ -106,8 +106,8 @@ export default function Privacy() {
             </ul>
           </section>
 
-          <section className="bg-gradient-to-br from-[#2d1b4e] to-[#1a0a2e] rounded-lg border-2 border-[#f7a600]/30 p-8">
-            <h2 className="text-2xl font-bold text-[#f7a600] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
+          <section className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
+            <h2 className="text-2xl font-bold text-[#14b8a6] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
               6. Your Rights
             </h2>
             <p className="mb-4">
@@ -122,13 +122,13 @@ export default function Privacy() {
             </ul>
           </section>
 
-          <section className="bg-gradient-to-br from-[#2d1b4e] to-[#1a0a2e] rounded-lg border-2 border-[#f7a600]/30 p-8">
-            <h2 className="text-2xl font-bold text-[#f7a600] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
+          <section className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
+            <h2 className="text-2xl font-bold text-[#14b8a6] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
               7. Contact Us
             </h2>
             <p>
               For privacy concerns or to exercise your rights, contact us at:<br />
-              <a href="mailto:privacy@playbystats.com" className="text-[#f7a600] hover:underline">privacy@playbystats.com</a>
+              <a href="mailto:privacy@playbystats.com" className="text-[#14b8a6] hover:underline">privacy@playbystats.com</a>
             </p>
           </section>
 
@@ -136,12 +136,12 @@ export default function Privacy() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-[#f7a600]/20 to-[#d4860f]/20 border-2 border-[#f7a600] rounded-lg p-8 text-center"
+            className="bg-gradient-to-r from-[#14b8a6]/20 to-[#0d9488]/20 border-2 border-[#14b8a6] rounded-lg p-8 text-center"
           >
-            <p className="text-[#a0aec0] mb-4">
+            <p className="text-[#cbd5e1] mb-4">
               Last Updated: {new Date().toLocaleDateString()}
             </p>
-            <p className="text-[#f7a600] font-bold">
+            <p className="text-[#14b8a6] font-bold">
               We are committed to protecting your privacy
             </p>
           </motion.div>

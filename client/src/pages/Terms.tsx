@@ -3,8 +3,8 @@ import { FileText } from 'lucide-react';
 
 export default function Terms() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#1a0a2e] to-[#2d1b4e]">
-      <div className="bg-gradient-to-r from-[#f7a600]/10 to-[#d4860f]/10 border-b-2 border-[#f7a600] py-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-b from-[#0f172a] to-[#1e293b]">
+      <div className="bg-gradient-to-r from-[#14b8a6]/10 to-[#0d9488]/10 border-b-2 border-[#14b8a6] py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -12,7 +12,7 @@ export default function Terms() {
             transition={{ duration: 0.6 }}
             className="flex gap-4 items-start"
           >
-            <FileText className="text-[#f7a600] flex-shrink-0 mt-1" size={32} />
+            <FileText className="text-[#14b8a6] flex-shrink-0 mt-1" size={32} />
             <div>
               <h1
                 className="text-4xl font-bold text-white mb-2"
@@ -20,7 +20,7 @@ export default function Terms() {
               >
                 Terms & Conditions
               </h1>
-              <p className="text-[#a0aec0]">
+              <p className="text-[#cbd5e1]">
                 Please read these terms carefully before using our platform
               </p>
             </div>
@@ -33,10 +33,10 @@ export default function Terms() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="space-y-8 text-[#a0aec0]"
+          className="space-y-8 text-[#cbd5e1]"
         >
-          <section className="bg-gradient-to-br from-[#2d1b4e] to-[#1a0a2e] rounded-lg border-2 border-[#f7a600]/30 p-8">
-            <h2 className="text-2xl font-bold text-[#f7a600] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
+          <section className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
+            <h2 className="text-2xl font-bold text-[#14b8a6] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
               1. Acceptance of Terms
             </h2>
             <p>
@@ -44,8 +44,8 @@ export default function Terms() {
             </p>
           </section>
 
-          <section className="bg-gradient-to-br from-[#2d1b4e] to-[#1a0a2e] rounded-lg border-2 border-[#f7a600]/30 p-8">
-            <h2 className="text-2xl font-bold text-[#f7a600] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
+          <section className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
+            <h2 className="text-2xl font-bold text-[#14b8a6] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
               2. Age Requirement
             </h2>
             <p>
@@ -53,8 +53,8 @@ export default function Terms() {
             </p>
           </section>
 
-          <section className="bg-gradient-to-br from-[#2d1b4e] to-[#1a0a2e] rounded-lg border-2 border-[#f7a600]/30 p-8">
-            <h2 className="text-2xl font-bold text-[#f7a600] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
+          <section className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
+            <h2 className="text-2xl font-bold text-[#14b8a6] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
               3. User Accounts
             </h2>
             <ul className="list-disc list-inside space-y-2">
@@ -66,8 +66,8 @@ export default function Terms() {
             </ul>
           </section>
 
-          <section className="bg-gradient-to-br from-[#2d1b4e] to-[#1a0a2e] rounded-lg border-2 border-[#f7a600]/30 p-8">
-            <h2 className="text-2xl font-bold text-[#f7a600] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
+          <section className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
+            <h2 className="text-2xl font-bold text-[#14b8a6] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
               4. Prohibited Conduct
             </h2>
             <p className="mb-4">You agree not to:</p>
@@ -82,8 +82,8 @@ export default function Terms() {
             </ul>
           </section>
 
-          <section className="bg-gradient-to-br from-[#2d1b4e] to-[#1a0a2e] rounded-lg border-2 border-[#f7a600]/30 p-8">
-            <h2 className="text-2xl font-bold text-[#f7a600] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
+          <section className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
+            <h2 className="text-2xl font-bold text-[#14b8a6] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
               5. Intellectual Property
             </h2>
             <p>
@@ -91,8 +91,8 @@ export default function Terms() {
             </p>
           </section>
 
-          <section className="bg-gradient-to-br from-[#2d1b4e] to-[#1a0a2e] rounded-lg border-2 border-[#f7a600]/30 p-8">
-            <h2 className="text-2xl font-bold text-[#f7a600] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
+          <section className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
+            <h2 className="text-2xl font-bold text-[#14b8a6] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
               6. Limitation of Liability
             </h2>
             <p>
@@ -100,8 +100,8 @@ export default function Terms() {
             </p>
           </section>
 
-          <section className="bg-gradient-to-br from-[#2d1b4e] to-[#1a0a2e] rounded-lg border-2 border-[#f7a600]/30 p-8">
-            <h2 className="text-2xl font-bold text-[#f7a600] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
+          <section className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
+            <h2 className="text-2xl font-bold text-[#14b8a6] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
               7. Indemnification
             </h2>
             <p>
@@ -109,8 +109,8 @@ export default function Terms() {
             </p>
           </section>
 
-          <section className="bg-gradient-to-br from-[#2d1b4e] to-[#1a0a2e] rounded-lg border-2 border-[#f7a600]/30 p-8">
-            <h2 className="text-2xl font-bold text-[#f7a600] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
+          <section className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
+            <h2 className="text-2xl font-bold text-[#14b8a6] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
               8. Termination
             </h2>
             <p>
@@ -118,8 +118,8 @@ export default function Terms() {
             </p>
           </section>
 
-          <section className="bg-gradient-to-br from-[#2d1b4e] to-[#1a0a2e] rounded-lg border-2 border-[#f7a600]/30 p-8">
-            <h2 className="text-2xl font-bold text-[#f7a600] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
+          <section className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
+            <h2 className="text-2xl font-bold text-[#14b8a6] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
               9. Changes to Terms
             </h2>
             <p>
@@ -127,13 +127,13 @@ export default function Terms() {
             </p>
           </section>
 
-          <section className="bg-gradient-to-br from-[#2d1b4e] to-[#1a0a2e] rounded-lg border-2 border-[#f7a600]/30 p-8">
-            <h2 className="text-2xl font-bold text-[#f7a600] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
+          <section className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
+            <h2 className="text-2xl font-bold text-[#14b8a6] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
               10. Contact Information
             </h2>
             <p>
               If you have any questions about these Terms, please contact us at:<br />
-              <a href="mailto:legal@playbystats.com" className="text-[#f7a600] hover:underline">legal@playbystats.com</a>
+              <a href="mailto:legal@playbystats.com" className="text-[#14b8a6] hover:underline">legal@playbystats.com</a>
             </p>
           </section>
 
@@ -141,12 +141,12 @@ export default function Terms() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-[#f7a600]/20 to-[#d4860f]/20 border-2 border-[#f7a600] rounded-lg p-8 text-center"
+            className="bg-gradient-to-r from-[#14b8a6]/20 to-[#0d9488]/20 border-2 border-[#14b8a6] rounded-lg p-8 text-center"
           >
-            <p className="text-[#a0aec0] mb-4">
+            <p className="text-[#cbd5e1] mb-4">
               Last Updated: {new Date().toLocaleDateString()}
             </p>
-            <p className="text-[#f7a600] font-bold">
+            <p className="text-[#14b8a6] font-bold">
               By using Play By Stats, you agree to these terms and conditions
             </p>
           </motion.div>

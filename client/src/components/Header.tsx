@@ -24,7 +24,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-gradient-to-r from-[#1a0a2e] to-[#2d1b4e] border-b-2 border-[#f7a600] shadow-2xl">
+    <header className="sticky top-0 z-50 bg-gradient-to-r from-[#0f172a] to-[#1e293b] border-b-2 border-[#14b8a6] shadow-2xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -45,9 +45,9 @@ export default function Header() {
           <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <Link key={item.href} href={item.href}>
-                <a className="text-white hover:text-[#f7a600] transition-colors duration-300 font-medium relative group">
+                <a className="text-white hover:text-[#14b8a6] transition-colors duration-300 font-medium relative group">
                   {item.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#f7a600] group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#14b8a6] group-hover:w-full transition-all duration-300"></span>
                 </a>
               </Link>
             ))}
@@ -55,7 +55,7 @@ export default function Header() {
 
           {/* CTA Button */}
           <Link href="/games">
-            <a className="hidden sm:inline-block px-6 py-2 bg-gradient-to-r from-[#f7a600] to-[#d4860f] text-[#1a0a2e] font-bold rounded-lg hover:shadow-lg hover:shadow-[#f7a600]/50 transition-all duration-300 transform hover:scale-105">
+            <a className="hidden sm:inline-block px-6 py-2 bg-gradient-to-r from-[#14b8a6] to-[#0d9488] text-[#0f172a] font-bold rounded-lg hover:shadow-lg hover:shadow-[#14b8a6]/50 transition-all duration-300 transform hover:scale-105">
               Play Games
             </a>
           </Link>
@@ -63,7 +63,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white hover:text-[#f7a600] transition-colors"
+            className="md:hidden text-white hover:text-[#14b8a6] transition-colors"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -71,23 +71,23 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pb-4 border-t border-[#f7a600]/30">
+          <div className="md:hidden pb-4 border-t border-[#14b8a6]/30">
             <nav className="flex flex-col gap-3 mt-4">
               {navItems.map((item) => (
                 <Link key={item.href} href={item.href}>
                   <a
-                    className="text-white hover:text-[#f7a600] transition-colors py-2 px-4 rounded hover:bg-[#2d1b4e]"
+                    className="text-white hover:text-[#14b8a6] transition-colors py-2 px-4 rounded hover:bg-[#1e293b]"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.label}
                   </a>
                 </Link>
               ))}
-              <div className="border-t border-[#f7a600]/30 pt-3 mt-3">
+              <div className="border-t border-[#14b8a6]/30 pt-3 mt-3">
                 {legalItems.map((item) => (
                   <Link key={item.href} href={item.href}>
                     <a
-                      className="text-[#a0aec0] hover:text-[#f7a600] text-sm transition-colors py-1 px-4 block"
+                      className="text-[#cbd5e1] hover:text-[#14b8a6] text-sm transition-colors py-1 px-4 block"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.label}
