@@ -134,7 +134,7 @@ export default function Home() {
                 className="relative z-10"
               >
                 <img
-                  src="/images/gaming-character-purple.webp"
+                  src="/images/gaming-character-custom.webp"
                   alt="Gaming Character"
                   className="h-[500px] w-auto drop-shadow-2xl"
                 />
