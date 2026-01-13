@@ -45,59 +45,59 @@
 }
 
 :root {
-  /* Premium Gaming Theme - Teal & Gold */
-  --primary: #14b8a6;
-  --primary-foreground: #0f172a;
-  --sidebar-primary: #0d9488;
-  --sidebar-primary-foreground: #f0fdfa;
-  --chart-1: #06b6d4;
-  --chart-2: #14b8a6;
-  --chart-3: #0d9488;
-  --chart-4: #0f766e;
-  --chart-5: #134e4a;
+  /* Premium Gaming Theme - Purple & Pink */
+  --primary: #a855f7;
+  --primary-foreground: #fce7f3;
+  --sidebar-primary: #9333ea;
+  --sidebar-primary-foreground: #fce7f3;
+  --chart-1: #ec4899;
+  --chart-2: #a855f7;
+  --chart-3: #7c3aed;
+  --chart-4: #6d28d9;
+  --chart-5: #5b21b6;
   --radius: 0.65rem;
-  --background: #0f172a;
-  --foreground: #f0f9ff;
-  --card: #1e293b;
-  --card-foreground: #f0f9ff;
-  --popover: #1e293b;
-  --popover-foreground: #f0f9ff;
-  --secondary: #1e293b;
-  --secondary-foreground: #cbd5e1;
-  --muted: #334155;
-  --muted-foreground: #94a3b8;
-  --accent: #fbbf24;
-  --accent-foreground: #1f2937;
+  --background: #f5f3ff;
+  --foreground: #1f1f2e;
+  --card: #ffffff;
+  --card-foreground: #1f1f2e;
+  --popover: #ffffff;
+  --popover-foreground: #1f1f2e;
+  --secondary: #ec4899;
+  --secondary-foreground: #ffffff;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+  --accent: #22c55e;
+  --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #334155;
-  --input: #1e293b;
-  --ring: #14b8a6;
-  --sidebar: #0f172a;
-  --sidebar-foreground: #f0f9ff;
-  --sidebar-accent: #fbbf24;
-  --sidebar-accent-foreground: #1f2937;
-  --sidebar-border: #334155;
-  --sidebar-ring: #14b8a6;
+  --border: #e5e7eb;
+  --input: #f3f4f6;
+  --ring: #a855f7;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1f1f2e;
+  --sidebar-accent: #ec4899;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #a855f7;
 }
 
 .dark {
-  /* Dark theme inherits root values */
-  --primary: #14b8a6;
-  --primary-foreground: #0f172a;
-  --sidebar-primary: #0d9488;
-  --sidebar-primary-foreground: #f0fdfa;
-  --background: #0f172a;
-  --foreground: #f0f9ff;
-  --card: #1e293b;
-  --card-foreground: #f0f9ff;
-  --popover: #1e293b;
-  --popover-foreground: #f0f9ff;
-  --secondary: #1e293b;
-  --secondary-foreground: #cbd5e1;
-  --muted: #334155;
-  --muted-foreground: #94a3b8;
-  --accent: #fbbf24;
+  /* Dark theme - Purple & Pink */
+  --primary: #a855f7;
+  --primary-foreground: #fce7f3;
+  --sidebar-primary: #9333ea;
+  --sidebar-primary-foreground: #fce7f3;
+  --background: #0f0f1e;
+  --foreground: #f5f3ff;
+  --card: #1a1a2e;
+  --card-foreground: #f5f3ff;
+  --popover: #1a1a2e;
+  --popover-foreground: #f5f3ff;
+  --secondary: #ec4899;
+  --secondary-foreground: #ffffff;
+  --muted: #2d2d44;
+  --muted-foreground: #a0a0b0;
+  --accent: #22c55e;
   --accent-foreground: #1f2937;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
