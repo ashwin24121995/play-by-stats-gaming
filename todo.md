@@ -67,3 +67,4 @@
 
 ## Content Fixes
 - [x] Remove "Create account" and "Sign up" references from Home page
+- [x] Fix "How to Get Started" section - remove "Create Free Account" step

@@ -270,7 +270,7 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl font-bold text-[#1f1f2e] mb-4">How to Get Started</h2>
-            <p className="text-xl text-[#6b7280]">Begin your gaming journey in just 3 easy steps</p>
+            <p className="text-xl text-[#6b7280]">Start playing instantly - No registration required</p>
           </motion.div>
 
           <motion.div
@@ -282,18 +282,18 @@ export default function Home() {
             {[
               {
                 step: '1',
-                title: 'Create Free Account',
-                desc: 'Register in under 60 seconds with just your email. No credit card required. Verify your age (18+) and you\'re ready to play.',
+                title: 'Click Play Now',
+                desc: 'No registration, no login, no personal information needed. Just click "Play Games" and start instantly. 100% anonymous gaming.',
               },
               {
                 step: '2',
                 title: 'Choose Your Game',
-                desc: 'Select from our collection of exciting casino games - Slots, Roulette, Blackjack, and Dice. Each game is completely free.',
+                desc: 'Select from our collection of exciting casino games - Slots, Roulette, Blackjack, and Dice. Each game is completely free with virtual coins.',
               },
               {
                 step: '3',
-                title: 'Compete & Climb',
-                desc: 'Watch your performance in real-time, track your stats, and improve your skills. Learn and master strategy with every game.',
+                title: 'Play & Improve',
+                desc: 'Master your skills and develop winning strategies. Your progress is saved locally on your device. Play anytime, anywhere - completely free.',
               },
             ].map((item, idx) => (
               <motion.div
