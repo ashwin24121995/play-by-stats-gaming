@@ -26,6 +26,16 @@ export default function RouletteRush() {
     const playerData = localStorage.getItem('playerData');
     if (playerData) {
       setPlayer(JSON.parse(playerData));
+    } else {
+      // Initialize default player data
+      const defaultPlayer = {
+        coins: 1000,
+        gamesWon: 0,
+        gamesLost: 0,
+        totalGames: 0
+      };
+      localStorage.setItem('playerData', JSON.stringify(defaultPlayer));
+      setPlayer(defaultPlayer);
     }
   }, []);
 
