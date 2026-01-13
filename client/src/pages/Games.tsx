@@ -68,7 +68,7 @@ export default function Games() {
       <div
         className="relative h-96 bg-cover bg-center overflow-hidden"
         style={{
-          backgroundImage: 'url(/images/games-showcase-bg.png)',
+          backgroundImage: 'url(/images/games-showcase-bg.webp)',
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a0a2e]/70 to-[#2d1b4e]/90"></div>

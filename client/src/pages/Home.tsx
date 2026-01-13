@@ -34,7 +34,7 @@ export default function Home() {
       <section
         className="relative h-screen bg-cover bg-center overflow-hidden flex items-center"
         style={{
-          backgroundImage: 'url(/images/hero-gaming-bg.png)',
+          backgroundImage: 'url(/images/hero-gaming-bg.webp)',
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#1a0a2e]/80 via-[#1a0a2e]/60 to-transparent"></div>
@@ -158,7 +158,7 @@ export default function Home() {
       <section
         className="relative py-20 px-4 sm:px-6 lg:px-8 bg-cover bg-center"
         style={{
-          backgroundImage: 'url(/images/features-bg.png)',
+          backgroundImage: 'url(/images/features-bg.webp)',
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#1a0a2e]/90 to-[#2d1b4e]/90"></div>

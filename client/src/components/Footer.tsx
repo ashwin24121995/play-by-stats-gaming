@@ -35,7 +35,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img
-                src="/images/playbystats-logo.png"
+                src="/images/playbystats-logo.webp"
                 alt="Play By Stats"
                 className="h-10 w-auto"
               />

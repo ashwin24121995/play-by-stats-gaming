@@ -31,7 +31,7 @@ export default function Header() {
           <Link href="/">
             <a className="flex items-center gap-2 group cursor-pointer">
               <img
-                src="/images/playbystats-logo.png"
+                src="/images/playbystats-logo.webp"
                 alt="Play By Stats"
                 className="h-12 w-auto group-hover:scale-110 transition-transform duration-300"
               />
