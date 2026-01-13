@@ -80,3 +80,9 @@
 
 ## UX Improvements
 - [x] Implement scroll-to-top on page navigation
+
+## Legal Pages Rewrite
+- [x] Rewrite Privacy Policy with fresh content
+- [x] Rewrite Terms & Conditions with fresh content
+- [x] Rewrite Disclaimer with fresh content
+- [x] Rewrite Responsible Gaming with fresh content

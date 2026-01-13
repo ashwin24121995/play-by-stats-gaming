@@ -1,405 +1,235 @@
 import { motion } from 'framer-motion';
-import { AlertCircle, Shield, XCircle, Info, CheckCircle, AlertTriangle } from 'lucide-react';
+import { AlertTriangle, DollarSign, Shield, Info, Ban, FileWarning, Mail } from 'lucide-react';
 
 /**
  * Disclaimer Page - Play By Stats
- * Comprehensive disclaimers for anonymous, no-money platform
- * Design: Purple (#a855f7) & Pink (#ec4899)
+ * Comprehensive disclaimer for anonymous gaming platform
  */
 export default function Disclaimer() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-[#f5f3ff]">
+    <div className="min-h-screen bg-gradient-to-b from-[#f5f3ff] to-white">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-[#dc2626] to-[#f59e0b] text-white py-20 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#f59e0b] to-[#ef4444]">
+        <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
           >
-            <div className="flex items-start gap-4">
-              <AlertTriangle size={48} className="flex-shrink-0 mt-1" />
-              <div>
-                <h1 className="text-5xl md:text-6xl font-bold mb-4">Important Disclaimers</h1>
-                <p className="text-xl text-white/90">Critical information you must read before using Play By Stats</p>
-                <p className="text-sm text-white/70 mt-2">Last Updated: January 14, 2026</p>
-              </div>
-            </div>
+            <AlertTriangle className="w-16 h-16 text-white mx-auto mb-6" />
+            <h1 className="text-5xl font-bold text-white mb-4">Disclaimer</h1>
+            <p className="text-xl text-white/90">
+              Important information about our platform and services
+            </p>
+            <p className="text-sm text-white/80 mt-4">
+              Last Updated: January 14, 2026
+            </p>
           </motion.div>
         </div>
-      </div>
+      </section>
 
-      {/* Content */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="space-y-12"
-        >
-          {/* Critical Notice */}
-          <section className="bg-gradient-to-br from-[#dc2626]/10 to-[#f59e0b]/10 rounded-lg p-8 border-2 border-[#dc2626]/30">
-            <div className="flex items-start gap-4">
-              <AlertCircle className="text-[#dc2626] flex-shrink-0 mt-1" size={40} />
-              <div>
-                <h2 className="text-3xl font-bold text-[#dc2626] mb-4">PLEASE READ CAREFULLY</h2>
-                <p className="text-[#6b7280] leading-relaxed text-lg">
-                  By accessing or using Play By Stats, you acknowledge that you have read, understood, and agree to all disclaimers on this page. These disclaimers form an integral part of our Terms & Conditions and are legally binding.
+      {/* Content Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="space-y-8"
+          >
+            {/* General Disclaimer */}
+            <div className="bg-white rounded-xl shadow-sm p-8 border border-[#e5e7eb]">
+              <h2 className="text-3xl font-bold text-[#1f1f2e] mb-4 flex items-center gap-3">
+                <Info className="w-8 h-8 text-[#f59e0b]" />
+                General Disclaimer
+              </h2>
+              <p className="text-[#4b5563] leading-relaxed mb-4">
+                The information contained on Play By Stats (the "Platform") and the services provided by SDSURABHI INFRA PRIVATE LIMITED (the "Company") are for general information and entertainment purposes only. While we strive to keep the information accurate and up to date, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability of the Platform or the information contained therein.
+              </p>
+              <p className="text-[#4b5563] leading-relaxed">
+                Any reliance you place on such information is strictly at your own risk. In no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this Platform.
+              </p>
+            </div>
+
+            {/* No Real Money Gambling */}
+            <div className="bg-white rounded-xl shadow-sm p-8 border border-[#e5e7eb]">
+              <h2 className="text-3xl font-bold text-[#1f1f2e] mb-4 flex items-center gap-3">
+                <DollarSign className="w-8 h-8 text-[#ef4444]" />
+                No Real Money Gambling
+              </h2>
+              <div className="bg-[#fee2e2] rounded-lg p-6 border-l-4 border-[#ef4444] mb-4">
+                <p className="text-[#7f1d1d] leading-relaxed mb-4 font-bold text-lg">
+                  IMPORTANT: Play By Stats is NOT a real money gambling platform.
+                </p>
+                <div className="space-y-3 text-[#7f1d1d]">
+                  <p className="leading-relaxed">
+                    <strong>No Real Money Wagering:</strong> All games on this Platform use virtual coins that have absolutely no monetary value. You cannot bet, wager, or gamble with real money on this Platform.
+                  </p>
+                  <p className="leading-relaxed">
+                    <strong>No Cash Prizes:</strong> You cannot win real money, cash prizes, or anything of monetary value through gameplay. All winnings are purely virtual and for entertainment purposes only.
+                  </p>
+                  <p className="leading-relaxed">
+                    <strong>No Purchase or Exchange:</strong> Virtual coins cannot be purchased with real money, nor can they be exchanged, redeemed, or converted into real currency, goods, services, or anything of value.
+                  </p>
+                  <p className="leading-relaxed">
+                    <strong>Entertainment Only:</strong> This Platform is designed solely for entertainment, skill development, and recreational purposes. It does not constitute gambling under any jurisdiction's laws.
+                  </p>
+                </div>
+              </div>
+              <p className="text-[#4b5563] leading-relaxed">
+                The games on this Platform simulate casino-style games for entertainment purposes only. They are not intended to replicate real gambling experiences, encourage real-money gambling, or serve as training for real gambling activities.
+              </p>
+            </div>
+
+            {/* Age Restriction */}
+            <div className="bg-white rounded-xl shadow-sm p-8 border border-[#e5e7eb]">
+              <h2 className="text-3xl font-bold text-[#1f1f2e] mb-4 flex items-center gap-3">
+                <Ban className="w-8 h-8 text-[#ef4444]" />
+                Age Restriction and Compliance
+              </h2>
+              <div className="bg-[#fef3c7] rounded-lg p-6 border-l-4 border-[#f59e0b] space-y-4">
+                <p className="text-[#78350f] leading-relaxed">
+                  <strong>18+ Only:</strong> This Platform is intended for users who are 18 years of age or older. By accessing or using this Platform, you represent and warrant that you are at least 18 years old. We do not knowingly collect information from or direct content to individuals under 18.
+                </p>
+                <p className="text-[#78350f] leading-relaxed">
+                  <strong>Legal Compliance:</strong> It is your responsibility to ensure that your use of this Platform complies with all applicable laws and regulations in your jurisdiction. Some jurisdictions may restrict or prohibit access to gaming content, even when no real money is involved.
+                </p>
+                <p className="text-[#78350f] leading-relaxed">
+                  <strong>Parental Responsibility:</strong> Parents and guardians are responsible for monitoring and controlling their children's internet usage. If you are a parent or guardian and discover that your child under 18 has accessed this Platform, please contact us immediately.
                 </p>
               </div>
             </div>
-          </section>
 
-          {/* No Real Money Gambling */}
-          <section>
-            <div className="flex items-start gap-4 mb-6">
-              <XCircle className="text-[#dc2626] flex-shrink-0 mt-1" size={40} />
-              <div>
-                <h2 className="text-4xl font-bold text-[#1a1a2e] mb-6">1. NO REAL MONEY GAMBLING</h2>
-                <div className="space-y-4 text-[#6b7280] leading-relaxed">
-                  <div className="bg-[#fff5f5] border-2 border-[#dc2626] rounded-lg p-6">
-                    <p className="text-xl font-bold text-[#dc2626] mb-4">
-                      PLAY BY STATS IS NOT A GAMBLING WEBSITE. NO REAL MONEY IS INVOLVED AT ANY TIME.
-                    </p>
-                    <div className="space-y-3 text-[#6b7280]">
-                      <p><strong className="text-[#1a1a2e]">✗ You CANNOT deposit real money</strong> - We do not accept payments, deposits, or any form of financial transaction</p>
-                      <p><strong className="text-[#1a1a2e]">✗ You CANNOT win real money</strong> - All "winnings" are virtual coins with zero monetary value</p>
-                      <p><strong className="text-[#1a1a2e]">✗ You CANNOT withdraw or cash out</strong> - Virtual coins cannot be exchanged for money, prizes, or anything of value</p>
-                      <p><strong className="text-[#1a1a2e]">✗ You CANNOT purchase virtual coins</strong> - There are no in-app purchases or microtransactions</p>
-                      <p><strong className="text-[#1a1a2e]">✗ You CANNOT transfer virtual coins</strong> - Virtual coins cannot be sold, traded, or given to other users</p>
-                    </div>
-                  </div>
-
-                  <p className="text-lg">
-                    Play By Stats is a <strong className="text-[#1a1a2e]">100% free entertainment platform</strong> designed solely for fun, skill development, and recreational gaming. The games simulate casino-style gameplay for entertainment purposes only and do not constitute real gambling.
-                  </p>
-
-                  <p>
-                    <strong className="text-[#1a1a2e]">If you are looking for real money gambling,</strong> this platform is NOT for you. Please visit licensed online casinos in jurisdictions where online gambling is legal and regulated.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Age Restriction */}
-          <section>
-            <div className="flex items-start gap-4 mb-6">
-              <AlertCircle className="text-[#f59e0b] flex-shrink-0 mt-1" size={40} />
-              <div>
-                <h2 className="text-4xl font-bold text-[#1a1a2e] mb-6">2. AGE RESTRICTION (18+)</h2>
-                <div className="space-y-4 text-[#6b7280] leading-relaxed">
-                  <div className="bg-[#fff3cd] border-2 border-[#ffc107] rounded-lg p-6">
-                    <p className="text-xl font-bold text-[#856404] mb-3">
-                      YOU MUST BE 18 YEARS OF AGE OR OLDER TO USE THIS PLATFORM
-                    </p>
-                    <p className="text-[#856404]">
-                      By using Play By Stats, you confirm and warrant that you are at least 18 years old and have the legal capacity to enter into a binding agreement. If you are under 18, you are strictly prohibited from accessing or using this website.
-                    </p>
-                  </div>
-
-                  <p>
-                    <strong className="text-[#1a1a2e]">Why 18+?</strong> Although no real money is involved, our platform features casino-style games that simulate gambling mechanics. To promote responsible gaming and comply with best practices, we restrict access to adults only.
-                  </p>
-
-                  <p>
-                    <strong className="text-[#1a1a2e]">Parents & Guardians:</strong> We strongly encourage parents and guardians to monitor their children's internet usage. If you discover that a minor has accessed our platform, please contact us immediately at <strong>support@playbystats.com</strong>.
-                  </p>
-
-                  <p>
-                    <strong className="text-[#1a1a2e]">Verification:</strong> We reserve the right to request proof of age at any time. Failure to provide adequate verification may result in immediate termination of access.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Entertainment Only */}
-          <section>
-            <div className="flex items-start gap-4 mb-6">
-              <Info className="text-[#a855f7] flex-shrink-0 mt-1" size={40} />
-              <div>
-                <h2 className="text-4xl font-bold text-[#1a1a2e] mb-6">3. ENTERTAINMENT PURPOSE ONLY</h2>
-                <div className="space-y-4 text-[#6b7280] leading-relaxed">
-                  <p>
-                    Play By Stats is provided strictly for <strong className="text-[#1a1a2e]">entertainment, recreational, and educational purposes</strong>. The platform is designed to:
-                  </p>
-
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="bg-[#f0fdf4] rounded-lg p-6 border border-[#16a34a]/20">
-                      <h3 className="font-bold text-[#16a34a] mb-2 flex items-center gap-2">
-                        <CheckCircle size={20} />
-                        What This Platform IS
-                      </h3>
-                      <div className="space-y-2 text-sm text-[#6b7280]">
-                        <p>✓ A free entertainment platform</p>
-                        <p>✓ A skill development tool</p>
-                        <p>✓ A recreational gaming experience</p>
-                        <p>✓ A way to pass time and have fun</p>
-                        <p>✓ A simulation of casino games</p>
-                      </div>
-                    </div>
-
-                    <div className="bg-[#fff5f5] rounded-lg p-6 border border-[#dc2626]/20">
-                      <h3 className="font-bold text-[#dc2626] mb-2 flex items-center gap-2">
-                        <XCircle size={20} />
-                        What This Platform IS NOT
-                      </h3>
-                      <div className="space-y-2 text-sm text-[#6b7280]">
-                        <p>✗ A gambling website</p>
-                        <p>✗ A way to earn money</p>
-                        <p>✗ A financial investment opportunity</p>
-                        <p>✗ A substitute for real casino gaming</p>
-                        <p>✗ A platform for monetary transactions</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <p>
-                    <strong className="text-[#1a1a2e]">No Financial Advice:</strong> Nothing on this platform constitutes financial, investment, or gambling advice. We do not encourage or promote real money gambling.
-                  </p>
-
-                  <p>
-                    <strong className="text-[#1a1a2e]">Simulated Experience:</strong> While our games simulate casino-style gameplay, the outcomes, odds, and mechanics may differ from real gambling establishments. This platform is not intended to replicate real gambling experiences accurately.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* No Warranties */}
-          <section>
-            <div className="flex items-start gap-4 mb-6">
-              <Shield className="text-[#ec4899] flex-shrink-0 mt-1" size={40} />
-              <div>
-                <h2 className="text-4xl font-bold text-[#1a1a2e] mb-6">4. NO WARRANTIES OR GUARANTEES</h2>
-                <div className="space-y-4 text-[#6b7280] leading-relaxed">
-                  <p className="text-lg font-bold text-[#1a1a2e]">
-                    THE PLATFORM IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND.
-                  </p>
-
-                  <p>
-                    We make no warranties, express or implied, regarding:
-                  </p>
-
-                  <div className="bg-[#f5f3ff] rounded-lg p-6 space-y-3">
-                    <p><strong className="text-[#1a1a2e]">• Availability:</strong> We do not guarantee that the platform will be available 24/7 or at any specific time. The platform may experience downtime, maintenance, or technical issues.</p>
-                    
-                    <p><strong className="text-[#1a1a2e]">• Accuracy:</strong> We do not warrant that game mechanics, odds, or outcomes are accurate representations of real casino games.</p>
-                    
-                    <p><strong className="text-[#1a1a2e]">• Error-Free Operation:</strong> We do not guarantee that the platform will be free from bugs, errors, viruses, or other harmful components.</p>
-                    
-                    <p><strong className="text-[#1a1a2e]">• Data Preservation:</strong> Since game data is stored locally on your device, we cannot guarantee preservation of your virtual coins, scores, or progress. Clearing browser data will result in permanent data loss.</p>
-                    
-                    <p><strong className="text-[#1a1a2e]">• Security:</strong> While we implement security measures, we cannot guarantee absolute security against unauthorized access, hacking, or data breaches.</p>
-                    
-                    <p><strong className="text-[#1a1a2e]">• Compatibility:</strong> We do not guarantee compatibility with all devices, browsers, or operating systems.</p>
-                  </div>
-
-                  <p>
-                    <strong className="text-[#1a1a2e]">Use at Your Own Risk:</strong> You use the platform at your own risk. We are not responsible for any loss of data, game progress, or time spent on the platform.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Limitation of Liability */}
-          <section className="bg-[#fff3cd] border border-[#ffc107] rounded-lg p-8">
-            <h2 className="text-4xl font-bold text-[#856404] mb-6">5. LIMITATION OF LIABILITY</h2>
-            <div className="space-y-4 text-[#856404] leading-relaxed">
-              <p className="text-lg font-bold">
-                TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE SHALL NOT BE LIABLE FOR ANY DAMAGES ARISING FROM YOUR USE OF THE PLATFORM.
+            {/* No Warranties */}
+            <div className="bg-white rounded-xl shadow-sm p-8 border border-[#e5e7eb]">
+              <h2 className="text-3xl font-bold text-[#1f1f2e] mb-4">No Warranties or Guarantees</h2>
+              <p className="text-[#4b5563] leading-relaxed mb-4">
+                The Platform is provided on an "as is" and "as available" basis without any warranties or guarantees of any kind, whether express or implied. To the fullest extent permitted by law, we disclaim all warranties, including but not limited to:
               </p>
-
-              <p>
-                This includes, but is not limited to:
-              </p>
-
-              <div className="bg-white rounded-lg p-6 space-y-2 text-[#6b7280]">
-                <p>• Loss of virtual coins, game progress, or data</p>
-                <p>• Time spent playing games</p>
-                <p>• Technical issues, errors, or bugs</p>
-                <p>• Inability to access the platform</p>
-                <p>• Any direct, indirect, incidental, consequential, or punitive damages</p>
-                <p>• Loss of profits, revenue, or business opportunities (not applicable as no money is involved)</p>
-                <p>• Emotional distress or personal injury</p>
+              <div className="bg-[#f5f3ff] rounded-lg p-6 space-y-3">
+                <p className="text-[#4b5563] leading-relaxed">
+                  <strong>Availability:</strong> We do not guarantee that the Platform will be available at all times, operate without interruption, or be free from errors, bugs, or technical issues.
+                </p>
+                <p className="text-[#4b5563] leading-relaxed">
+                  <strong>Accuracy:</strong> We do not warrant the accuracy, completeness, or reliability of any content, information, or materials on the Platform.
+                </p>
+                <p className="text-[#4b5563] leading-relaxed">
+                  <strong>Security:</strong> While we implement security measures, we do not guarantee that the Platform will be secure or free from viruses, malware, or other harmful components.
+                </p>
+                <p className="text-[#4b5563] leading-relaxed">
+                  <strong>Results:</strong> We do not guarantee any specific results, outcomes, or experiences from using the Platform. Your experience may vary.
+                </p>
+                <p className="text-[#4b5563] leading-relaxed">
+                  <strong>Fitness for Purpose:</strong> We do not warrant that the Platform will meet your specific requirements or expectations.
+                </p>
               </div>
+            </div>
 
-              <p>
-                <strong>Maximum Liability:</strong> Our total liability to you for all claims shall not exceed INR 1,000 (One Thousand Indian Rupees) or the amount you paid us in the past 12 months (which is zero, as the platform is free).
+            {/* Limitation of Liability */}
+            <div className="bg-white rounded-xl shadow-sm p-8 border border-[#e5e7eb]">
+              <h2 className="text-3xl font-bold text-[#1f1f2e] mb-4 flex items-center gap-3">
+                <Shield className="w-8 h-8 text-[#f59e0b]" />
+                Limitation of Liability
+              </h2>
+              <p className="text-[#4b5563] leading-relaxed mb-4">
+                To the maximum extent permitted by applicable law, SDSURABHI INFRA PRIVATE LIMITED, its directors, employees, partners, agents, suppliers, or affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation:
+              </p>
+              <div className="bg-[#eff6ff] rounded-lg p-6 border-l-4 border-[#3b82f6] space-y-2">
+                <p className="text-[#1e3a8a] leading-relaxed">• Loss of profits, revenue, or business opportunities</p>
+                <p className="text-[#1e3a8a] leading-relaxed">• Loss of data or information</p>
+                <p className="text-[#1e3a8a] leading-relaxed">• Loss of use or inability to use the Platform</p>
+                <p className="text-[#1e3a8a] leading-relaxed">• Personal injury or property damage</p>
+                <p className="text-[#1e3a8a] leading-relaxed">• Costs of procurement of substitute services</p>
+                <p className="text-[#1e3a8a] leading-relaxed">• Any other damages arising from your use of or inability to use the Platform</p>
+              </div>
+              <p className="text-[#4b5563] leading-relaxed mt-4">
+                This limitation applies whether the alleged liability is based on contract, tort, negligence, strict liability, or any other basis, even if we have been advised of the possibility of such damage. Because some jurisdictions do not allow the exclusion or limitation of incidental or consequential damages, our liability in such jurisdictions shall be limited to the maximum extent permitted by law.
               </p>
             </div>
-          </section>
 
-          {/* Responsible Gaming */}
-          <section>
-            <div className="flex items-start gap-4 mb-6">
-              <AlertCircle className="text-[#a855f7] flex-shrink-0 mt-1" size={40} />
-              <div>
-                <h2 className="text-4xl font-bold text-[#1a1a2e] mb-6">6. RESPONSIBLE GAMING</h2>
-                <div className="space-y-4 text-[#6b7280] leading-relaxed">
-                  <p>
-                    While Play By Stats involves no real money and poses no financial risk, we encourage <strong className="text-[#1a1a2e]">responsible and moderate use</strong> of the platform.
-                  </p>
-
-                  <div className="bg-gradient-to-br from-[#a855f7]/10 to-[#ec4899]/10 rounded-lg p-6 border border-[#a855f7]/20">
-                    <h3 className="text-xl font-bold text-[#1a1a2e] mb-3">Responsible Gaming Guidelines</h3>
-                    <div className="space-y-2">
-                      <p>✓ <strong>Set Time Limits:</strong> Take regular breaks and avoid excessive gaming sessions</p>
-                      <p>✓ <strong>Balance Your Life:</strong> Don't let gaming interfere with work, relationships, or responsibilities</p>
-                      <p>✓ <strong>Recognize Warning Signs:</strong> If you feel compelled to play or experience negative emotions, take a break</p>
-                      <p>✓ <strong>Gaming is Entertainment:</strong> Remember that this is just a game for fun, not a way to earn money</p>
-                      <p>✓ <strong>Seek Help if Needed:</strong> If you have a gambling problem, seek professional help even though this platform involves no money</p>
-                    </div>
-                  </div>
-
-                  <p>
-                    <strong className="text-[#1a1a2e]">Gambling Addiction Resources:</strong> If you or someone you know has a gambling problem, please contact:
-                  </p>
-                  <div className="bg-[#f5f3ff] rounded-lg p-6">
-                    <p className="font-bold text-[#1a1a2e] mb-2">India Gambling Helplines:</p>
-                    <p>• National Gambling Helpline: 1800-XXX-XXXX (24/7)</p>
-                    <p>• Gamblers Anonymous India: Visit gamblersanonymous.org.in</p>
-                    <p>• Mental Health Helpline: 1800-599-0019 (NIMHANS)</p>
-                  </div>
-
-                  <p>
-                    For more information, please visit our dedicated <a href="/disclaimer" className="text-[#a855f7] font-bold hover:underline">Responsible Gaming</a> page.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Legal Compliance */}
-          <section>
-            <div className="flex items-start gap-4 mb-6">
-              <Shield className="text-[#ec4899] flex-shrink-0 mt-1" size={40} />
-              <div>
-                <h2 className="text-4xl font-bold text-[#1a1a2e] mb-6">7. LEGAL COMPLIANCE & JURISDICTION</h2>
-                <div className="space-y-4 text-[#6b7280] leading-relaxed">
-                  <p>
-                    <strong className="text-[#1a1a2e]">Your Responsibility:</strong> You are solely responsible for ensuring that your use of Play By Stats complies with all applicable laws and regulations in your jurisdiction.
-                  </p>
-
-                  <p>
-                    <strong className="text-[#1a1a2e]">Restricted Jurisdictions:</strong> If casino-style games (even without real money) are prohibited in your country, state, or region, you must not use this platform. It is your responsibility to verify local laws.
-                  </p>
-
-                  <p>
-                    <strong className="text-[#1a1a2e]">Indian Law:</strong> This platform is operated from India and governed by Indian law. We comply with all applicable Indian regulations regarding online entertainment platforms.
-                  </p>
-
-                  <p>
-                    <strong className="text-[#1a1a2e]">Not Licensed for Gambling:</strong> Play By Stats is not licensed as a gambling operator because we do not offer real money gambling. We do not require gambling licenses as no financial transactions occur.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Third-Party Links */}
-          <section>
-            <div className="flex items-start gap-4 mb-6">
-              <Info className="text-[#a855f7] flex-shrink-0 mt-1" size={40} />
-              <div>
-                <h2 className="text-4xl font-bold text-[#1a1a2e] mb-6">8. THIRD-PARTY LINKS & CONTENT</h2>
-                <div className="space-y-4 text-[#6b7280] leading-relaxed">
-                  <p>
-                    Our platform may contain links to third-party websites, services, or resources. We are not responsible for:
-                  </p>
-
-                  <div className="bg-[#fff5f5] rounded-lg p-6 space-y-2">
-                    <p>✗ The content, accuracy, or legality of third-party websites</p>
-                    <p>✗ The privacy practices of third-party services</p>
-                    <p>✗ Any damages or losses caused by third-party websites</p>
-                    <p>✗ Products or services offered by third parties</p>
-                  </div>
-
-                  <p>
-                    <strong className="text-[#1a1a2e]">Your Risk:</strong> Clicking on third-party links is at your own risk. We recommend reviewing the terms and privacy policies of any third-party websites you visit.
-                  </p>
-
-                  <p>
-                    <strong className="text-[#1a1a2e]">No Endorsement:</strong> The presence of third-party links does not imply endorsement, sponsorship, or recommendation by Play By Stats.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Changes to Disclaimers */}
-          <section>
-            <div className="flex items-start gap-4 mb-6">
-              <AlertCircle className="text-[#ec4899] flex-shrink-0 mt-1" size={40} />
-              <div>
-                <h2 className="text-4xl font-bold text-[#1a1a2e] mb-6">9. CHANGES TO DISCLAIMERS</h2>
-                <div className="space-y-4 text-[#6b7280] leading-relaxed">
-                  <p>
-                    We reserve the right to modify, update, or change these disclaimers at any time without prior notice. Changes will be effective immediately upon posting on this page.
-                  </p>
-
-                  <p>
-                    <strong className="text-[#1a1a2e]">Your Responsibility:</strong> It is your responsibility to review these disclaimers periodically. Your continued use of the platform after any changes constitutes acceptance of the updated disclaimers.
-                  </p>
-
-                  <p>
-                    <strong className="text-[#1a1a2e]">Last Updated:</strong> This page was last updated on January 14, 2026. Check the top of this page for the most recent update date.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Acknowledgment */}
-          <section className="bg-gradient-to-r from-[#a855f7] to-[#ec4899] text-white rounded-lg p-8">
-            <h2 className="text-4xl font-bold mb-4">ACKNOWLEDGMENT & ACCEPTANCE</h2>
-            <div className="space-y-4 text-white/90 leading-relaxed">
-              <p className="text-lg font-bold">
-                BY USING PLAY BY STATS, YOU ACKNOWLEDGE THAT:
+            {/* Third-Party Links */}
+            <div className="bg-white rounded-xl shadow-sm p-8 border border-[#e5e7eb]">
+              <h2 className="text-3xl font-bold text-[#1f1f2e] mb-4">Third-Party Links and Content</h2>
+              <p className="text-[#4b5563] leading-relaxed mb-4">
+                The Platform may contain links to third-party websites, services, or resources that are not owned or controlled by us. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services.
               </p>
-              <div className="space-y-2 ml-4">
-                <p>✓ You have read and understood all disclaimers on this page</p>
-                <p>✓ You agree to all terms, conditions, and disclaimers</p>
-                <p>✓ You are at least 18 years of age</p>
-                <p>✓ You understand that no real money is involved</p>
-                <p>✓ You accept all risks associated with using the platform</p>
-                <p>✓ You will use the platform responsibly and in moderation</p>
-                <p>✓ You comply with all applicable laws in your jurisdiction</p>
+              <div className="bg-[#fff5f5] rounded-lg p-6 border-l-4 border-[#ef4444]">
+                <p className="text-[#7f1d1d] leading-relaxed mb-3">
+                  <strong>No Endorsement:</strong> The inclusion of any link does not imply endorsement, approval, or recommendation by us of the linked site or any association with its operators.
+                </p>
+                <p className="text-[#7f1d1d] leading-relaxed mb-3">
+                  <strong>Your Responsibility:</strong> You acknowledge and agree that we shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods, or services available on or through any such third-party websites or services.
+                </p>
+                <p className="text-[#7f1d1d] leading-relaxed">
+                  <strong>Review Policies:</strong> We strongly advise you to read the terms and conditions and privacy policies of any third-party websites or services that you visit.
+                </p>
               </div>
-              <p className="text-lg font-bold mt-6">
-                IF YOU DO NOT AGREE WITH THESE DISCLAIMERS, YOU MUST IMMEDIATELY STOP USING THE PLATFORM.
+            </div>
+
+            {/* Responsible Gaming */}
+            <div className="bg-white rounded-xl shadow-sm p-8 border border-[#e5e7eb]">
+              <h2 className="text-3xl font-bold text-[#1f1f2e] mb-4">Responsible Gaming Statement</h2>
+              <p className="text-[#4b5563] leading-relaxed mb-4">
+                While Play By Stats does not involve real money gambling, we recognize that any form of gaming should be enjoyed responsibly and in moderation.
+              </p>
+              <div className="bg-[#f0fdf4] rounded-lg p-6 border-l-4 border-[#22c55e] space-y-4">
+                <p className="text-[#14532d] leading-relaxed">
+                  <strong>Play for Fun:</strong> Remember that this Platform is designed for entertainment purposes only. Take regular breaks and maintain a healthy balance with other activities in your life.
+                </p>
+                <p className="text-[#14532d] leading-relaxed">
+                  <strong>No Financial Risk:</strong> Since no real money is involved, there is no financial risk. However, we encourage you to be mindful of the time you spend on the Platform.
+                </p>
+                <p className="text-[#14532d] leading-relaxed">
+                  <strong>Seek Help if Needed:</strong> If you or someone you know has concerns about gaming habits or gambling behavior, please visit our Responsible Gaming page for resources and support information.
+                </p>
+              </div>
+            </div>
+
+            {/* Changes to Disclaimer */}
+            <div className="bg-white rounded-xl shadow-sm p-8 border border-[#e5e7eb]">
+              <h2 className="text-3xl font-bold text-[#1f1f2e] mb-4 flex items-center gap-3">
+                <FileWarning className="w-8 h-8 text-[#f59e0b]" />
+                Changes to This Disclaimer
+              </h2>
+              <p className="text-[#4b5563] leading-relaxed mb-4">
+                We reserve the right to modify, update, or change this Disclaimer at any time without prior notice. Any changes will be effective immediately upon posting on the Platform. The "Last Updated" date at the top of this page indicates when this Disclaimer was last revised.
+              </p>
+              <p className="text-[#4b5563] leading-relaxed">
+                Your continued use of the Platform following the posting of changes constitutes your acceptance of such changes. We encourage you to review this Disclaimer periodically to stay informed about how we are protecting you and clarifying the nature of our services.
               </p>
             </div>
-          </section>
 
-          {/* Contact */}
-          <section className="bg-gradient-to-br from-[#a855f7]/10 to-[#ec4899]/10 rounded-lg p-8 border border-[#a855f7]/20">
-            <h2 className="text-3xl font-bold text-[#1a1a2e] mb-4">Questions or Concerns?</h2>
-            <p className="text-[#6b7280] leading-relaxed mb-4">
-              If you have any questions about these disclaimers or need clarification, please contact us:
-            </p>
-            <div className="space-y-2 text-[#6b7280]">
-              <p><strong className="text-[#1a1a2e]">Email:</strong> support@playbystats.com</p>
-              <p><strong className="text-[#1a1a2e]">Legal Email:</strong> legal@playbystats.com</p>
-              <p><strong className="text-[#1a1a2e]">Company:</strong> SDSURABHI INFRA PRIVATE LIMITED</p>
-              <p><strong className="text-[#1a1a2e]">CIN:</strong> U41002UP2023PTC194590</p>
-              <p><strong className="text-[#1a1a2e]">Location:</strong> Lucknow, Uttar Pradesh, India</p>
+            {/* Acceptance */}
+            <div className="bg-white rounded-xl shadow-sm p-8 border border-[#e5e7eb]">
+              <h2 className="text-3xl font-bold text-[#1f1f2e] mb-4">Acceptance of Disclaimer</h2>
+              <p className="text-[#4b5563] leading-relaxed mb-4">
+                By using the Play By Stats Platform, you acknowledge that you have read, understood, and agree to be bound by this Disclaimer. This Disclaimer should be read in conjunction with our Terms & Conditions and Privacy Policy, which together govern your use of the Platform.
+              </p>
+              <p className="text-[#4b5563] leading-relaxed">
+                If you do not agree with any part of this Disclaimer, you must immediately discontinue use of the Platform.
+              </p>
             </div>
-          </section>
 
-          {/* Footer Note */}
-          <div className="text-center space-y-2">
-            <p className="text-[#6b7280] text-sm">
-              <strong>Last Updated:</strong> January 14, 2026
-            </p>
-            <p className="text-[#6b7280] text-sm">
-              These disclaimers are part of our Terms & Conditions and are legally binding.
-            </p>
-          </div>
-        </motion.div>
-      </div>
+            {/* Contact Information */}
+            <div className="bg-gradient-to-r from-[#f59e0b] to-[#ef4444] rounded-xl shadow-lg p-8 text-white">
+              <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
+                <Mail className="w-8 h-8" />
+                Contact Us
+              </h2>
+              <p className="leading-relaxed mb-4">
+                If you have any questions or concerns about this Disclaimer, please contact us:
+              </p>
+              <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm">
+                <p className="mb-2"><strong>Company:</strong> SDSURABHI INFRA PRIVATE LIMITED</p>
+                <p className="mb-2"><strong>Email:</strong> <a href="mailto:support@playbystats.com" className="underline hover:text-white/80">support@playbystats.com</a></p>
+                <p className="mb-2"><strong>Phone:</strong> +91 (987) 654-3210</p>
+                <p><strong>Website:</strong> <a href="https://playbystats.com" className="underline hover:text-white/80">playbystats.com</a></p>
+              </div>
+            </div>
+
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 }
