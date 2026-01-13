@@ -90,3 +90,160 @@ export async function getUserByOpenId(openId: string) {
 }
 
 // TODO: add feature queries here as your schema grows.
+
+// ============================================
+// Game Database Functions
+// ============================================
+
+import { players, gameSessions, leaderboard } from "../drizzle/schema";
+import type { InsertPlayer, InsertGameSession, InsertLeaderboard } from "../drizzle/schema";
+import { desc, and } from "drizzle-orm";
+
+/**
+ * Create or get anonymous player by userId
+ * Returns player with virtual coins
+ */
+export async function getOrCreatePlayer(userId?: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  // Check if player exists
+  if (userId) {
+    const existing = await db.select().from(players).where(eq(players.userId, userId)).limit(1);
+    if (existing.length > 0) {
+      return existing[0];
+    }
+  }
+
+  // For anonymous players, create new player every time
+  // Create new player with starting coins
+  const newPlayer: InsertPlayer = {
+    userId: null,
+    username: `Player${Math.floor(Math.random() * 10000)}`,
+    coins: 1000, // Starting coins
+    totalWins: 0,
+    totalLosses: 0,
+  };
+
+  const result = await db.insert(players).values(newPlayer);
+  const playerId = Number(result[0].insertId);
+  
+  const created = await db.select().from(players).where(eq(players.id, playerId)).limit(1);
+  return created[0];
+}
+
+/**
+ * Update player coins and stats
+ */
+export async function updatePlayerStats(
+  playerId: number,
+  coinsChange: number,
+  won: boolean
+) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  const player = await db.select().from(players).where(eq(players.id, playerId)).limit(1);
+  if (player.length === 0) throw new Error("Player not found");
+
+  const current = player[0];
+  
+  await db.update(players)
+    .set({
+      coins: current.coins + coinsChange,
+      totalWins: won ? current.totalWins + 1 : current.totalWins,
+      totalLosses: won ? current.totalLosses : current.totalLosses + 1,
+    })
+    .where(eq(players.id, playerId));
+
+  // Return updated player
+  const updated = await db.select().from(players).where(eq(players.id, playerId)).limit(1);
+  return updated[0];
+}
+
+/**
+ * Record game session
+ */
+export async function recordGameSession(session: InsertGameSession) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  await db.insert(gameSessions).values(session);
+}
+
+/**
+ * Update leaderboard
+ */
+export async function updateLeaderboard(
+  playerId: number,
+  score: number,
+  period: 'daily' | 'weekly' | 'monthly' | 'alltime'
+) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  // Check if entry exists
+  const existing = await db.select()
+    .from(leaderboard)
+    .where(and(
+      eq(leaderboard.playerId, playerId),
+      eq(leaderboard.period, period)
+    ))
+    .limit(1);
+
+  if (existing.length > 0) {
+    // Update existing entry
+    const current = existing[0];
+    await db.update(leaderboard)
+      .set({
+        totalCoins: current.totalCoins + score,
+        updatedAt: new Date(),
+      })
+      .where(eq(leaderboard.id, current.id));
+  } else {
+    // Create new entry - calculate rank as 0 initially
+    const newEntry: InsertLeaderboard = {
+      playerId,
+      totalCoins: score,
+      rank: 0,
+      period,
+    };
+    await db.insert(leaderboard).values(newEntry);
+  }
+}
+
+/**
+ * Get leaderboard rankings
+ */
+export async function getLeaderboard(
+  period: 'daily' | 'weekly' | 'monthly' | 'alltime',
+  limit: number = 100
+) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  return await db.select()
+    .from(leaderboard)
+    .where(eq(leaderboard.period, period))
+    .orderBy(desc(leaderboard.totalCoins))
+    .limit(limit);
+}
+
+/**
+ * Get player rank in leaderboard
+ */
+export async function getPlayerRank(
+  playerId: number,
+  period: 'daily' | 'weekly' | 'monthly' | 'alltime'
+) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  const allEntries = await db.select()
+    .from(leaderboard)
+    .where(eq(leaderboard.period, period))
+    .orderBy(desc(leaderboard.totalCoins));
+
+  const rank = allEntries.findIndex(entry => entry.playerId === playerId);
+  return rank >= 0 ? rank + 1 : null;
+}

@@ -1,6 +1,11 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
+import DiceRoller from "@/pages/DiceRoller";
+import SlotsMaster from "@/pages/SlotsMaster";
+import RouletteRush from "@/pages/RouletteRush";
+import BlackjackPro from "@/pages/BlackjackPro";
+import Leaderboard from "@/pages/Leaderboard";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -23,8 +28,13 @@ function Router() {
       <Switch>
         <Route path={"/"} component={Home} />
         <Route path={"/games"} component={Games} />
-        <Route path={"/about"} component={About} />
-        <Route path={"/contact"} component={Contact} />
+            <Route path="/about" component={About} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/games/dice" component={DiceRoller} />
+        <Route path="/games/slots" component={SlotsMaster} />
+        <Route path="/games/roulette" component={RouletteRush} />
+        <Route path="/games/blackjack" component={BlackjackPro} />
+        <Route path="/leaderboard" component={Leaderboard} />
         <Route path={"/privacy"} component={Privacy} />
         <Route path={"/terms"} component={Terms} />
         <Route path={"/disclaimer"} component={Disclaimer} />

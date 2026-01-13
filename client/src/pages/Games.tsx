@@ -140,9 +140,9 @@ export default function Games() {
                     </div>
 
                     {/* CTA Button */}
-                    <Link href="/">
+                    <Link href={game.id === 1 ? "/games/dice" : game.id === 2 ? "/games/slots" : game.id === 3 ? "/games/roulette" : game.id === 4 ? "/games/blackjack" : "/"}>
                       <a className="w-full inline-block px-6 py-3 bg-gradient-to-r from-[#a855f7] to-[#ec4899] text-white font-bold rounded-lg text-center hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                        Play {game.name}
+                        {game.id === 1 ? '🎲 Play Now' : game.id === 2 ? '🎰 Play Now' : game.id === 3 ? '🎡 Play Now' : game.id === 4 ? '🏏 Play Now' : 'Coming Soon'}
                       </a>
                     </Link>
                   </div>
