@@ -99,13 +99,13 @@ export default function Leaderboard() {
 
             {/* Table Body */}
             <div className="divide-y divide-[#a855f7]/20">
-              {isLoading ? (
+              {false ? (
                 <div className="p-12 text-center text-gray-400">
                   <TrendingUp className="w-12 h-12 mx-auto mb-4 animate-pulse" />
                   <p>Loading leaderboard...</p>
                 </div>
-              ) : leaderboardData && leaderboardData.length > 0 ? (
-                leaderboardData.map((entry, index) => {
+              ) : leaderboard && leaderboard.length > 0 ? (
+                leaderboard.map((entry, index) => {
                   const rank = index + 1;
                   return (
                     <motion.div
