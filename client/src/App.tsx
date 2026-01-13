@@ -15,8 +15,8 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Disclaimer from "./pages/Disclaimer";
 
-
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <>
       <Header />

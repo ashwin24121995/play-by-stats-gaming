@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
+import { useAuth } from '@/_core/hooks/useAuth';
 import { ArrowRight, Zap, Shield, Users, CheckCircle, Trophy, Gamepad2, TrendingUp, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 
@@ -10,6 +11,10 @@ import { useState } from 'react';
  * Layout: Hero with floating badges, feature cards, stadium imagery
  */
 export default function Home() {
+  // The userAuth hooks provides authentication state
+  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
+  let { user, loading, error, isAuthenticated, logout } = useAuth();
+
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   const faqItems = [
