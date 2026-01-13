@@ -15,7 +15,6 @@ export default function Header() {
   const navLinks = [
     { label: 'Home', href: '/' },
     { label: 'Games', href: '/games' },
-    { label: 'Leaderboard', href: '/leaderboard' },
     { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' },
   ];

@@ -55,3 +55,6 @@
 - [x] Fix Slots Master animation timing - reels should stop before showing result
 - [x] Fix Roulette Rush animation timing - wheel should stop before showing result
 - [x] Fix Blackjack Pro animation timing - cards should be dealt before showing result
+
+## Feature Removal
+- [x] Remove Leaderboard page and navigation links

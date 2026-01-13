@@ -85,7 +85,7 @@ export default function Home() {
               </h1>
 
               <p className="text-xl text-[#4b5563] mb-8 leading-relaxed max-w-2xl">
-                Play exciting casino games instantly - no account needed. Compete anonymously, climb the leaderboard, and master gaming strategy without any financial pressure or risk.
+                Play exciting casino games instantly - no account needed. Compete anonymously and master gaming strategy without any financial pressure or risk.
               </p>
 
               {/* Feature Pills */}
@@ -166,7 +166,7 @@ export default function Home() {
                 <div className="bg-gradient-to-br from-[#fbbf24] to-[#f59e0b] rounded-full p-4 shadow-lg">
                   <span className="text-2xl">⭐</span>
                 </div>
-                <p className="text-xs font-bold text-white mt-2 bg-[#f59e0b] rounded px-2 py-1">Leaderboard</p>
+                
               </motion.div>
 
               {/* Floating Games Badge */}
@@ -222,7 +222,7 @@ export default function Home() {
               {
                 icon: <TrendingUp size={32} />,
                 title: 'Track Performance',
-                desc: 'Real-time statistics and achievement tracking. Monitor your progress and compete on global leaderboards.',
+                desc: 'Real-time statistics and achievement tracking. Monitor your progress and improve your gaming skills.',
               },
               {
                 icon: <Users size={32} />,
@@ -293,7 +293,7 @@ export default function Home() {
               {
                 step: '3',
                 title: 'Compete & Climb',
-                desc: 'Watch your performance in real-time, track your stats, and compete on the leaderboard. Learn and improve with every game.',
+                desc: 'Watch your performance in real-time, track your stats, and improve your skills. Learn and master strategy with every game.',
               },
             ].map((item, idx) => (
               <motion.div

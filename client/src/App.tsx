@@ -5,7 +5,7 @@ import DiceRoller from "@/pages/DiceRoller";
 import SlotsMaster from "@/pages/SlotsMaster";
 import RouletteRush from "@/pages/RouletteRush";
 import BlackjackPro from "@/pages/BlackjackPro";
-import Leaderboard from "@/pages/Leaderboard";
+
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -34,7 +34,7 @@ function Router() {
         <Route path="/games/slots" component={SlotsMaster} />
         <Route path="/games/roulette" component={RouletteRush} />
         <Route path="/games/blackjack" component={BlackjackPro} />
-        <Route path="/leaderboard" component={Leaderboard} />
+
         <Route path={"/privacy"} component={Privacy} />
         <Route path={"/terms"} component={Terms} />
         <Route path={"/disclaimer"} component={Disclaimer} />
