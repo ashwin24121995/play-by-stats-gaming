@@ -221,5 +221,5 @@
 - [x] Update contact page colors to match purple/pink gradient theme
 - [x] Update contact page layout to match game pages
 - [x] Ensure contact form styling matches website theme
-- [ ] Test contact page on desktop and mobile
-- [ ] Push to GitHub/Railway
+- [x] Test contact page on desktop and mobile
+- [x] Push to GitHub/Railway
