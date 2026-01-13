@@ -39,8 +39,8 @@ export default function Home() {
       answer: 'Players must be 18 years of age or older to use Play By Stats. This is in accordance with responsible gaming practices and platform policies.',
     },
     {
-      question: 'Can I play without creating an account?',
-      answer: 'Yes! You can start playing immediately without registration. No account creation is required. Just click "Play Now" and start playing instantly as a guest. Complete anonymity - no personal data needed.',
+      question: 'Do I need to register or login to play?',
+      answer: 'No! You can start playing immediately - completely anonymous. Just click "Play Now" and start playing instantly. No registration, no login, no personal data needed. 100% anonymous gaming.',
     },
   ];
 

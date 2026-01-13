@@ -60,7 +60,10 @@
 - [x] Remove Leaderboard page and navigation links
 
 ## Legal Pages Enhancement
-- [x] Write comprehensive Privacy Policy page
-- [ ] Write comprehensive Terms & Conditions page
-- [ ] Write comprehensive Disclaimer page
-- [ ] Write comprehensive Responsible Gaming page
+- [x] Fix Privacy Policy to remove account/login references (anonymous platform)
+- [x] Write comprehensive Terms & Conditions page (anonymous platform)
+- [x] Write comprehensive Disclaimer page
+- [x] Write comprehensive Responsible Gaming page
+
+## Content Fixes
+- [x] Remove "Create account" and "Sign up" references from Home page
