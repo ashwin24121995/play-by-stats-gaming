@@ -4,6 +4,7 @@ import { trpc } from '@/lib/trpc';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Coins, TrendingUp, Trophy } from 'lucide-react';
+import { gameSounds } from '@/utils/soundManager';
 
 /**
  * Blackjack Pro Game
@@ -44,6 +45,19 @@ export default function BlackjackPro() {
         if (data.player) {
           setPlayer(data.player);
         }
+        
+        // Play appropriate sound based on result
+        setTimeout(() => {
+          if (data.won) {
+            if (data.playerValue === 21 && data.playerHand.length === 2) {
+              gameSounds.blackjack.blackjack();
+            } else {
+              gameSounds.blackjack.win();
+            }
+          } else if (data.playerValue > 21) {
+            gameSounds.blackjack.bust();
+          }
+        }, 500);
       } else {
         setGameState('playing');
       }
@@ -62,6 +76,15 @@ export default function BlackjackPro() {
     setGameState('playing');
     setResult(null);
     
+    // Play shuffle sound before dealing
+    gameSounds.blackjack.shuffle();
+    
+    // Play card dealing sounds with delays
+    setTimeout(() => gameSounds.blackjack.deal(0), 300);
+    setTimeout(() => gameSounds.blackjack.deal(0), 500);
+    setTimeout(() => gameSounds.blackjack.deal(0), 700);
+    setTimeout(() => gameSounds.blackjack.deal(0), 900);
+    
     playBlackjackMutation.mutate({
       playerId: player.id,
       betAmount,
@@ -70,6 +93,9 @@ export default function BlackjackPro() {
   };
 
   const handleHit = () => {
+    // Play card flip sound
+    gameSounds.blackjack.flip();
+    
     playBlackjackMutation.mutate({
       playerId: player.id,
       betAmount,
@@ -80,6 +106,9 @@ export default function BlackjackPro() {
   };
 
   const handleStand = () => {
+    // Play card flip sound for dealer's cards
+    gameSounds.blackjack.flip();
+    
     playBlackjackMutation.mutate({
       playerId: player.id,
       betAmount,

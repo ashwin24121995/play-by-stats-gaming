@@ -4,6 +4,7 @@ import { trpc } from '@/lib/trpc';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Coins, TrendingUp, Trophy } from 'lucide-react';
+import { gameSounds } from '@/utils/soundManager';
 
 /**
  * Slots Master Game
@@ -33,7 +34,18 @@ export default function SlotsMaster() {
       setResult(data);
       setPlayer(data.player);
       setShowResult(true);
+      
+      // Play win sound after reels stop (3 seconds)
       setTimeout(() => {
+        if (data.won) {
+          if (data.multiplier >= 25) {
+            gameSounds.slots.jackpot();
+          } else if (data.multiplier >= 10) {
+            gameSounds.slots.bigWin();
+          } else {
+            gameSounds.slots.win();
+          }
+        }
         setIsSpinning(false);
       }, 3000);
     },
@@ -52,6 +64,14 @@ export default function SlotsMaster() {
     setIsSpinning(true);
     setShowResult(false);
     setResult(null);
+
+    // Play slot spin sound
+    gameSounds.slots.spin();
+    
+    // Play reel stop sounds at intervals (1s, 2s, 3s)
+    gameSounds.slots.reelStop(1000);
+    gameSounds.slots.reelStop(2000);
+    gameSounds.slots.reelStop(3000);
 
     playSlotsMutation.mutate({
       playerId: player.id,

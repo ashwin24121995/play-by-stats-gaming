@@ -4,6 +4,7 @@ import { trpc } from '@/lib/trpc';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Coins, TrendingUp, Trophy } from 'lucide-react';
+import { gameSounds } from '@/utils/soundManager';
 
 /**
  * Dice Roller Game
@@ -34,7 +35,14 @@ export default function DiceRoller() {
       setResult(data);
       setPlayer(data.player);
       setShowResult(true);
+      
+      // Play win/loss sound after dice stop rolling (2 seconds)
       setTimeout(() => {
+        if (data.won) {
+          gameSounds.dice.win();
+        } else {
+          gameSounds.dice.loss();
+        }
         setIsRolling(false);
       }, 2000);
     },
@@ -53,6 +61,9 @@ export default function DiceRoller() {
     setIsRolling(true);
     setShowResult(false);
     setResult(null);
+
+    // Play dice roll sound
+    gameSounds.dice.roll();
 
     playDiceMutation.mutate({
       playerId: player.id,

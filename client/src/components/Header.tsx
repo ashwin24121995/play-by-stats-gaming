@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'wouter';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import SoundToggle from './SoundToggle';
 
 /**
  * Header Component - Play By Stats
@@ -56,6 +57,9 @@ export default function Header() {
 
           {/* CTA Button & Mobile Menu */}
           <div className="flex items-center gap-4">
+            {/* Sound Toggle */}
+            <SoundToggle />
+            
             <Link href="/games">
               <a className="hidden sm:inline-flex px-6 py-2 bg-gradient-to-r from-[#a855f7] to-[#ec4899] text-white font-bold rounded-lg hover:shadow-lg hover:shadow-[#a855f7]/40 transition-all duration-300 transform hover:scale-105">
                 Play Games

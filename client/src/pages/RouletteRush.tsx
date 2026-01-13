@@ -4,6 +4,7 @@ import { trpc } from '@/lib/trpc';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Coins, TrendingUp, Trophy } from 'lucide-react';
+import { gameSounds } from '@/utils/soundManager';
 
 /**
  * Roulette Rush Game
@@ -41,11 +42,21 @@ export default function RouletteRush() {
       const targetRotation = 720 + (data.winningNumber * degreesPerNumber);
       setWheelRotation(targetRotation);
       
+      // Play ball landing sound after 2 seconds
       setTimeout(() => {
+        gameSounds.roulette.ballLand();
         setShowResult(true);
       }, 2000);
       
+      // Play win sound after 3 seconds
       setTimeout(() => {
+        if (data.won) {
+          if (data.winAmount >= 100) {
+            gameSounds.roulette.bigWin();
+          } else {
+            gameSounds.roulette.win();
+          }
+        }
         setIsSpinning(false);
       }, 3000);
     },
@@ -69,6 +80,9 @@ export default function RouletteRush() {
     setIsSpinning(true);
     setShowResult(false);
     setResult(null);
+
+    // Play roulette wheel spinning sound
+    gameSounds.roulette.spin();
 
     playRouletteMutation.mutate({
       playerId: player.id,
