@@ -1,33 +1,53 @@
 import express from "express";
-import { createServer } from "http";
 import path from "path";
 import { fileURLToPath } from "url";
+import fs from "fs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-async function startServer() {
-  const app = express();
-  const server = createServer(app);
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-  // Serve static files from dist/public in production
-  const staticPath =
-    process.env.NODE_ENV === "production"
-      ? path.resolve(__dirname, "public")
-      : path.resolve(__dirname, "..", "dist", "public");
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-  app.use(express.static(staticPath));
+// CORS
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+  next();
+});
 
-  // Handle client-side routing - serve index.html for all routes
-  app.get("*", (_req, res) => {
-    res.sendFile(path.join(staticPath, "index.html"));
-  });
+// Serve static files
+const distPath = path.resolve(__dirname, "public");
+console.log(`Serving static files from: ${distPath}`);
 
-  const port = process.env.PORT || 3000;
-
-  server.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}/`);
-  });
+if (!fs.existsSync(distPath)) {
+  console.error(`Build directory not found: ${distPath}`);
+  console.error("Please run 'pnpm build' first");
+  process.exit(1);
 }
 
-startServer().catch(console.error);
+app.use(express.static(distPath));
+
+// Health check endpoint
+app.get("/api/health", (req, res) => {
+  res.json({ status: "ok", timestamp: new Date().toISOString() });
+});
+
+// Fallback to index.html for SPA routing
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(distPath, "index.html"));
+});
+
+// Start server
+app.listen(PORT, () => {
+  console.log(`✅ Server running on port ${PORT}`);
+  console.log(`🌐 URL: http://localhost:${PORT}`);
+});

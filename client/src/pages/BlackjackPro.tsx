@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { trpc } from '@/lib/trpc';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Coins, TrendingUp, Trophy } from 'lucide-react';
@@ -23,7 +22,6 @@ export default function BlackjackPro() {
   const [result, setResult] = useState<any>(null);
 
   // Get player profile
-  const { data: playerData } = trpc.game.getPlayer.useQuery();
 
   useEffect(() => {
     if (playerData) {
@@ -32,41 +30,7 @@ export default function BlackjackPro() {
   }, [playerData]);
 
   // Play blackjack mutation
-  const playBlackjackMutation = trpc.game.playBlackjack.useMutation({
-    onSuccess: (data) => {
-      setPlayerHand(data.playerHand);
-      setDealerHand(data.dealerHand);
-      setPlayerValue(data.playerValue);
-      setDealerValue(data.dealerValue);
-      
-      if (data.gameOver) {
-        // Wait for card animations to complete before showing result
-        setTimeout(() => {
-          setGameState('finished');
-          setResult(data);
-          if (data.player) {
-            setPlayer(data.player);
-          }
-          
-          // Play appropriate sound based on result
-          if (data.won) {
-            if (data.playerValue === 21 && data.playerHand.length === 2) {
-              gameSounds.blackjack.blackjack();
-            } else {
-              gameSounds.blackjack.win();
-            }
-          } else if (data.playerValue > 21) {
-            gameSounds.blackjack.bust();
-          }
-        }, 800);
-      } else {
-        setGameState('playing');
-      }
-    },
-    onError: (error) => {
-      console.error('Error playing blackjack:', error);
-    },
-  });
+
 
   const handleDeal = () => {
     if (!player || player.coins < betAmount) {
@@ -86,37 +50,21 @@ export default function BlackjackPro() {
     setTimeout(() => gameSounds.blackjack.deal(0), 700);
     setTimeout(() => gameSounds.blackjack.deal(0), 900);
     
-    playBlackjackMutation.mutate({
-      playerId: player.id,
-      betAmount,
-      action: 'deal',
-    });
+    // Game logic will be implemented here
   };
 
   const handleHit = () => {
     // Play card flip sound
     gameSounds.blackjack.flip();
     
-    playBlackjackMutation.mutate({
-      playerId: player.id,
-      betAmount,
-      action: 'hit',
-      playerHand,
-      dealerHand,
-    });
+    // Game logic will be implemented here
   };
 
   const handleStand = () => {
     // Play card flip sound for dealer's cards
     gameSounds.blackjack.flip();
     
-    playBlackjackMutation.mutate({
-      playerId: player.id,
-      betAmount,
-      action: 'stand',
-      playerHand,
-      dealerHand,
-    });
+    // Game logic will be implemented here
   };
 
   const handleNewGame = () => {

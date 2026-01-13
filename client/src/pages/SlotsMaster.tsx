@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { trpc } from '@/lib/trpc';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Coins, TrendingUp, Trophy } from 'lucide-react';
@@ -19,44 +18,13 @@ export default function SlotsMaster() {
   const [result, setResult] = useState<any>(null);
   const [showResult, setShowResult] = useState(false);
 
-  // Get player profile
-  const { data: playerData } = trpc.game.getPlayer.useQuery();
-
+  // Get player profile from localStorage
   useEffect(() => {
+    const playerData = localStorage.getItem('playerData');
     if (playerData) {
-      setPlayer(playerData);
+      setPlayer(JSON.parse(playerData));
     }
-  }, [playerData]);
-
-  // Play slots mutation
-  const playSlotsMutation = trpc.game.playSlots.useMutation({
-    onSuccess: (data) => {
-      // Store result but don't show it yet
-      setResult(data);
-      setPlayer(data.player);
-      
-      // Wait for reels to stop spinning (3 seconds), then show result
-      setTimeout(() => {
-        setIsSpinning(false);
-        setShowResult(true);
-        
-        // Play win sound after showing result
-        if (data.won) {
-          if (data.multiplier >= 25) {
-            gameSounds.slots.jackpot();
-          } else if (data.multiplier >= 10) {
-            gameSounds.slots.bigWin();
-          } else {
-            gameSounds.slots.win();
-          }
-        }
-      }, 3000);
-    },
-    onError: (error) => {
-      console.error('Error playing slots:', error);
-      setIsSpinning(false);
-    },
-  });
+  }, []);
 
   const handleSpin = () => {
     if (!player || player.coins < betAmount) {
@@ -76,10 +44,75 @@ export default function SlotsMaster() {
     gameSounds.slots.reelStop(2000);
     gameSounds.slots.reelStop(3000);
 
-    playSlotsMutation.mutate({
-      playerId: player.id,
-      betAmount,
-    });
+    // Simulate slots game
+    const symbols = ["🍒", "🍋", "🍊", "🍇", "💎", "7️⃣"];
+    const reel1 = symbols[Math.floor(Math.random() * symbols.length)];
+    const reel2 = symbols[Math.floor(Math.random() * symbols.length)];
+    const reel3 = symbols[Math.floor(Math.random() * symbols.length)];
+
+    let won = false;
+    let multiplier = 0;
+    let winAmount = 0;
+
+    // Check for matches
+    if (reel1 === reel2 && reel2 === reel3) {
+      // All three match
+      won = true;
+      if (reel1 === "7️⃣") {
+        multiplier = 50;
+      } else if (reel1 === "💎") {
+        multiplier = 25;
+      } else if (reel1 === "🍇") {
+        multiplier = 10;
+      } else {
+        multiplier = 5;
+      }
+    } else if (reel1 === reel2 || reel2 === reel3 || reel1 === reel3) {
+      // Two match
+      won = true;
+      multiplier = 2;
+    }
+
+    winAmount = won ? betAmount * multiplier : 0;
+
+    const gameResult = {
+      reel1,
+      reel2,
+      reel3,
+      won,
+      multiplier,
+      winAmount,
+    };
+
+    // Store result but don't show it yet
+    setResult(gameResult);
+    
+    // Update player stats
+    const updatedPlayer = {
+      ...player,
+      coins: player.coins - betAmount + winAmount,
+      totalWins: player.totalWins + (won ? 1 : 0),
+      totalLosses: player.totalLosses + (won ? 0 : 1),
+    };
+    
+    // Wait for reels to stop spinning (3 seconds), then show result
+    setTimeout(() => {
+      setIsSpinning(false);
+      setShowResult(true);
+      setPlayer(updatedPlayer);
+      localStorage.setItem('playerData', JSON.stringify(updatedPlayer));
+      
+      // Play win sound after showing result
+      if (won) {
+        if (multiplier >= 25) {
+          gameSounds.slots.jackpot();
+        } else if (multiplier >= 10) {
+          gameSounds.slots.bigWin();
+        } else {
+          gameSounds.slots.win();
+        }
+      }
+    }, 3000);
   };
 
   const SlotReel = ({ symbol, isSpinning: spinning }: { symbol: string; isSpinning: boolean }) => {

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { trpc } from '@/lib/trpc';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Coins, TrendingUp, Trophy } from 'lucide-react';
@@ -23,7 +22,6 @@ export default function RouletteRush() {
   const [wheelRotation, setWheelRotation] = useState(0);
 
   // Get player profile
-  const { data: playerData } = trpc.game.getPlayer.useQuery();
 
   useEffect(() => {
     if (playerData) {
@@ -32,42 +30,7 @@ export default function RouletteRush() {
   }, [playerData]);
 
   // Play roulette mutation
-  const playRouletteMutation = trpc.game.playRoulette.useMutation({
-    onSuccess: (data) => {
-      // Store result but don't show it yet
-      setResult(data);
-      setPlayer(data.player);
-      
-      // Calculate final wheel rotation based on winning number
-      const degreesPerNumber = 360 / 37;
-      const targetRotation = 720 + (data.winningNumber * degreesPerNumber);
-      setWheelRotation(targetRotation);
-      
-      // Play ball landing sound after 2 seconds
-      setTimeout(() => {
-        gameSounds.roulette.ballLand();
-      }, 2000);
-      
-      // Wait for wheel to stop (3 seconds), then show result and play sound
-      setTimeout(() => {
-        setIsSpinning(false);
-        setShowResult(true);
-        
-        // Play win sound after showing result
-        if (data.won) {
-          if (data.winAmount >= 100) {
-            gameSounds.roulette.bigWin();
-          } else {
-            gameSounds.roulette.win();
-          }
-        }
-      }, 3000);
-    },
-    onError: (error) => {
-      console.error('Error playing roulette:', error);
-      setIsSpinning(false);
-    },
-  });
+
 
   const handleSpin = () => {
     if (!player || player.coins < betAmount) {
@@ -87,12 +50,7 @@ export default function RouletteRush() {
     // Play roulette wheel spinning sound
     gameSounds.roulette.spin();
 
-    playRouletteMutation.mutate({
-      playerId: player.id,
-      betAmount,
-      betType,
-      betValue: betType === 'number' ? betValue : undefined,
-    });
+    // Game logic will be implemented here
   };
 
   const redNumbers = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36];

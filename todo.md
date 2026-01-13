@@ -117,3 +117,12 @@
 - [x] Find all path.resolve usages with environment variables
 - [x] Fix path operations to handle undefined values
 - [x] Rebuild and push to GitHub
+
+## Railway Deployment Preparation
+- [x] Remove Manus SDK completely
+- [x] Remove OAuth authentication system
+- [x] Remove database dependencies (Drizzle, tRPC)
+- [x] Simplify server to static file serving only
+- [ ] Remove Manus packages from package.json
+- [ ] Test standalone build
+- [ ] Push to GitHub and verify Railway deployment

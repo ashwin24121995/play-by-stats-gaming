@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { trpc } from '@/lib/trpc';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Coins, TrendingUp, Trophy } from 'lucide-react';
@@ -20,40 +19,13 @@ export default function DiceRoller() {
   const [result, setResult] = useState<any>(null);
   const [showResult, setShowResult] = useState(false);
 
-  // Get player profile
-  const { data: playerData, refetch: refetchPlayer } = trpc.game.getPlayer.useQuery();
-
+  // Get player profile from localStorage
   useEffect(() => {
+    const playerData = localStorage.getItem('playerData');
     if (playerData) {
-      setPlayer(playerData);
+      setPlayer(JSON.parse(playerData));
     }
-  }, [playerData]);
-
-  // Play dice mutation
-  const playDiceMutation = trpc.game.playDice.useMutation({
-    onSuccess: (data) => {
-      // Store result but don't show it yet
-      setResult(data);
-      setPlayer(data.player);
-      
-      // Wait for dice to finish rolling (2 seconds), then show result
-      setTimeout(() => {
-        setIsRolling(false);
-        setShowResult(true);
-        
-        // Play win/loss sound after showing result
-        if (data.won) {
-          gameSounds.dice.win();
-        } else {
-          gameSounds.dice.loss();
-        }
-      }, 2000);
-    },
-    onError: (error) => {
-      console.error('Error playing dice:', error);
-      setIsRolling(false);
-    },
-  });
+  }, []);
 
   const handleRoll = () => {
     if (!player || player.coins < betAmount) {
@@ -68,11 +40,46 @@ export default function DiceRoller() {
     // Play dice roll sound
     gameSounds.dice.roll();
 
-    playDiceMutation.mutate({
-      playerId: player.id,
-      betAmount,
-      prediction,
-    });
+    // Simulate dice roll
+    const dice1 = Math.floor(Math.random() * 6) + 1;
+    const dice2 = Math.floor(Math.random() * 6) + 1;
+    const total = dice1 + dice2;
+    const won = total === prediction;
+    const winAmount = won ? betAmount * 10 : 0;
+
+    const gameResult = {
+      dice1,
+      dice2,
+      total,
+      won,
+      winAmount,
+    };
+
+    // Store result but don't show it yet
+    setResult(gameResult);
+    
+    // Update player stats
+    const updatedPlayer = {
+      ...player,
+      coins: player.coins - betAmount + winAmount,
+      totalWins: player.totalWins + (won ? 1 : 0),
+      totalLosses: player.totalLosses + (won ? 0 : 1),
+    };
+    
+    // Wait for dice to finish rolling (2 seconds), then show result
+    setTimeout(() => {
+      setIsRolling(false);
+      setShowResult(true);
+      setPlayer(updatedPlayer);
+      localStorage.setItem('playerData', JSON.stringify(updatedPlayer));
+      
+      // Play win/loss sound after showing result
+      if (won) {
+        gameSounds.dice.win();
+      } else {
+        gameSounds.dice.loss();
+      }
+    }, 2000);
   };
 
   const DiceFace = ({ value, isRolling: rolling }: { value: number; isRolling: boolean }) => {
