@@ -135,13 +135,24 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Animated Gaming Icon */}
+        {/* Animated Gaming Character */}
         <motion.div
-          animate={{ y: [0, 20, 0] }}
-          transition={{ duration: 4, repeat: Infinity }}
-          className="absolute bottom-10 right-10 opacity-20 hidden lg:block"
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="absolute right-0 bottom-0 hidden lg:block h-full w-1/3 overflow-hidden"
         >
-          <div className="text-9xl">🎲</div>
+          <motion.div
+            animate={{ y: [0, 30, 0] }}
+            transition={{ duration: 4, repeat: Infinity }}
+            className="h-full flex items-center justify-center"
+          >
+            <img
+              src="/images/hero-character.webp"
+              alt="Gaming Character"
+              className="h-full w-auto object-contain drop-shadow-2xl"
+            />
+          </motion.div>
         </motion.div>
       </LazyBackgroundSection>
 
