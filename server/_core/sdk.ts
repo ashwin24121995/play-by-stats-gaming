@@ -301,4 +301,5 @@ class SDKServer {
   }
 }
 
-export const sdk = new SDKServer();
+// Only instantiate SDK if OAuth is configured
+export const sdk = ENV.oAuthServerUrl ? new SDKServer() : null;

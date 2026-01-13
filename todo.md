@@ -105,3 +105,10 @@
 - [x] Create Railway configuration files
 - [ ] Set up Railway deployment
 - [ ] Configure environment variables for Railway
+
+## Railway Deployment Fixes
+- [x] Remove Manus OAuth dependency from server
+- [x] Make environment variables optional
+- [x] Fix server startup for standalone deployment
+- [ ] Push fixes to GitHub
+- [ ] Verify Railway deployment works
