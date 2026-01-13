@@ -3,7 +3,7 @@
 
 export function useAuth() {
   return {
-    user: null,
+    user: null as { name: string | null; email: string | null } | null,
     loading: false,
     error: null,
     isAuthenticated: false,
