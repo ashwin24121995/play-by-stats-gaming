@@ -1,103 +1,108 @@
 import { useState } from 'react';
 import { Link } from 'wouter';
 import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 /**
- * Header Component
- * Premium gaming platform navigation with sticky positioning
- * Design: Deep purple background with golden accents, italic Poppins headings
+ * Header Component - Play By Stats
+ * Design: Purple (#a855f7) & Pink (#ec4899) with bright green accents
+ * Features: Logo, navigation menu, mobile hamburger, CTA button
  */
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navItems = [
+  const navLinks = [
     { label: 'Home', href: '/' },
     { label: 'Games', href: '/games' },
     { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' },
   ];
 
-  const legalItems = [
-    { label: 'Privacy', href: '/privacy' },
-    { label: 'Terms', href: '/terms' },
-    { label: 'Disclaimer', href: '/disclaimer' },
-  ];
-
   return (
-    <header className="sticky top-0 z-50 bg-gradient-to-r from-[#0f172a] to-[#1e293b] border-b-2 border-[#14b8a6] shadow-2xl">
+    <header className="sticky top-0 z-50 bg-white border-b-2 border-[#e5e7eb] shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/">
-            <a className="flex items-center gap-2 group cursor-pointer">
-              <img
-                src="/images/logo-teal-gold.webp"
-                alt="Play By Stats"
-                className="h-12 w-auto group-hover:scale-110 transition-transform duration-300"
-              />
-              <span className="text-xl font-bold text-white hidden sm:inline" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
-                Play By Stats
-              </span>
+            <a className="flex items-center gap-3 group">
+              <div className="relative w-12 h-12 rounded-full overflow-hidden shadow-lg group-hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all duration-300">
+                <img
+                  src="/images/logo-playbystats.webp"
+                  alt="Play By Stats Logo"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="hidden sm:block">
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-[#a855f7] to-[#ec4899] bg-clip-text text-transparent">
+                  Play By Stats
+                </h1>
+                <p className="text-xs text-[#6b7280] font-semibold">Free Gaming Platform</p>
+              </div>
             </a>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href}>
-                <a className="text-white hover:text-[#14b8a6] transition-colors duration-300 font-medium relative group">
-                  {item.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#14b8a6] group-hover:w-full transition-all duration-300"></span>
+            {navLinks.map((link) => (
+              <Link key={link.href} href={link.href}>
+                <a className="text-[#1f1f2e] font-semibold hover:text-[#a855f7] transition-colors duration-300 relative group">
+                  {link.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-[#a855f7] to-[#ec4899] group-hover:w-full transition-all duration-300"></span>
                 </a>
               </Link>
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <Link href="/games">
-            <a className="hidden sm:inline-block px-6 py-2 bg-gradient-to-r from-[#14b8a6] to-[#0d9488] text-[#0f172a] font-bold rounded-lg hover:shadow-lg hover:shadow-[#14b8a6]/50 transition-all duration-300 transform hover:scale-105">
-              Play Games
-            </a>
-          </Link>
+          {/* CTA Button & Mobile Menu */}
+          <div className="flex items-center gap-4">
+            <Link href="/games">
+              <a className="hidden sm:inline-flex px-6 py-2 bg-gradient-to-r from-[#a855f7] to-[#ec4899] text-white font-bold rounded-lg hover:shadow-lg hover:shadow-[#a855f7]/40 transition-all duration-300 transform hover:scale-105">
+                Play Games
+              </a>
+            </Link>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white hover:text-[#14b8a6] transition-colors"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 text-[#a855f7] hover:bg-[#f5f3ff] rounded-lg transition-colors"
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden pb-4 border-t border-[#14b8a6]/30">
-            <nav className="flex flex-col gap-3 mt-4">
-              {navItems.map((item) => (
-                <Link key={item.href} href={item.href}>
-                  <a
-                    className="text-white hover:text-[#14b8a6] transition-colors py-2 px-4 rounded hover:bg-[#1e293b]"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.label}
-                  </a>
-                </Link>
-              ))}
-              <div className="border-t border-[#14b8a6]/30 pt-3 mt-3">
-                {legalItems.map((item) => (
-                  <Link key={item.href} href={item.href}>
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.nav
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden border-t-2 border-[#e5e7eb] bg-gradient-to-b from-white to-[#f5f3ff]"
+            >
+              <div className="px-4 py-4 space-y-3">
+                {navLinks.map((link) => (
+                  <Link key={link.href} href={link.href}>
                     <a
-                      className="text-[#cbd5e1] hover:text-[#14b8a6] text-sm transition-colors py-1 px-4 block"
-                      onClick={() => setIsOpen(false)}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block px-4 py-2 text-[#1f1f2e] font-semibold hover:bg-[#a855f7]/10 hover:text-[#a855f7] rounded-lg transition-colors"
                     >
-                      {item.label}
+                      {link.label}
                     </a>
                   </Link>
                 ))}
+                <Link href="/games">
+                  <a
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block px-4 py-2 bg-gradient-to-r from-[#a855f7] to-[#ec4899] text-white font-bold rounded-lg text-center hover:shadow-lg transition-all"
+                  >
+                    Play Games
+                  </a>
+                </Link>
               </div>
-            </nav>
-          </div>
-        )}
+            </motion.nav>
+          )}
+        </AnimatePresence>
       </div>
     </header>
   );

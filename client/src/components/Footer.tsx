@@ -1,128 +1,158 @@
 import { Link } from 'wouter';
-import { AlertCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Twitter, Instagram } from 'lucide-react';
 
 /**
- * Footer Component
- * Premium gaming platform footer with legal pages and age disclaimer
- * Design: Deep purple background with golden accents, prominent disclaimer
+ * Footer Component - Play By Stats
+ * Design: Purple (#a855f7) & Pink (#ec4899) with professional layout
+ * Features: Company info, links, legal, contact, social media
  */
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-r from-[#0f172a] to-[#1e293b] border-t-2 border-[#14b8a6] text-white mt-20">
-      {/* Disclaimer Section */}
-      <div className="bg-[#1e293b]/80 border-b border-[#14b8a6]/30 py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex gap-3 items-start">
-            <AlertCircle className="text-[#14b8a6] flex-shrink-0 mt-1" size={24} />
-            <div>
-              <h3 className="font-bold text-[#14b8a6] mb-2" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
-                ⚠️ Age & Responsible Gaming Disclaimer
-              </h3>
-              <p className="text-sm text-[#cbd5e1] leading-relaxed">
-                This platform is intended for users 18 years of age or older. We provide free-to-play entertainment experiences with <strong>no real money involved</strong>. No real currency can be used or gained during gameplay. All achievements are for entertainment purposes only and do not translate into real-world financial activities. We promote responsible gaming and fair play in a safe, risk-free environment.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <footer className="bg-gradient-to-b from-[#1a1a2e] to-[#0f0f1e] text-white">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          {/* Brand Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+          {/* Company Info */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-3 mb-4">
               <img
-                src="/images/playbystats-logo.webp"
+                src="/images/logo-playbystats.webp"
                 alt="Play By Stats"
-                className="h-10 w-auto"
+                className="h-10 w-10 rounded-full"
               />
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-[#a855f7] to-[#ec4899] bg-clip-text text-transparent">
+                Play By Stats
+              </h3>
             </div>
-            <p className="text-[#cbd5e1] text-sm">
-              Premium social gaming platform for entertainment and fun.
+            <p className="text-[#a0a0b0] mb-4 leading-relaxed">
+              Your ultimate free-to-play gaming platform. Enjoy exciting casino games with zero financial risk and pure entertainment.
+            </p>
+            <p className="text-xs text-[#6b7280]">
+              © {currentYear} SDSURABHI INFRA PRIVATE LIMITED. All rights reserved.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold text-[#14b8a6] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
-              Quick Links
-            </h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/">
-                  <a className="text-[#cbd5e1] hover:text-[#14b8a6] transition-colors text-sm">Home</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/games">
-                  <a className="text-[#cbd5e1] hover:text-[#14b8a6] transition-colors text-sm">Games</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/about">
-                  <a className="text-[#cbd5e1] hover:text-[#14b8a6] transition-colors text-sm">About</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact">
-                  <a className="text-[#cbd5e1] hover:text-[#14b8a6] transition-colors text-sm">Contact</a>
-                </Link>
-              </li>
+            <h4 className="text-lg font-bold text-white mb-6">Quick Links</h4>
+            <ul className="space-y-3">
+              {[
+                { label: 'Home', href: '/' },
+                { label: 'Games', href: '/games' },
+                { label: 'About Us', href: '/about' },
+                { label: 'Contact', href: '/contact' },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href}>
+                    <a className="text-[#a0a0b0] hover:text-[#a855f7] transition-colors duration-300 flex items-center gap-2">
+                      <span className="w-1 h-1 bg-[#a855f7] rounded-full"></span>
+                      {link.label}
+                    </a>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Legal & Compliance */}
           <div>
-            <h4 className="font-bold text-[#14b8a6] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
-              Legal
-            </h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/privacy">
-                  <a className="text-[#cbd5e1] hover:text-[#14b8a6] transition-colors text-sm">Privacy Policy</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms">
-                  <a className="text-[#cbd5e1] hover:text-[#14b8a6] transition-colors text-sm">Terms & Conditions</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/disclaimer">
-                  <a className="text-[#cbd5e1] hover:text-[#14b8a6] transition-colors text-sm">Disclaimer</a>
-                </Link>
-              </li>
+            <h4 className="text-lg font-bold text-white mb-6">Legal</h4>
+            <ul className="space-y-3">
+              {[
+                { label: 'Privacy Policy', href: '/privacy' },
+                { label: 'Terms & Conditions', href: '/terms' },
+                { label: 'Disclaimer', href: '/disclaimer' },
+                { label: 'Responsible Gaming', href: '/disclaimer' },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href}>
+                    <a className="text-[#a0a0b0] hover:text-[#ec4899] transition-colors duration-300 flex items-center gap-2">
+                      <span className="w-1 h-1 bg-[#ec4899] rounded-full"></span>
+                      {link.label}
+                    </a>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contact Info */}
           <div>
-            <h4 className="font-bold text-[#14b8a6] mb-4" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
-              Contact
-            </h4>
-            <ul className="space-y-2 text-sm text-[#cbd5e1]">
-              <li>Email: <a href="mailto:support@playbystats.com" className="text-[#14b8a6] hover:underline">support@playbystats.com</a></li>
-              <li>Phone: <a href="tel:+919876543210" className="text-[#14b8a6] hover:underline">+91 (987) 654-3210</a></li>
-              <li>Hours: 24/7 Support</li>
-            </ul>
+            <h4 className="text-lg font-bold text-white mb-6">Contact Us</h4>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <Mail size={20} className="text-[#a855f7] flex-shrink-0 mt-1" />
+                <div>
+                  <p className="text-sm text-[#6b7280]">Email</p>
+                  <a href="mailto:support@playbystats.com" className="text-[#a0a0b0] hover:text-[#a855f7] transition-colors">
+                    support@playbystats.com
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Phone size={20} className="text-[#ec4899] flex-shrink-0 mt-1" />
+                <div>
+                  <p className="text-sm text-[#6b7280]">Phone</p>
+                  <a href="tel:+919876543210" className="text-[#a0a0b0] hover:text-[#ec4899] transition-colors">
+                    +91 (987) 654-3210
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <MapPin size={20} className="text-[#22c55e] flex-shrink-0 mt-1" />
+                <div>
+                  <p className="text-sm text-[#6b7280]">Location</p>
+                  <p className="text-[#a0a0b0]">Lucknow, Uttar Pradesh, India</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Divider */}
+      <div className="border-t border-[#2d2d44]"></div>
+
+      {/* Bottom Footer */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Company Details */}
+          <div className="text-center md:text-left text-sm text-[#a0a0b0]">
+            <p className="mb-2">
+              <strong>Company:</strong> SDSURABHI INFRA PRIVATE LIMITED
+            </p>
+            <p className="mb-2">
+              <strong>CIN:</strong> U41002UP2023PTC194590 | <strong>PAN:</strong> ABMCS3759A
+            </p>
+            <p>
+              <strong>TAN:</strong> LKNS26029D | <strong>Domain:</strong> playbystats.com
+            </p>
+          </div>
+
+          {/* Social Media */}
+          <div className="flex items-center gap-6">
+            <a href="#" className="text-[#a0a0b0] hover:text-[#a855f7] transition-colors">
+              <Facebook size={20} />
+            </a>
+            <a href="#" className="text-[#a0a0b0] hover:text-[#ec4899] transition-colors">
+              <Twitter size={20} />
+            </a>
+            <a href="#" className="text-[#a0a0b0] hover:text-[#22c55e] transition-colors">
+              <Instagram size={20} />
+            </a>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-[#14b8a6]/30 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-[#cbd5e1] text-sm">
-              © {currentYear} Play By Stats. All rights reserved. Entertainment only. No real money involved.
-            </p>
-            <div className="flex gap-4 text-xs text-[#cbd5e1]">
-              <span>CIN: U41002UP2023PTC194590</span>
-              <span>•</span>
-              <span>PAN: ABMCS3759A</span>
-            </div>
-          </div>
+        {/* Compliance Notice */}
+        <div className="mt-8 pt-8 border-t border-[#2d2d44] text-center text-xs text-[#6b7280]">
+          <p className="mb-2">
+            ⚠️ <strong>Responsible Gaming & Compliance Notice:</strong>
+          </p>
+          <p>
+            Play By Stats is a free-to-play social gaming platform for entertainment purposes only. No real money is involved. Players must be 18+ years old. This platform complies with all responsible gaming standards. Play responsibly and have fun!
+          </p>
         </div>
       </div>
     </footer>
