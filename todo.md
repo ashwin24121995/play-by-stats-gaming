@@ -49,3 +49,6 @@
 - [x] Ensure perfect synchronization between sounds and animations
 - [x] Add sound toggle controls with volume adjustment
 - [x] Test timing and sync for all sound effects
+
+## Bug Fixes
+- [x] Fix dice animation timing - dice should roll first, then stop before showing result

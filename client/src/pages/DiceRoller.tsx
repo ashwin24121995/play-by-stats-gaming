@@ -32,18 +32,21 @@ export default function DiceRoller() {
   // Play dice mutation
   const playDiceMutation = trpc.game.playDice.useMutation({
     onSuccess: (data) => {
+      // Store result but don't show it yet
       setResult(data);
       setPlayer(data.player);
-      setShowResult(true);
       
-      // Play win/loss sound after dice stop rolling (2 seconds)
+      // Wait for dice to finish rolling (2 seconds), then show result
       setTimeout(() => {
+        setIsRolling(false);
+        setShowResult(true);
+        
+        // Play win/loss sound after showing result
         if (data.won) {
           gameSounds.dice.win();
         } else {
           gameSounds.dice.loss();
         }
-        setIsRolling(false);
       }, 2000);
     },
     onError: (error) => {
