@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
 import { ArrowRight, Zap, Shield, Users } from 'lucide-react';
+import LazyBackgroundSection from '@/components/LazyBackgroundSection';
 
 /**
  * Home Page
@@ -31,11 +32,9 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#1a0a2e] via-[#2d1b4e] to-[#1a0a2e]">
       {/* Hero Section */}
-      <section
-        className="relative h-screen bg-cover bg-center overflow-hidden flex items-center"
-        style={{
-          backgroundImage: 'url(/images/hero-gaming-bg.webp)',
-        }}
+      <LazyBackgroundSection
+        imageSrc="/images/hero-gaming-bg.webp"
+        className="relative h-screen overflow-hidden flex items-center"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#1a0a2e]/80 via-[#1a0a2e]/60 to-transparent"></div>
 
@@ -90,7 +89,7 @@ export default function Home() {
         >
           <div className="text-9xl">🎲</div>
         </motion.div>
-      </section>
+      </LazyBackgroundSection>
 
       {/* Featured Games Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
@@ -155,11 +154,9 @@ export default function Home() {
       </section>
 
       {/* Why Play Section */}
-      <section
-        className="relative py-20 px-4 sm:px-6 lg:px-8 bg-cover bg-center"
-        style={{
-          backgroundImage: 'url(/images/features-bg.webp)',
-        }}
+      <LazyBackgroundSection
+        imageSrc="/images/features-bg.webp"
+        className="relative py-20 px-4 sm:px-6 lg:px-8"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#1a0a2e]/90 to-[#2d1b4e]/90"></div>
 
@@ -174,7 +171,7 @@ export default function Home() {
               className="text-5xl font-bold text-white mb-4"
               style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}
             >
-              Why Choose PlayHub?
+              Why Choose Play By Stats?
             </h2>
           </motion.div>
 
@@ -227,7 +224,7 @@ export default function Home() {
             ))}
           </motion.div>
         </div>
-      </section>
+      </LazyBackgroundSection>
 
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">

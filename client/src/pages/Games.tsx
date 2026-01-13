@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Dices, RotateCcw, Spade } from 'lucide-react';
+import LazyBackgroundSection from '@/components/LazyBackgroundSection';
 
 /**
  * Games Page
@@ -65,11 +66,9 @@ export default function Games() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#1a0a2e] to-[#2d1b4e]">
       {/* Hero Section */}
-      <div
-        className="relative h-96 bg-cover bg-center overflow-hidden"
-        style={{
-          backgroundImage: 'url(/images/games-showcase-bg.webp)',
-        }}
+      <LazyBackgroundSection
+        imageSrc="/images/games-showcase-bg.webp"
+        className="relative h-96 overflow-hidden"
       >
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a0a2e]/70 to-[#2d1b4e]/90"></div>
         <div className="relative h-full flex flex-col items-center justify-center text-center px-4">
@@ -91,7 +90,7 @@ export default function Games() {
             Choose from our collection of exciting free-to-play games. No real money, pure entertainment!
           </motion.p>
         </div>
-      </div>
+      </LazyBackgroundSection>
 
       {/* Games Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
