@@ -90,3 +90,18 @@
 ## Address Updates
 - [ ] Update Contact page with full company address
 - [ ] Update Footer component with full company address
+
+## Remove Manus Dependencies
+- [ ] Remove Manus OAuth authentication system
+- [ ] Remove database connections and queries  
+- [ ] Remove tRPC backend API calls
+- [ ] Convert games to pure client-side with localStorage
+- [ ] Remove all Manus-specific environment variables
+- [ ] Simplify to standalone application ready for PHP conversion
+
+## GitHub & Railway Deployment
+- [x] Create GitHub repository
+- [x] Push code to GitHub
+- [x] Create Railway configuration files
+- [ ] Set up Railway deployment
+- [ ] Configure environment variables for Railway
