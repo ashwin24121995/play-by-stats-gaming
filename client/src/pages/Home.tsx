@@ -35,7 +35,7 @@ export default function Home() {
     },
     {
       question: 'Can I play without creating an account?',
-      answer: 'Yes! You can start playing immediately without registration. No account creation is required to enjoy our games. If you want to track statistics, you can optionally create an account.',
+      answer: 'Yes! You can start playing immediately without registration. No account creation is required. Just click "Play Now" and start playing instantly as a guest. Complete anonymity - no personal data needed.',
     },
   ];
 
@@ -80,7 +80,7 @@ export default function Home() {
               </h1>
 
               <p className="text-xl text-[#4b5563] mb-8 leading-relaxed max-w-2xl">
-                Play exciting casino games, compete in daily contests, and climb the leaderboard. Learn gaming strategy without any financial pressure or risk.
+                Play exciting casino games instantly - no account needed. Compete anonymously, climb the leaderboard, and master gaming strategy without any financial pressure or risk.
               </p>
 
               {/* Feature Pills */}
