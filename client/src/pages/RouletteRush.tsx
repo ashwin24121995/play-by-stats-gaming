@@ -34,6 +34,7 @@ export default function RouletteRush() {
   // Play roulette mutation
   const playRouletteMutation = trpc.game.playRoulette.useMutation({
     onSuccess: (data) => {
+      // Store result but don't show it yet
       setResult(data);
       setPlayer(data.player);
       
@@ -45,11 +46,14 @@ export default function RouletteRush() {
       // Play ball landing sound after 2 seconds
       setTimeout(() => {
         gameSounds.roulette.ballLand();
-        setShowResult(true);
       }, 2000);
       
-      // Play win sound after 3 seconds
+      // Wait for wheel to stop (3 seconds), then show result and play sound
       setTimeout(() => {
+        setIsSpinning(false);
+        setShowResult(true);
+        
+        // Play win sound after showing result
         if (data.won) {
           if (data.winAmount >= 100) {
             gameSounds.roulette.bigWin();
@@ -57,7 +61,6 @@ export default function RouletteRush() {
             gameSounds.roulette.win();
           }
         }
-        setIsSpinning(false);
       }, 3000);
     },
     onError: (error) => {

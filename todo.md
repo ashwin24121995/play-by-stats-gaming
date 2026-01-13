@@ -52,3 +52,6 @@
 
 ## Bug Fixes
 - [x] Fix dice animation timing - dice should roll first, then stop before showing result
+- [x] Fix Slots Master animation timing - reels should stop before showing result
+- [x] Fix Roulette Rush animation timing - wheel should stop before showing result
+- [x] Fix Blackjack Pro animation timing - cards should be dealt before showing result

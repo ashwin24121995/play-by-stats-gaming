@@ -40,14 +40,15 @@ export default function BlackjackPro() {
       setDealerValue(data.dealerValue);
       
       if (data.gameOver) {
-        setGameState('finished');
-        setResult(data);
-        if (data.player) {
-          setPlayer(data.player);
-        }
-        
-        // Play appropriate sound based on result
+        // Wait for card animations to complete before showing result
         setTimeout(() => {
+          setGameState('finished');
+          setResult(data);
+          if (data.player) {
+            setPlayer(data.player);
+          }
+          
+          // Play appropriate sound based on result
           if (data.won) {
             if (data.playerValue === 21 && data.playerHand.length === 2) {
               gameSounds.blackjack.blackjack();
@@ -57,7 +58,7 @@ export default function BlackjackPro() {
           } else if (data.playerValue > 21) {
             gameSounds.blackjack.bust();
           }
-        }, 500);
+        }, 800);
       } else {
         setGameState('playing');
       }

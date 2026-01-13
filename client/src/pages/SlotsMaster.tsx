@@ -31,12 +31,16 @@ export default function SlotsMaster() {
   // Play slots mutation
   const playSlotsMutation = trpc.game.playSlots.useMutation({
     onSuccess: (data) => {
+      // Store result but don't show it yet
       setResult(data);
       setPlayer(data.player);
-      setShowResult(true);
       
-      // Play win sound after reels stop (3 seconds)
+      // Wait for reels to stop spinning (3 seconds), then show result
       setTimeout(() => {
+        setIsSpinning(false);
+        setShowResult(true);
+        
+        // Play win sound after showing result
         if (data.won) {
           if (data.multiplier >= 25) {
             gameSounds.slots.jackpot();
@@ -46,7 +50,6 @@ export default function SlotsMaster() {
             gameSounds.slots.win();
           }
         }
-        setIsSpinning(false);
       }, 3000);
     },
     onError: (error) => {
