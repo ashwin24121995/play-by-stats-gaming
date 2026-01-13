@@ -141,7 +141,7 @@ export default function Home() {
                 <img
                   src="/images/gaming-character-custom.webp"
                   alt="Gaming Character"
-                  className="h-[500px] w-auto drop-shadow-2xl"
+                  className="h-[500px] w-auto drop-shadow-2xl" style={{height: '844px'}}
                 />
               </motion.div>
 
