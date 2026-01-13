@@ -132,13 +132,13 @@ export default function BlackjackPro() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0f172a] to-[#1e293b] pt-16 pb-4 px-4">
+    <div className="min-h-screen bg-gradient-to-b from-[#0f172a] to-[#1e293b] pt-4 pb-1 px-4">
       <div className="w-full max-w-[85%] mx-auto">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-3"
+          className="text-center mb-1"
         >
           <h1 className="text-4xl font-bold text-white mb-2">
             🃏 Blackjack Pro
@@ -146,7 +146,7 @@ export default function BlackjackPro() {
           <p className="text-xl text-gray-300">
             Beat the dealer to 21 • Classic casino card game
           </p>
-          <div className="mt-4 inline-flex items-center gap-2 bg-[#fbbf24]/20 border-2 border-[#fbbf24] rounded-full px-6 py-2">
+          <div className="mt-4 inline-flex items-center gap-2 bg-[#fbbf24]/20 border-2 border-[#fbbf24] rounded-full px-4 py-2">
             <span className="w-2 h-2 bg-[#22c55e] rounded-full animate-pulse"></span>
             <span className="text-white font-bold">100% FREE • NO REAL MONEY • PURE FUN</span>
           </div>
@@ -157,10 +157,10 @@ export default function BlackjackPro() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-3"
+            className="mb-1"
           >
             <Card className="bg-gradient-to-r from-[#fbbf24] to-[#a855f7] border-0 p-6">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-white">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-white">
                 <div className="flex items-center gap-3">
                   <Coins className="w-8 h-8" />
                   <div>
@@ -192,7 +192,7 @@ export default function BlackjackPro() {
         )}
 
         {/* Game Area */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
           {/* Game Table */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -204,7 +204,7 @@ export default function BlackjackPro() {
               <h3 className="text-white text-xl font-bold mb-4 text-center">
                 Dealer's Hand {gameState !== 'betting' && `(${dealerValue})`}
               </h3>
-              <div className="flex gap-4 justify-center">
+              <div className="flex gap-2 justify-center">
                 {dealerHand.length > 0 ? (
                   dealerHand.map((card, index) => (
                     <PlayingCard
@@ -224,7 +224,7 @@ export default function BlackjackPro() {
               <h3 className="text-white text-xl font-bold mb-4 text-center">
                 Your Hand {gameState !== 'betting' && `(${playerValue})`}
               </h3>
-              <div className="flex gap-4 justify-center">
+              <div className="flex gap-2 justify-center">
                 {playerHand.length > 0 ? (
                   playerHand.map((card, index) => (
                     <PlayingCard key={index} value={card} />
@@ -321,14 +321,14 @@ export default function BlackjackPro() {
                   <Button
                     onClick={handleHit}
                     disabled={playerValue >= 21}
-                    className="w-full bg-gradient-to-r from-[#22c55e] to-[#16a34a] hover:from-[#16a34a] hover:to-[#15803d] text-white font-bold py-4 text-lg"
+                    className="w-full bg-gradient-to-r from-[#22c55e] to-[#16a34a] hover:from-[#16a34a] hover:to-[#15803d] text-white font-bold py-2 text-lg"
                   >
                     👊 Hit (Draw Card)
                   </Button>
                   
                   <Button
                     onClick={handleStand}
-                    className="w-full bg-gradient-to-r from-[#ef4444] to-[#dc2626] hover:from-[#dc2626] hover:to-[#b91c1c] text-white font-bold py-4 text-lg"
+                    className="w-full bg-gradient-to-r from-[#ef4444] to-[#dc2626] hover:from-[#dc2626] hover:to-[#b91c1c] text-white font-bold py-2 text-lg"
                   >
                     ✋ Stand (End Turn)
                   </Button>
@@ -356,9 +356,9 @@ export default function BlackjackPro() {
             )}
 
             {/* How to Play */}
-            <Card className="bg-[#1e293b] border-[#fbbf24]/30 p-6">
-              <h3 className="text-xl font-bold text-white mb-3">How to Play</h3>
-              <ul className="text-gray-300 space-y-2 text-sm">
+            <Card className="hidden hidden bg-[#1e293b] border-[#fbbf24]/30 p-6">
+              <h3 className="hidden text-xl font-bold text-white mb-1">How to Play</h3>
+              <ul className="hidden hidden text-gray-300 space-y-2 text-sm">
                 <li>• Choose your bet amount (10-100 coins)</li>
                 <li>• Click "Deal Cards" to start</li>
                 <li>• Get as close to 21 as possible</li>
@@ -371,7 +371,7 @@ export default function BlackjackPro() {
 
             {/* Card Values */}
             <Card className="bg-[#1e293b] border-[#fbbf24]/30 p-6">
-              <h3 className="text-xl font-bold text-white mb-3">Card Values</h3>
+              <h3 className="text-xl font-bold text-white mb-1">Card Values</h3>
               <ul className="text-gray-300 space-y-2 text-sm">
                 <li>• Number cards: Face value (2-10)</li>
                 <li>• Face cards (J, Q, K): 10 points</li>

@@ -24,7 +24,7 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0f172a] to-[#1e293b]">
-      <div className="bg-gradient-to-r from-[#14b8a6]/10 to-[#0d9488]/10 border-b-2 border-[#14b8a6] py-16 px-4 sm:px-6 lg:px-8">
+      <div className="bg-gradient-to-r from-[#a855f7]/10 to-[#ec4899]/10 border-b-2 border-[#a855f7] py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
@@ -52,10 +52,10 @@ export default function Contact() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8"
+            className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#a855f7]/30 p-8"
           >
             <h2
-              className="text-2xl font-bold text-[#14b8a6] mb-6"
+              className="text-2xl font-bold text-[#a855f7] mb-6"
               style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}
             >
               Send us a Message
@@ -71,7 +71,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 bg-[#0f172a] border border-[#14b8a6]/30 rounded-lg text-white placeholder-[#334155] focus:border-[#14b8a6] focus:outline-none transition-colors"
+                  className="w-full px-4 py-2 bg-[#0f172a] border border-[#a855f7]/30 rounded-lg text-white placeholder-[#334155] focus:border-[#a855f7] focus:outline-none transition-colors"
                   placeholder="Your name"
                 />
               </div>
@@ -85,7 +85,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 bg-[#0f172a] border border-[#14b8a6]/30 rounded-lg text-white placeholder-[#334155] focus:border-[#14b8a6] focus:outline-none transition-colors"
+                  className="w-full px-4 py-2 bg-[#0f172a] border border-[#a855f7]/30 rounded-lg text-white placeholder-[#334155] focus:border-[#a855f7] focus:outline-none transition-colors"
                   placeholder="your@email.com"
                 />
               </div>
@@ -99,7 +99,7 @@ export default function Contact() {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 bg-[#0f172a] border border-[#14b8a6]/30 rounded-lg text-white placeholder-[#334155] focus:border-[#14b8a6] focus:outline-none transition-colors"
+                  className="w-full px-4 py-2 bg-[#0f172a] border border-[#a855f7]/30 rounded-lg text-white placeholder-[#334155] focus:border-[#a855f7] focus:outline-none transition-colors"
                   placeholder="Subject"
                 />
               </div>
@@ -113,13 +113,13 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-2 bg-[#0f172a] border border-[#14b8a6]/30 rounded-lg text-white placeholder-[#334155] focus:border-[#14b8a6] focus:outline-none transition-colors resize-none"
+                  className="w-full px-4 py-2 bg-[#0f172a] border border-[#a855f7]/30 rounded-lg text-white placeholder-[#334155] focus:border-[#a855f7] focus:outline-none transition-colors resize-none"
                   placeholder="Your message..."
                 />
               </div>
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-gradient-to-r from-[#14b8a6] to-[#0d9488] text-[#0f172a] font-bold rounded-lg hover:shadow-lg hover:shadow-[#14b8a6]/50 transition-all duration-300 transform hover:scale-105"
+                className="w-full px-6 py-3 bg-gradient-to-r from-[#a855f7] to-[#ec4899] text-white font-bold rounded-lg hover:shadow-lg hover:shadow-[#a855f7]/50 transition-all duration-300 transform hover:scale-105"
               >
                 Send Message
               </button>
@@ -132,18 +132,18 @@ export default function Contact() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <div className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
+            <div className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#a855f7]/30 p-8">
               <div className="flex gap-4 items-start">
-                <Mail className="text-[#14b8a6] flex-shrink-0 mt-1" size={28} />
+                <Mail className="text-[#a855f7] flex-shrink-0 mt-1" size={28} />
                 <div>
                   <h3
-                    className="text-xl font-bold text-[#14b8a6] mb-2"
+                    className="text-xl font-bold text-[#a855f7] mb-2"
                     style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}
                   >
                     Email
                   </h3>
                   <p className="text-[#cbd5e1]">
-                    <a href="mailto:support@playbystats.com" className="hover:text-[#14b8a6] transition-colors">
+                    <a href="mailto:support@playbystats.com" className="hover:text-[#a855f7] transition-colors">
                       support@playbystats.com
                     </a>
                   </p>
@@ -154,18 +154,18 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
+            <div className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#a855f7]/30 p-8">
               <div className="flex gap-4 items-start">
-                <Phone className="text-[#14b8a6] flex-shrink-0 mt-1" size={28} />
+                <Phone className="text-[#a855f7] flex-shrink-0 mt-1" size={28} />
                 <div>
                   <h3
-                    className="text-xl font-bold text-[#14b8a6] mb-2"
+                    className="text-xl font-bold text-[#a855f7] mb-2"
                     style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}
                   >
                     Phone
                   </h3>
                   <p className="text-[#cbd5e1]">
-                    <a href="tel:+919876543210" className="hover:text-[#14b8a6] transition-colors">
+                    <a href="tel:+919876543210" className="hover:text-[#a855f7] transition-colors">
                       +91 (987) 654-3210
                     </a>
                   </p>
@@ -176,12 +176,12 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
+            <div className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#a855f7]/30 p-8">
               <div className="flex gap-4 items-start">
-                <MapPin className="text-[#14b8a6] flex-shrink-0 mt-1" size={28} />
+                <MapPin className="text-[#a855f7] flex-shrink-0 mt-1" size={28} />
                 <div>
                   <h3
-                    className="text-xl font-bold text-[#14b8a6] mb-2"
+                    className="text-xl font-bold text-[#a855f7] mb-2"
                     style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}
                   >
                     Location
@@ -199,9 +199,9 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#14b8a6]/30 p-8">
+            <div className="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-lg border-2 border-[#a855f7]/30 p-8">
               <h3
-                className="text-xl font-bold text-[#14b8a6] mb-4"
+                className="text-xl font-bold text-[#a855f7] mb-4"
                 style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}
               >
                 Business Hours

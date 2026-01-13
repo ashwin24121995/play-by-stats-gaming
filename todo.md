@@ -201,3 +201,25 @@
 - [x] Test on tablet (768px width)
 - [x] Test on desktop (1920px width)
 - [ ] Push to GitHub/Railway
+
+## Make Games Fit in Single Viewport (No Scrolling)
+- [ ] Hide "How to Play" section by default (make it collapsible/expandable)
+- [ ] Reduce pt-16 to pt-8 or pt-4 (top padding)
+- [ ] Reduce pb-4 to pb-2 or pb-1 (bottom padding)
+- [ ] Make player stats bar height smaller (reduce py-4 to py-2)
+- [ ] Reduce dice/game element sizes by 20-30%
+- [ ] Reduce all mb-3 to mb-1 or mb-2
+- [ ] Remove or hide disclaimer section at bottom
+- [ ] Test Dice Roller fits in viewport
+- [ ] Test Slots Master fits in viewport
+- [ ] Test Roulette Rush fits in viewport
+- [ ] Test Blackjack Pro fits in viewport
+- [ ] Push to GitHub/Railway
+
+## Contact Page Design Fix
+- [x] Review current contact page design
+- [x] Update contact page colors to match purple/pink gradient theme
+- [x] Update contact page layout to match game pages
+- [x] Ensure contact form styling matches website theme
+- [ ] Test contact page on desktop and mobile
+- [ ] Push to GitHub/Railway

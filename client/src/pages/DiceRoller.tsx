@@ -230,13 +230,13 @@ export default function DiceRoller() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0f172a] to-[#1e293b] pt-16 pb-4 px-4">
+    <div className="min-h-screen bg-gradient-to-b from-[#0f172a] to-[#1e293b] pt-4 pb-1 px-4">
       <div className="w-full max-w-[85%] mx-auto">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-3"
+          className="text-center mb-1"
         >
           <h1 className="text-4xl font-bold text-white mb-2">
             🎲 Dice Roller
@@ -244,7 +244,7 @@ export default function DiceRoller() {
           <p className="text-xl text-gray-300">
             Predict the sum of two dice • 10x payout for exact match
           </p>
-          <div className="mt-4 inline-flex items-center gap-2 bg-[#a855f7]/20 border-2 border-[#a855f7] rounded-full px-6 py-2">
+          <div className="mt-4 inline-flex items-center gap-2 bg-[#a855f7]/20 border-2 border-[#a855f7] rounded-full px-4 py-2">
             <span className="w-2 h-2 bg-[#22c55e] rounded-full animate-pulse"></span>
             <span className="text-white font-bold">100% FREE • NO REAL MONEY • PURE FUN</span>
           </div>
@@ -255,10 +255,10 @@ export default function DiceRoller() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-3"
+            className="mb-1"
           >
             <Card className="bg-gradient-to-r from-[#a855f7] to-[#ec4899] border-0 p-6">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-white">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-white">
                 <div className="flex items-center gap-3">
                   <Coins className="w-8 h-8" />
                   <div>
@@ -290,7 +290,7 @@ export default function DiceRoller() {
         )}
 
         {/* Game Area */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
           {/* Dice Display */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -407,8 +407,8 @@ export default function DiceRoller() {
             </Card>
 
             {/* How to Play */}
-            <Card className="bg-[#1e293b] border-[#a855f7]/30 p-6">
-              <h3 className="text-xl font-bold text-white mb-3">How to Play</h3>
+            <Card className="hidden bg-[#1e293b] border-[#a855f7]/30 p-6">
+              <h3 className="text-xl font-bold text-white mb-1">How to Play</h3>
               <ul className="text-gray-300 space-y-2 text-sm">
                 <li>• Choose your bet amount (10-100 coins)</li>
                 <li>• Predict the sum of two dice (2-12)</li>
@@ -420,8 +420,8 @@ export default function DiceRoller() {
           </motion.div>
         </div>
 
-        {/* Game History */}
-        {gameHistory.length > 0 && (
+        {/* Game History - Hidden to save space */}
+        {false && gameHistory.length > 0 && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

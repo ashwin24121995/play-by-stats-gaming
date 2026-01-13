@@ -164,7 +164,7 @@ export default function SlotsMaster() {
         >
           {spinning ? (
             // Show scrolling symbols during spin
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2">
               {[...symbols, ...symbols, ...symbols].map((s, i) => (
                 <div key={i} className="text-6xl">
                   {s}
@@ -186,13 +186,13 @@ export default function SlotsMaster() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0f172a] to-[#1e293b] pt-16 pb-4 px-4">
+    <div className="min-h-screen bg-gradient-to-b from-[#0f172a] to-[#1e293b] pt-4 pb-1 px-4">
       <div className="w-full max-w-[85%] mx-auto">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-3"
+          className="text-center mb-1"
         >
           <h1 className="text-4xl font-bold text-white mb-2">
             🎰 Slots Master
@@ -200,7 +200,7 @@ export default function SlotsMaster() {
           <p className="text-xl text-gray-300">
             Spin the reels for big wins • Match 3 symbols for massive payouts
           </p>
-          <div className="mt-4 inline-flex items-center gap-2 bg-[#a855f7]/20 border-2 border-[#a855f7] rounded-full px-6 py-2">
+          <div className="mt-4 inline-flex items-center gap-2 bg-[#a855f7]/20 border-2 border-[#a855f7] rounded-full px-4 py-2">
             <span className="w-2 h-2 bg-[#22c55e] rounded-full animate-pulse"></span>
             <span className="text-white font-bold">100% FREE • NO REAL MONEY • PURE FUN</span>
           </div>
@@ -211,10 +211,10 @@ export default function SlotsMaster() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-3"
+            className="mb-1"
           >
             <Card className="bg-gradient-to-r from-[#ec4899] to-[#f43f5e] border-0 p-6">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-white">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-white">
                 <div className="flex items-center gap-3">
                   <Coins className="w-8 h-8" />
                   <div>
@@ -246,7 +246,7 @@ export default function SlotsMaster() {
         )}
 
         {/* Game Area */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
           {/* Slot Machine */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -255,7 +255,7 @@ export default function SlotsMaster() {
           >
             {/* Slot Machine Frame */}
             <div className="bg-gradient-to-b from-[#a855f7] to-[#ec4899] rounded-3xl p-4 shadow-2xl">
-              <div className="flex gap-4 mb-3">
+              <div className="flex gap-2 mb-1">
                 {result ? (
                   <>
                     <SlotReel symbol={result.reel1} isSpinning={isSpinning} />
@@ -336,7 +336,7 @@ export default function SlotsMaster() {
               <Button
                 onClick={handleSpin}
                 disabled={isSpinning || !player || player.coins < betAmount}
-                className="w-full bg-gradient-to-r from-[#ec4899] to-[#f43f5e] hover:from-[#db2777] hover:to-[#e11d48] text-white font-bold py-4 text-lg"
+                className="w-full bg-gradient-to-r from-[#ec4899] to-[#f43f5e] hover:from-[#db2777] hover:to-[#e11d48] text-white font-bold py-2 text-lg"
               >
                 {isSpinning ? '🎰 Spinning...' : '🎰 Spin Reels'}
               </Button>
@@ -349,9 +349,9 @@ export default function SlotsMaster() {
             </Card>
 
             {/* How to Play */}
-            <Card className="bg-[#1e293b] border-[#ec4899]/30 p-6">
-              <h3 className="text-xl font-bold text-white mb-3">How to Play</h3>
-              <ul className="text-gray-300 space-y-2 text-sm">
+            <Card className="hidden hidden bg-[#1e293b] border-[#ec4899]/30 p-6">
+              <h3 className="hidden text-xl font-bold text-white mb-1">How to Play</h3>
+              <ul className="hidden hidden text-gray-300 space-y-2 text-sm">
                 <li>• Choose your bet amount (10-100 coins)</li>
                 <li>• Click "Spin Reels" to play</li>
                 <li>• Match 3 symbols for big wins!</li>

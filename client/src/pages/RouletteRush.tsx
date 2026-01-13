@@ -151,13 +151,13 @@ export default function RouletteRush() {
   const redNumbers = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0f172a] to-[#1e293b] pt-16 pb-4 px-4">
+    <div className="min-h-screen bg-gradient-to-b from-[#0f172a] to-[#1e293b] pt-4 pb-1 px-4">
       <div className="w-full max-w-[85%] mx-auto">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-3"
+          className="text-center mb-1"
         >
           <h1 className="text-4xl font-bold text-white mb-2">
             🎡 Roulette Rush
@@ -165,7 +165,7 @@ export default function RouletteRush() {
           <p className="text-xl text-gray-300">
             Spin the wheel and predict the outcome • 35x payout for exact number
           </p>
-          <div className="mt-4 inline-flex items-center gap-2 bg-[#f43f5e]/20 border-2 border-[#f43f5e] rounded-full px-6 py-2">
+          <div className="mt-4 inline-flex items-center gap-2 bg-[#f43f5e]/20 border-2 border-[#f43f5e] rounded-full px-4 py-2">
             <span className="w-2 h-2 bg-[#22c55e] rounded-full animate-pulse"></span>
             <span className="text-white font-bold">100% FREE • NO REAL MONEY • PURE FUN</span>
           </div>
@@ -176,10 +176,10 @@ export default function RouletteRush() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-3"
+            className="mb-1"
           >
             <Card className="bg-gradient-to-r from-[#f43f5e] to-[#fbbf24] border-0 p-6">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-white">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-white">
                 <div className="flex items-center gap-3">
                   <Coins className="w-8 h-8" />
                   <div>
@@ -211,7 +211,7 @@ export default function RouletteRush() {
         )}
 
         {/* Game Area */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
           {/* Roulette Wheel */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -394,9 +394,9 @@ export default function RouletteRush() {
             </Card>
 
             {/* How to Play */}
-            <Card className="bg-[#1e293b] border-[#f43f5e]/30 p-6">
-              <h3 className="text-xl font-bold text-white mb-3">How to Play</h3>
-              <ul className="text-gray-300 space-y-2 text-sm">
+            <Card className="hidden hidden bg-[#1e293b] border-[#f43f5e]/30 p-6">
+              <h3 className="hidden text-xl font-bold text-white mb-1">How to Play</h3>
+              <ul className="hidden hidden text-gray-300 space-y-2 text-sm">
                 <li>• Choose your bet amount (10-100 coins)</li>
                 <li>• Select bet type: Red, Black, Even, Odd, or Number</li>
                 <li>• Click "Spin Wheel" to play</li>
