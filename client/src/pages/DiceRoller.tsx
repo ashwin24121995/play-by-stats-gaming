@@ -230,15 +230,15 @@ export default function DiceRoller() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0f172a] to-[#1e293b] pt-24 pb-12 px-4">
+    <div className="min-h-screen bg-gradient-to-b from-[#0f172a] to-[#1e293b] pt-16 pb-4 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-8"
+          className="text-center mb-3"
         >
-          <h1 className="text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl font-bold text-white mb-2">
             🎲 Dice Roller
           </h1>
           <p className="text-xl text-gray-300">
@@ -255,7 +255,7 @@ export default function DiceRoller() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-8"
+            className="mb-3"
           >
             <Card className="bg-gradient-to-r from-[#a855f7] to-[#ec4899] border-0 p-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-white">
@@ -290,12 +290,12 @@ export default function DiceRoller() {
         )}
 
         {/* Game Area */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {/* Dice Display */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="flex flex-col items-center justify-center bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-2xl p-8 border-2 border-[#a855f7]/30 min-h-[400px]"
+            className="flex flex-col items-center justify-center bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-2xl p-4 border-2 border-[#a855f7]/30"
           >
             <div className="flex gap-8 mb-8">
               {result ? (

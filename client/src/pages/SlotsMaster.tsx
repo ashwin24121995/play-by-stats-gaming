@@ -186,15 +186,15 @@ export default function SlotsMaster() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0f172a] to-[#1e293b] pt-24 pb-12 px-4">
+    <div className="min-h-screen bg-gradient-to-b from-[#0f172a] to-[#1e293b] pt-16 pb-4 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-8"
+          className="text-center mb-3"
         >
-          <h1 className="text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl font-bold text-white mb-2">
             🎰 Slots Master
           </h1>
           <p className="text-xl text-gray-300">
@@ -211,7 +211,7 @@ export default function SlotsMaster() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-8"
+            className="mb-3"
           >
             <Card className="bg-gradient-to-r from-[#ec4899] to-[#f43f5e] border-0 p-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-white">
@@ -246,16 +246,16 @@ export default function SlotsMaster() {
         )}
 
         {/* Game Area */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {/* Slot Machine */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="flex flex-col items-center justify-center bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-2xl p-8 border-2 border-[#ec4899]/30 min-h-[500px]"
+            className="flex flex-col items-center justify-center bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-2xl p-4 border-2 border-[#ec4899]/30"
           >
             {/* Slot Machine Frame */}
-            <div className="bg-gradient-to-b from-[#a855f7] to-[#ec4899] rounded-3xl p-8 shadow-2xl">
-              <div className="flex gap-4 mb-6">
+            <div className="bg-gradient-to-b from-[#a855f7] to-[#ec4899] rounded-3xl p-4 shadow-2xl">
+              <div className="flex gap-4 mb-3">
                 {result ? (
                   <>
                     <SlotReel symbol={result.reel1} isSpinning={isSpinning} />
@@ -336,7 +336,7 @@ export default function SlotsMaster() {
               <Button
                 onClick={handleSpin}
                 disabled={isSpinning || !player || player.coins < betAmount}
-                className="w-full bg-gradient-to-r from-[#ec4899] to-[#f43f5e] hover:from-[#db2777] hover:to-[#e11d48] text-white font-bold py-6 text-lg"
+                className="w-full bg-gradient-to-r from-[#ec4899] to-[#f43f5e] hover:from-[#db2777] hover:to-[#e11d48] text-white font-bold py-4 text-lg"
               >
                 {isSpinning ? '🎰 Spinning...' : '🎰 Spin Reels'}
               </Button>
@@ -361,31 +361,11 @@ export default function SlotsMaster() {
               </ul>
             </Card>
 
-            {/* Symbol Guide */}
-            <Card className="bg-[#1e293b] border-[#ec4899]/30 p-6">
-              <h3 className="text-xl font-bold text-white mb-3">Symbols</h3>
-              <div className="grid grid-cols-3 gap-4 text-center">
-                {["🍒", "🍋", "🍊", "🍇", "💎", "7️⃣"].map((symbol) => (
-                  <div key={symbol} className="text-4xl">
-                    {symbol}
-                  </div>
-                ))}
-              </div>
-            </Card>
+
           </motion.div>
         </div>
 
-        {/* Disclaimer */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="mt-8 text-center"
-        >
-          <p className="text-gray-400 text-sm">
-            ⚠️ <strong>Entertainment Only:</strong> This is a free-to-play game. No real money involved. Must be 18+.
-          </p>
-        </motion.div>
+
       </div>
     </div>
   );

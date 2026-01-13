@@ -137,7 +137,7 @@
 ## Game Enhancement & Bug Fixes
 - [x] Fix NaN bug in Games Won display
 - [x] Fix win rate calculation (currently showing 0% incorrectly)
-- [ ] Make games fullscreen/larger for better visibility
+- [x] Make games fullscreen/larger for better visibility
 - [x] Add game history tracking for each game
 - [ ] Add betting strategies and tips
 - [ ] Add achievements system
@@ -146,3 +146,16 @@
 - [x] Enhance Slots Master with game history tracking
 - [x] Enhance Roulette Rush with game history tracking
 - [x] Enhance Blackjack Pro with game history tracking
+- [x] Test and verify all enhancements on Railway deployment
+- [x] Push all changes to GitHub
+
+## Layout Optimization - Fit Games in Single Viewport
+- [x] Redesign game layouts to use side-by-side layout (game display left, controls right)
+- [x] Reduce padding and margins to save vertical space
+- [ ] Remove or collapse "How to Play" sections by default
+- [x] Optimize Dice Roller layout to fit in viewport
+- [x] Optimize Slots Master layout to fit in viewport
+- [x] Optimize Roulette Rush layout to fit in viewport
+- [x] Optimize Blackjack Pro layout to fit in viewport
+- [ ] Test on standard 1920x1080 resolution
+- [ ] Ensure responsive design still works on mobile
