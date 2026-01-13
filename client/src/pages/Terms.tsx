@@ -133,7 +133,7 @@ export default function Terms() {
             </h2>
             <p>
               If you have any questions about these Terms, please contact us at:<br />
-              <a href="mailto:legal@playhub.com" className="text-[#f7a600] hover:underline">legal@playhub.com</a>
+              <a href="mailto:legal@playbystats.com" className="text-[#f7a600] hover:underline">legal@playbystats.com</a>
             </p>
           </section>
 
@@ -147,7 +147,7 @@ export default function Terms() {
               Last Updated: {new Date().toLocaleDateString()}
             </p>
             <p className="text-[#f7a600] font-bold">
-              By using PlayHub, you agree to these terms and conditions
+              By using Play By Stats, you agree to these terms and conditions
             </p>
           </motion.div>
         </motion.div>

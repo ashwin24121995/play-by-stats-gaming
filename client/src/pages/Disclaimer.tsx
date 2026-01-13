@@ -21,10 +21,10 @@ export default function Disclaimer() {
             <AlertCircle className="text-[#f7a600] flex-shrink-0 mt-1" size={32} />
             <div>
               <h1
-                className="text-4xl font-bold text-white mb-2"
+                className="text-5xl font-bold text-white mb-4"
                 style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}
               >
-                Age & Responsible Gaming Disclaimer
+                Play By Stats - Age & Responsible Gaming Disclaimer
               </h1>
               <p className="text-[#a0aec0]">
                 Important legal information about our platform and responsible gaming practices
@@ -206,7 +206,7 @@ export default function Disclaimer() {
             className="bg-gradient-to-r from-[#f7a600]/20 to-[#d4860f]/20 border-2 border-[#f7a600] rounded-lg p-8 text-center"
           >
             <p className="text-[#a0aec0] mb-4">
-              By using PlayHub, you acknowledge that you have read, understood, and agree to this disclaimer.
+              By using Play By Stats, you acknowledge that you have read, understood, and agree to this disclaimer.
             </p>
             <p className="text-[#f7a600] font-bold">
               Last Updated: {new Date().toLocaleDateString()}

@@ -33,7 +33,7 @@ export default function Contact() {
             className="text-5xl font-bold text-white mb-4"
             style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}
           >
-            Contact Us
+            Contact Play By Stats
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -41,7 +41,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-[#a0aec0] text-lg"
           >
-            We would love to hear from you. Get in touch with our team.
+            We would love to hear from you. Get in touch with the Play By Stats team.
           </motion.p>
         </div>
       </div>
@@ -143,8 +143,8 @@ export default function Contact() {
                     Email
                   </h3>
                   <p className="text-[#a0aec0]">
-                    <a href="mailto:support@playhub.com" className="hover:text-[#f7a600] transition-colors">
-                      support@playhub.com
+                    <a href="mailto:support@playbystats.com" className="hover:text-[#f7a600] transition-colors">
+                      support@playbystats.com
                     </a>
                   </p>
                   <p className="text-[#a0aec0] text-sm mt-1">
@@ -165,8 +165,8 @@ export default function Contact() {
                     Phone
                   </h3>
                   <p className="text-[#a0aec0]">
-                    <a href="tel:+1234567890" className="hover:text-[#f7a600] transition-colors">
-                      +1 (234) 567-890
+                    <a href="tel:+919876543210" className="hover:text-[#f7a600] transition-colors">
+                      +91 (987) 654-3210
                     </a>
                   </p>
                   <p className="text-[#a0aec0] text-sm mt-1">
@@ -187,8 +187,8 @@ export default function Contact() {
                     Location
                   </h3>
                   <p className="text-[#a0aec0]">
-                    PlayHub Gaming Private Limited<br />
-                    India
+                    SDSURABHI INFRA PRIVATE LIMITED<br />
+                    Lucknow, Uttar Pradesh, India
                   </p>
                   <p className="text-[#a0aec0] text-sm mt-1">
                     Global operations with local support
@@ -205,8 +205,8 @@ export default function Contact() {
                 Business Hours
               </h3>
               <div className="text-[#a0aec0] space-y-2">
-                <p>Monday - Friday: 9:00 AM - 6:00 PM IST</p>
-                <p>Saturday - Sunday: 10:00 AM - 4:00 PM IST</p>
+                <p>Monday - Friday: 9:00 AM - 9:00 PM IST</p>
+                <p>Saturday - Sunday: 10:00 AM - 8:00 PM IST</p>
                 <p className="text-sm mt-4">Support available 24/7 for urgent issues</p>
               </div>
             </div>

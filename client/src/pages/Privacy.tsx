@@ -128,7 +128,7 @@ export default function Privacy() {
             </h2>
             <p>
               For privacy concerns or to exercise your rights, contact us at:<br />
-              <a href="mailto:privacy@playhub.com" className="text-[#f7a600] hover:underline">privacy@playhub.com</a>
+              <a href="mailto:privacy@playbystats.com" className="text-[#f7a600] hover:underline">privacy@playbystats.com</a>
             </p>
           </section>
 

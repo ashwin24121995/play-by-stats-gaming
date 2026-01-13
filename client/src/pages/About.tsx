@@ -19,7 +19,7 @@ export default function About() {
             className="text-5xl font-bold text-white mb-4"
             style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}
           >
-            About PlayHub
+            About Play By Stats
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -27,7 +27,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-[#a0aec0] text-lg"
           >
-            Your premier destination for free-to-play gaming entertainment
+            Where gaming meets statistics - Your premier destination for free-to-play gaming entertainment
           </motion.p>
         </div>
       </div>
@@ -52,7 +52,7 @@ export default function About() {
                   Our Mission
                 </h2>
                 <p className="text-[#a0aec0] leading-relaxed">
-                  At PlayHub, we believe gaming should be accessible, enjoyable, and risk-free. Our mission is to create a premium social gaming platform that brings people together through entertainment, without any financial risk or real money involvement. We're committed to providing a safe, fair, and thriving community where players of all skill levels can enjoy their favorite games.
+                  At Play By Stats, we believe gaming should be accessible, enjoyable, and risk-free. Our mission is to create a premium social gaming platform that brings people together through entertainment, without any financial risk or real money involvement. We're committed to providing a safe, fair, and thriving community where players of all skill levels can enjoy their favorite games.
                 </p>
               </div>
             </div>
@@ -70,7 +70,7 @@ export default function About() {
                   Our Vision
                 </h2>
                 <p className="text-[#a0aec0] leading-relaxed">
-                  We envision a world where gaming is celebrated as a form of entertainment and social connection. PlayHub aims to become the leading social gaming platform, known for our commitment to player safety, fair play, and community engagement. We continuously innovate to bring new games and features that excite and delight our players.
+                  We envision a world where gaming is celebrated as a form of entertainment and social connection. Play By Stats aims to become the leading social gaming platform, known for our commitment to player safety, fair play, and community engagement. We continuously innovate to bring new games and features that excite and delight our players.
                 </p>
               </div>
             </div>
@@ -133,25 +133,25 @@ export default function About() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-[#a0aec0]">
               <div>
-                <p className="mb-4">
-                  <strong className="text-white">Company Name:</strong> PlayHub Gaming Private Limited
+                <p className="text-[#a0aec0] mb-4">
+                  <strong className="text-white">Company Name:</strong> SDSURABHI INFRA PRIVATE LIMITED
                 </p>
                 <p className="mb-4">
-                  <strong className="text-white">Founded:</strong> 2024
+                  <strong className="text-white">Founded:</strong> 26/12/2023
                 </p>
                 <p className="mb-4">
-                  <strong className="text-white">Headquarters:</strong> India
+                  <strong className="text-white">Headquarters:</strong> Lucknow, Uttar Pradesh, India
                 </p>
               </div>
               <div>
-                <p className="mb-4">
-                  <strong className="text-white">CIN:</strong> 18AABCT1234A1Z5
+                <p className="text-[#a0aec0] mb-4">
+                  <strong className="text-white">CIN:</strong> U41002UP2023PTC194590
                 </p>
-                <p className="mb-4">
-                  <strong className="text-white">GST:</strong> 18AABCT1234A1Z5
+                <p className="text-[#a0aec0] mb-4">
+                  <strong className="text-white">PAN:</strong> ABMCS3759A
                 </p>
-                <p className="mb-4">
-                  <strong className="text-white">PAN:</strong> AABCT1234A
+                <p className="text-[#a0aec0]">
+                  <strong className="text-white">TAN:</strong> LKNS26029D
                 </p>
               </div>
             </div>
@@ -170,7 +170,7 @@ export default function About() {
                 <Users className="text-[#f7a600] flex-shrink-0 mt-1" size={28} />
                 <div>
                   <p className="text-[#a0aec0] leading-relaxed">
-                    PlayHub is powered by a dedicated team of gaming enthusiasts, software engineers, and customer service professionals who are passionate about creating the best gaming experience. Our team works tirelessly to ensure that every player has access to fair, fun, and engaging games in a safe environment.
+                    Play By Stats is powered by a dedicated team of gaming enthusiasts, software engineers, and customer service professionals who are passionate about creating the best gaming experience. Our team works tirelessly to ensure that every player has access to fair, fun, and engaging games in a safe environment.
                   </p>
                 </div>
               </div>
@@ -194,7 +194,7 @@ export default function About() {
               Get in touch with our team for any inquiries or feedback.
             </p>
             <a
-              href="mailto:support@playhub.com"
+              href="mailto:support@playbystats.com"
               className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-[#f7a600] to-[#d4860f] text-[#1a0a2e] font-bold rounded-lg hover:shadow-lg hover:shadow-[#f7a600]/50 transition-all duration-300 transform hover:scale-105"
             >
               Contact Us

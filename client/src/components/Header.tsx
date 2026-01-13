@@ -30,11 +30,13 @@ export default function Header() {
           {/* Logo */}
           <Link href="/">
             <a className="flex items-center gap-2 group cursor-pointer">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#f7a600] to-[#d4860f] rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
-                <span className="text-[#1a0a2e] font-bold text-lg">🎮</span>
-              </div>
-              <span className="text-2xl font-bold text-white hidden sm:inline" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
-                PlayHub
+              <img
+                src="/images/playbystats-logo.png"
+                alt="Play By Stats"
+                className="h-12 w-auto group-hover:scale-110 transition-transform duration-300"
+              />
+              <span className="text-xl font-bold text-white hidden sm:inline" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
+                Play By Stats
               </span>
             </a>
           </Link>
@@ -54,7 +56,7 @@ export default function Header() {
           {/* CTA Button */}
           <Link href="/games">
             <a className="hidden sm:inline-block px-6 py-2 bg-gradient-to-r from-[#f7a600] to-[#d4860f] text-[#1a0a2e] font-bold rounded-lg hover:shadow-lg hover:shadow-[#f7a600]/50 transition-all duration-300 transform hover:scale-105">
-              Play Now
+              Play Games
             </a>
           </Link>
 

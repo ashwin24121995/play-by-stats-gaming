@@ -34,12 +34,11 @@ export default function Footer() {
           {/* Brand Section */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#f7a600] to-[#d4860f] rounded-lg flex items-center justify-center">
-                <span className="text-[#1a0a2e] font-bold">🎮</span>
-              </div>
-              <span className="text-xl font-bold" style={{ fontFamily: 'Poppins, sans-serif', fontStyle: 'italic' }}>
-                PlayHub
-              </span>
+              <img
+                src="/images/playbystats-logo.png"
+                alt="Play By Stats"
+                className="h-10 w-auto"
+              />
             </div>
             <p className="text-[#a0aec0] text-sm">
               Premium social gaming platform for entertainment and fun.
@@ -105,8 +104,8 @@ export default function Footer() {
               Contact
             </h4>
             <ul className="space-y-2 text-sm text-[#a0aec0]">
-              <li>Email: <a href="mailto:support@playhub.com" className="text-[#f7a600] hover:underline">support@playhub.com</a></li>
-              <li>Phone: <a href="tel:+1234567890" className="text-[#f7a600] hover:underline">+1 (234) 567-890</a></li>
+              <li>Email: <a href="mailto:support@playbystats.com" className="text-[#f7a600] hover:underline">support@playbystats.com</a></li>
+              <li>Phone: <a href="tel:+919876543210" className="text-[#f7a600] hover:underline">+91 (987) 654-3210</a></li>
               <li>Hours: 24/7 Support</li>
             </ul>
           </div>
@@ -116,12 +115,12 @@ export default function Footer() {
         <div className="border-t border-[#f7a600]/30 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-[#a0aec0] text-sm">
-              © {currentYear} PlayHub. All rights reserved. Entertainment only. No real money involved.
+              © {currentYear} Play By Stats. All rights reserved. Entertainment only. No real money involved.
             </p>
             <div className="flex gap-4 text-xs text-[#a0aec0]">
-              <span>CIN: 18AABCT1234A1Z5</span>
+              <span>CIN: U41002UP2023PTC194590</span>
               <span>•</span>
-              <span>GST: 18AABCT1234A1Z5</span>
+              <span>PAN: ABMCS3759A</span>
             </div>
           </div>
         </div>
