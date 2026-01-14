@@ -77,8 +77,11 @@ export default function About() {
                 <p className="text-lg text-[#1a1a2e] font-bold">26th December 2023</p>
               </div>
               <div>
-                <p className="text-sm text-[#6b7280] font-semibold">Location</p>
-                <p className="text-lg text-[#1a1a2e] font-bold">Lucknow, Uttar Pradesh, India</p>
+                <p className="text-sm text-[#6b7280] font-semibold">Registered Office Address</p>
+                <p className="text-lg text-[#1a1a2e] font-bold leading-relaxed">
+                  H.NO-1/1009, VIPUL KHAND, GOMTI NAGAR,<br />
+                  Lucknow, Uttar Pradesh - 226010, India
+                </p>
               </div>
             </div>
           </motion.div>

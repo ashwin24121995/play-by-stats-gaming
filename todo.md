@@ -256,3 +256,8 @@
 - [x] Remove "Skill-Based Gaming" from feature pills
 - [x] Update any other skill references throughout the page
 - [x] Push to GitHub/Railway
+
+## About Page - Add Full Address
+- [x] Review current address on About page
+- [x] Add complete registered office address
+- [ ] Push to GitHub/Railway
