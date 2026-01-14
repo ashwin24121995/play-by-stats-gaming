@@ -46,8 +46,31 @@ export default function BlackjackPro() {
     }
   }, []);
 
-  // Play blackjack mutation
+  // Helper functions
+  const drawCard = () => Math.floor(Math.random() * 13) + 1;
 
+  const calculateHandValue = (hand: number[]) => {
+    let value = 0;
+    let aces = 0;
+
+    hand.forEach(card => {
+      if (card === 1) {
+        aces++;
+        value += 11;
+      } else if (card > 10) {
+        value += 10;
+      } else {
+        value += card;
+      }
+    });
+
+    while (value > 21 && aces > 0) {
+      value -= 10;
+      aces--;
+    }
+
+    return value;
+  };
 
   const handleDeal = () => {
     if (!player || player.coins < betAmount) {
@@ -55,11 +78,23 @@ export default function BlackjackPro() {
       return;
     }
 
-    setGameState('playing');
-    setResult(null);
-    
     // Play shuffle sound before dealing
     gameSounds.blackjack.shuffle();
+    
+    // Deal initial cards
+    const newPlayerHand = [drawCard(), drawCard()];
+    const newDealerHand = [drawCard(), drawCard()];
+    
+    setPlayerHand(newPlayerHand);
+    setDealerHand(newDealerHand);
+    
+    const pValue = calculateHandValue(newPlayerHand);
+    const dValue = calculateHandValue([newDealerHand[0]]);
+    
+    setPlayerValue(pValue);
+    setDealerValue(dValue);
+    setGameState('playing');
+    setResult(null);
     
     // Play card dealing sounds with delays
     setTimeout(() => gameSounds.blackjack.deal(0), 300);
@@ -67,21 +102,105 @@ export default function BlackjackPro() {
     setTimeout(() => gameSounds.blackjack.deal(0), 700);
     setTimeout(() => gameSounds.blackjack.deal(0), 900);
     
-    // Game logic will be implemented here
+    // Check for immediate blackjack
+    if (pValue === 21) {
+      setTimeout(() => handleStand(), 1000);
+    }
   };
 
   const handleHit = () => {
     // Play card flip sound
     gameSounds.blackjack.flip();
     
-    // Game logic will be implemented here
+    const newCard = drawCard();
+    const newHand = [...playerHand, newCard];
+    setPlayerHand(newHand);
+    
+    const newValue = calculateHandValue(newHand);
+    setPlayerValue(newValue);
+    
+    // Check for bust
+    if (newValue > 21) {
+      setTimeout(() => finishGame(newHand, dealerHand), 500);
+    }
   };
 
   const handleStand = () => {
     // Play card flip sound for dealer's cards
     gameSounds.blackjack.flip();
     
-    // Game logic will be implemented here
+    let newDealerHand = [...dealerHand];
+    let dValue = calculateHandValue(newDealerHand);
+    
+    // Dealer must hit until 17 or higher
+    while (dValue < 17) {
+      newDealerHand.push(drawCard());
+      dValue = calculateHandValue(newDealerHand);
+    }
+    
+    setDealerHand(newDealerHand);
+    setDealerValue(dValue);
+    
+    setTimeout(() => finishGame(playerHand, newDealerHand), 500);
+  };
+
+  const finishGame = (pHand: number[], dHand: number[]) => {
+    const pValue = calculateHandValue(pHand);
+    const dValue = calculateHandValue(dHand);
+    
+    setPlayerValue(pValue);
+    setDealerValue(dValue);
+    setGameState('finished');
+    
+    let won = false;
+    let winAmount = 0;
+    
+    if (pValue > 21) {
+      // Player bust
+      won = false;
+    } else if (dValue > 21) {
+      // Dealer bust
+      won = true;
+      winAmount = betAmount * 2;
+    } else if (pValue === 21 && pHand.length === 2) {
+      // Blackjack!
+      won = true;
+      winAmount = Math.floor(betAmount * 2.5);
+    } else if (pValue > dValue) {
+      // Player wins
+      won = true;
+      winAmount = betAmount * 2;
+    } else if (pValue === dValue) {
+      // Push
+      won = true;
+      winAmount = betAmount;
+    }
+    
+    // Update player data
+    const updatedPlayer = {
+      ...player,
+      coins: player.coins + (won ? winAmount : 0) - betAmount,
+      totalWins: player.totalWins + (won && winAmount > betAmount ? 1 : 0),
+      totalLosses: player.totalLosses + (won ? 0 : 1),
+      totalGames: player.totalGames + 1
+    };
+    
+    setPlayer(updatedPlayer);
+    localStorage.setItem('playerData', JSON.stringify(updatedPlayer));
+    
+    setResult({
+      won,
+      winAmount,
+      playerValue: pValue,
+      dealerValue: dValue
+    });
+    
+    // Play result sound
+    if (won && winAmount > betAmount) {
+      gameSounds.blackjack.win();
+    } else if (!won) {
+      gameSounds.blackjack.bust();
+    }
   };
 
   const handleNewGame = () => {
