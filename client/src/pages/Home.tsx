@@ -260,6 +260,96 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Featured Games Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#1a1a2e] to-[#2d2d44]">
+        <div className="w-full max-w-[85%] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-5xl font-bold text-white mb-4">
+              Choose Your Game
+            </h2>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+              Click any game to start playing instantly - No registration required
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                title: 'Dice Roller',
+                image: '/images/game-dice-roller.webp',
+                description: 'Roll the dice and predict the outcome. Test your luck with probability-based gameplay.',
+                link: '/games/dice-roller',
+                color: 'from-[#a855f7] to-[#ec4899]',
+              },
+              {
+                title: 'Slots Master',
+                image: '/images/game-slots-master.webp',
+                description: 'Spin the reels and match symbols. Classic slot machine fun with exciting combinations.',
+                link: '/games/slots-master',
+                color: 'from-[#ec4899] to-[#f43f5e]',
+              },
+              {
+                title: 'Roulette Rush',
+                image: '/images/game-roulette-rush.webp',
+                description: 'Place your bets and spin the wheel. Experience the thrill of classic roulette.',
+                link: '/games/roulette-rush',
+                color: 'from-[#f59e0b] to-[#fbbf24]',
+              },
+              {
+                title: 'Blackjack Pro',
+                image: '/images/game-blackjack-pro.webp',
+                description: 'Beat the dealer with strategy. Master the classic card game of 21.',
+                link: '/games/blackjack-pro',
+                color: 'from-[#22c55e] to-[#16a34a]',
+              },
+            ].map((game, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                whileHover={{ y: -10, scale: 1.02 }}
+                className="group"
+              >
+                <Link href={game.link}>
+                  <a className="block bg-gradient-to-br from-white/10 to-white/5 rounded-xl overflow-hidden border-2 border-white/20 hover:border-white/40 transition-all duration-300 shadow-lg hover:shadow-2xl">
+                    {/* Game Image */}
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src={game.image}
+                        alt={game.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
+                      <div className={`absolute inset-0 bg-gradient-to-t ${game.color} opacity-20 group-hover:opacity-30 transition-opacity`}></div>
+                    </div>
+
+                    {/* Game Info */}
+                    <div className="p-6">
+                      <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-[#a855f7] transition-colors">
+                        {game.title}
+                      </h3>
+                      <p className="text-white/70 text-sm mb-4 leading-relaxed">
+                        {game.description}
+                      </p>
+                      <div className={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${game.color} text-white font-bold rounded-lg group-hover:shadow-lg transition-all duration-300`}>
+                        Play Now
+                        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
+                  </a>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* How to Get Started */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#a855f7]/5 to-[#ec4899]/5">
         <div className="max-w-4xl mx-auto">

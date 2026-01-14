@@ -247,6 +247,148 @@ export default function About() {
         </div>
       </div>
 
+      {/* Technology & Innovation */}
+      <div className="bg-white py-20">
+        <div className="w-full max-w-[85%] mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-4xl font-bold text-center text-[#1a1a2e] mb-16"
+          >
+            Technology & Innovation
+          </motion.h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="space-y-6"
+            >
+              <h3 className="text-2xl font-bold text-[#1a1a2e] mb-4">Built with Modern Technology</h3>
+              <p className="text-[#6b7280] leading-relaxed">
+                Play By Stats is built using cutting-edge web technologies to deliver a seamless, fast, and secure gaming experience. Our platform leverages React for dynamic user interfaces, ensuring smooth animations and responsive gameplay across all devices.
+              </p>
+              <p className="text-[#6b7280] leading-relaxed">
+                We utilize advanced algorithms to ensure fair gameplay, with all game outcomes determined by certified random number generators. Our infrastructure is designed for high performance, handling thousands of concurrent players without compromising speed or reliability.
+              </p>
+              <p className="text-[#6b7280] leading-relaxed">
+                Security is paramount - we implement industry-standard encryption and security practices to protect player data. Since no real money is involved, players can enjoy gaming without financial risk or privacy concerns.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="space-y-4"
+            >
+              <div className="bg-gradient-to-br from-[#a855f7]/10 to-[#ec4899]/10 rounded-lg p-6 border-l-4 border-[#a855f7]">
+                <h4 className="font-bold text-[#1a1a2e] mb-2">⚡ Lightning Fast Performance</h4>
+                <p className="text-[#6b7280] text-sm">Optimized for speed with instant game loading and smooth animations</p>
+              </div>
+              <div className="bg-gradient-to-br from-[#a855f7]/10 to-[#ec4899]/10 rounded-lg p-6 border-l-4 border-[#ec4899]">
+                <h4 className="font-bold text-[#1a1a2e] mb-2">🎲 Provably Fair Gaming</h4>
+                <p className="text-[#6b7280] text-sm">Certified random algorithms ensure every game outcome is fair</p>
+              </div>
+              <div className="bg-gradient-to-br from-[#a855f7]/10 to-[#ec4899]/10 rounded-lg p-6 border-l-4 border-[#a855f7]">
+                <h4 className="font-bold text-[#1a1a2e] mb-2">📱 Cross-Platform Compatible</h4>
+                <p className="text-[#6b7280] text-sm">Play seamlessly on desktop, tablet, or mobile devices</p>
+              </div>
+              <div className="bg-gradient-to-br from-[#a855f7]/10 to-[#ec4899]/10 rounded-lg p-6 border-l-4 border-[#ec4899]">
+                <h4 className="font-bold text-[#1a1a2e] mb-2">🔒 Enterprise Security</h4>
+                <p className="text-[#6b7280] text-sm">Bank-level encryption protects all player data and interactions</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* Our Commitment */}
+      <div className="bg-gradient-to-r from-[#1a1a2e] to-[#2d2d44] text-white py-20">
+        <div className="w-full max-w-[85%] mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-4xl font-bold text-center mb-16"
+          >
+            Our Commitment to Players
+          </motion.h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="bg-white/10 rounded-xl p-8 border border-white/20"
+            >
+              <div className="text-4xl mb-4">🎯</div>
+              <h3 className="text-xl font-bold mb-3">Always Free</h3>
+              <p className="text-white/80 leading-relaxed">
+                We pledge to keep all games 100% free forever. No hidden charges, no premium features, no paywalls. Entertainment should be accessible to everyone.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="bg-white/10 rounded-xl p-8 border border-white/20"
+            >
+              <div className="text-4xl mb-4">🛡️</div>
+              <h3 className="text-xl font-bold mb-3">Player Safety First</h3>
+              <p className="text-white/80 leading-relaxed">
+                Zero financial risk, complete anonymity, and responsible gaming practices. We prioritize player wellbeing above all else.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="bg-white/10 rounded-xl p-8 border border-white/20"
+            >
+              <div className="text-4xl mb-4">🌟</div>
+              <h3 className="text-xl font-bold mb-3">Continuous Improvement</h3>
+              <p className="text-white/80 leading-relaxed">
+                We constantly update our games, add new features, and listen to player feedback to deliver the best gaming experience.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* Platform Statistics */}
+      <div className="bg-gradient-to-b from-[#f5f3ff] to-white py-20">
+        <div className="w-full max-w-[85%] mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-4xl font-bold text-center text-[#1a1a2e] mb-16"
+          >
+            Platform Highlights
+          </motion.h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {[
+              { number: '4', label: 'Casino Games', icon: '🎮' },
+              { number: '100%', label: 'Free to Play', icon: '💯' },
+              { number: '0₹', label: 'Real Money Risk', icon: '🔒' },
+              { number: '24/7', label: 'Available Anytime', icon: '⏰' },
+            ].map((stat, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: idx * 0.1 }}
+                className="text-center bg-gradient-to-br from-[#a855f7]/10 to-[#ec4899]/10 rounded-xl p-8 border-2 border-[#a855f7]/20 hover:border-[#a855f7] transition-all duration-300"
+              >
+                <div className="text-5xl mb-4">{stat.icon}</div>
+                <div className="text-5xl font-bold text-[#a855f7] mb-2">{stat.number}</div>
+                <div className="text-[#6b7280] font-semibold">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-[#a855f7] to-[#ec4899] text-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
