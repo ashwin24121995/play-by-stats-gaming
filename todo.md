@@ -261,3 +261,8 @@
 - [x] Review current address on About page
 - [x] Add complete registered office address
 - [x] Push to GitHub/Railway
+
+## Fix About Page Address - Use Footer Address
+- [x] Copy correct address from Footer
+- [x] Update About page to match Footer address
+- [ ] Push to GitHub/Railway

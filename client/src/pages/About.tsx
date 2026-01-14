@@ -79,8 +79,9 @@ export default function About() {
               <div>
                 <p className="text-sm text-[#6b7280] font-semibold">Registered Office Address</p>
                 <p className="text-lg text-[#1a1a2e] font-bold leading-relaxed">
-                  H.NO-1/1009, VIPUL KHAND, GOMTI NAGAR,<br />
-                  Lucknow, Uttar Pradesh - 226010, India
+                  Ram Acchayyar 48/2, Ayodhya Puri 2 Bijnour<br />
+                  Sarojini Nagar, Lucknow - 226008<br />
+                  Uttar Pradesh, India
                 </p>
               </div>
             </div>
