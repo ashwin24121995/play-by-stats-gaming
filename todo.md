@@ -255,4 +255,4 @@
 - [x] Update hero description to focus on entertainment and chance
 - [x] Remove "Skill-Based Gaming" from feature pills
 - [x] Update any other skill references throughout the page
-- [ ] Push to GitHub/Railway
+- [x] Push to GitHub/Railway
