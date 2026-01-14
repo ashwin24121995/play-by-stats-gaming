@@ -279,4 +279,4 @@
 - [x] Click Deal Cards and verify cards are dealt
 - [x] Check if game logic is implemented - Was missing
 - [x] Fix game logic if not working - Implemented complete Blackjack logic
-- [ ] Push to GitHub/Railway
+- [x] Push to GitHub/Railway
