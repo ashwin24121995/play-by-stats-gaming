@@ -223,3 +223,10 @@
 - [x] Ensure contact form styling matches website theme
 - [x] Test contact page on desktop and mobile
 - [x] Push to GitHub/Railway
+
+## Image Optimization - Convert All to WebP
+- [x] Scan project for all image files (PNG, JPG, JPEG)
+- [x] Convert all non-WebP images to WebP format
+- [x] Update all code references to use .webp extensions
+- [ ] Test all images load correctly
+- [ ] Push to GitHub/Railway
