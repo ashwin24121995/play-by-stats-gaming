@@ -266,3 +266,11 @@
 - [x] Copy correct address from Footer
 - [x] Update About page to match Footer address
 - [x] Push to GitHub/Railway
+
+## Fix Blackjack Game Not Working
+- [x] Check Blackjack game on live website
+- [x] Identify the bug/issue - Missing React imports
+- [x] Review Blackjack game code
+- [x] Fix the issue - Added useState and useEffect imports
+- [ ] Test the fix
+- [ ] Push to GitHub/Railway
