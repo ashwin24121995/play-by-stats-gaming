@@ -265,4 +265,4 @@
 ## Fix About Page Address - Use Footer Address
 - [x] Copy correct address from Footer
 - [x] Update About page to match Footer address
-- [ ] Push to GitHub/Railway
+- [x] Push to GitHub/Railway
