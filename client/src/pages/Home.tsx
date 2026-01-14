@@ -79,22 +79,22 @@ export default function Home() {
 
               {/* Main Heading */}
               <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
-                <span className="text-[#1f1f2e]">Master Casino</span>
+                <span className="text-[#1f1f2e]">Experience Casino</span>
                 <br />
-                <span className="bg-gradient-to-r from-[#a855f7] to-[#ec4899] bg-clip-text text-transparent">Strategy & Skill</span>
+                <span className="bg-gradient-to-r from-[#a855f7] to-[#ec4899] bg-clip-text text-transparent">Fun & Entertainment</span>
               </h1>
 
               <p className="text-xl text-[#4b5563] mb-8 leading-relaxed max-w-2xl">
-                Play exciting casino games instantly - no account needed. Compete anonymously and master gaming strategy without any financial pressure or risk.
+                Play exciting casino games instantly - no account needed. Test your luck anonymously and enjoy pure entertainment without any financial pressure or risk.
               </p>
 
               {/* Feature Pills */}
               <div className="grid grid-cols-2 gap-4 mb-8">
                 {[
                   { icon: '🎮', label: 'Entertainment Platform' },
-                  { icon: '🎲', label: 'Skill-Based Gaming' },
+                  { icon: '🎲', label: 'Games of Chance' },
                   { icon: '✨', label: 'Zero Financial Risk' },
-                  { icon: '🏆', label: 'Compete & Play' },
+                  { icon: '🏆', label: 'Test Your Luck' },
                 ].map((feature, idx) => (
                   <motion.div
                     key={idx}
@@ -198,7 +198,7 @@ export default function Home() {
               Why Play Our Casino?
             </h2>
             <p className="text-xl text-[#6b7280] max-w-3xl mx-auto">
-              Everything you need to master gaming strategy in a risk-free environment
+              Everything you need to enjoy casino entertainment in a risk-free environment
             </p>
           </motion.div>
 
@@ -212,7 +212,7 @@ export default function Home() {
               {
                 icon: <CheckCircle size={32} />,
                 title: '100% Free to Play',
-                desc: 'No deposits, no real money transactions, absolutely no financial pressure. Focus purely on gaming and improving your skills.',
+                desc: 'No deposits, no real money transactions, absolutely no financial pressure. Focus purely on entertainment and having fun.',
               },
               {
                 icon: <Zap size={32} />,
@@ -222,7 +222,7 @@ export default function Home() {
               {
                 icon: <TrendingUp size={32} />,
                 title: 'Track Performance',
-                desc: 'Real-time statistics and achievement tracking. Monitor your progress and improve your gaming skills.',
+                desc: 'Real-time statistics and achievement tracking. Monitor your progress and track your gaming journey.',
               },
               {
                 icon: <Users size={32} />,
@@ -303,7 +303,7 @@ export default function Home() {
               {
                 title: 'Blackjack Pro',
                 image: '/images/game-blackjack-pro.webp',
-                description: 'Beat the dealer with strategy. Master the classic card game of 21.',
+                description: 'Beat the dealer in this classic card game. Try your luck at reaching 21.',
                 link: '/games/blackjack-pro',
                 color: 'from-[#22c55e] to-[#16a34a]',
               },
@@ -383,7 +383,7 @@ export default function Home() {
               {
                 step: '3',
                 title: 'Play & Improve',
-                desc: 'Master your skills and develop winning strategies. Your progress is saved locally on your device. Play anytime, anywhere - completely free.',
+                desc: 'Test your luck and enjoy the excitement. Your progress is saved locally on your device. Play anytime, anywhere - completely free.',
               },
             ].map((item, idx) => (
               <motion.div
@@ -473,9 +473,9 @@ export default function Home() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl font-bold text-white mb-4">Ready to Play Smart?</h2>
+            <h2 className="text-5xl font-bold text-white mb-4">Ready to Test Your Luck?</h2>
             <p className="text-xl text-white/90 mb-8">
-              Join thousands of gamers mastering casino strategy on our free-to-play platform
+              Join thousands of players enjoying casino entertainment on our free-to-play platform
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/games">

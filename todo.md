@@ -248,3 +248,11 @@
 - [x] Ensure responsive design
 - [x] Test Home page gaming section
 - [x] Push to GitHub/Railway
+
+## Hero Section Content Fix
+- [x] Review hero section for skill-based language
+- [x] Rewrite hero heading to remove "Strategy & Skill"
+- [x] Update hero description to focus on entertainment and chance
+- [x] Remove "Skill-Based Gaming" from feature pills
+- [x] Update any other skill references throughout the page
+- [ ] Push to GitHub/Railway
