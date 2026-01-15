@@ -285,4 +285,4 @@
 - [x] Add Google site verification meta tag to index.html
 - [x] Create sitemap.xml with all website pages
 - [x] Create robots.txt file
-- [ ] Push to GitHub/Railway
+- [x] Push to GitHub/Railway
