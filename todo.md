@@ -280,3 +280,9 @@
 - [x] Check if game logic is implemented - Was missing
 - [x] Fix game logic if not working - Implemented complete Blackjack logic
 - [x] Push to GitHub/Railway
+
+## SEO Setup - Google Verification, Sitemap, Robots.txt
+- [x] Add Google site verification meta tag to index.html
+- [x] Create sitemap.xml with all website pages
+- [x] Create robots.txt file
+- [ ] Push to GitHub/Railway

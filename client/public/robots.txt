@@ -1,0 +1,41 @@
+# robots.txt for Play By Stats - Free Casino Gaming Platform
+# Website: https://playbystats.com
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://playbystats.com/sitemap.xml
+
+# Crawl-delay for polite crawling (optional)
+Crawl-delay: 1
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block access to admin or sensitive areas (if any in future)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Allow all game pages
+Allow: /games/
+Allow: /games/dice-roller
+Allow: /games/slots
+Allow: /games/roulette
+Allow: /games/blackjack
+
+# Allow all public pages
+Allow: /about
+Allow: /contact
+Allow: /privacy
+Allow: /terms
+Allow: /disclaimer
+Allow: /responsible-gaming
