@@ -292,3 +292,8 @@
 - [x] Fix incorrect game URLs causing 404 - Changed dice-roller to dice, slots-master to slots, roulette-rush to roulette, blackjack-pro to blackjack
 - [x] Test all game links
 - [x] Push to GitHub/Railway
+
+## Fix Analytics Script - Google AdSense Cloaking Policy
+- [x] Check index.html for analytics script with placeholder variables
+- [x] Remove or comment out problematic analytics script - Removed umami analytics script
+- [ ] Push to GitHub/Railway
