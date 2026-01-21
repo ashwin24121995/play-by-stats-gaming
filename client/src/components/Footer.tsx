@@ -17,7 +17,7 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img
+              <img loading="lazy"
                 src="/images/logo-playbystats.webp"
                 alt="Play By Stats"
                 className="h-10 w-10 rounded-full"

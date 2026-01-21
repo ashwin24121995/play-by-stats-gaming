@@ -27,7 +27,7 @@ export default function Header() {
           <Link href="/">
             <a className="flex items-center gap-3 group">
               <div className="relative w-12 h-12 rounded-full overflow-hidden shadow-lg group-hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all duration-300">
-                <img
+                <img loading="lazy"
                   src="/images/logo-playbystats.webp"
                   alt="Play By Stats Logo"
                   className="w-full h-full object-cover"

@@ -297,3 +297,12 @@
 - [x] Check index.html for analytics script with placeholder variables
 - [x] Remove or comment out problematic analytics script - Removed umami analytics script
 - [x] Push to GitHub/Railway
+
+## Optimize Image Loading Performance
+- [x] Check all image file sizes
+- [x] Identify large images that need compression - Found 9 images over 5MB each
+- [x] Add lazy loading to all images - Added to Home.tsx, Games.tsx, Header.tsx, Footer.tsx
+- [x] Compress large images - hero-stadium-purple 6.4MB→200KB, logo-playbystats 5.3MB→46KB
+- [x] Delete unused large images - Removed 8 unused 5-6MB images
+- [ ] Test loading performance
+- [ ] Push to GitHub/Railway

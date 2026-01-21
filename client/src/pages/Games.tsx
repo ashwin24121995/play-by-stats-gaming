@@ -104,7 +104,7 @@ export default function Games() {
                 <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                   {/* Game Image */}
                   <div className="relative h-64 overflow-hidden bg-gradient-to-br from-[#a855f7]/20 to-[#ec4899]/20">
-                    <img
+                    <img loading="lazy"
                       src={game.image}
                       alt={game.name}
                       className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"

@@ -54,6 +54,7 @@ export default function Home() {
             src="/images/hero-stadium-purple.webp"
             alt="Gaming Stadium"
             className="w-full h-full object-cover opacity-30"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#f5f3ff] via-[#f5f3ff]/80 to-transparent"></div>
         </div>
@@ -142,6 +143,7 @@ export default function Home() {
                   src="/images/gaming-character-custom.webp"
                   alt="Gaming Character"
                   className="h-[500px] w-auto drop-shadow-2xl" style={{height: '844px'}}
+                  loading="lazy"
                 />
               </motion.div>
 
@@ -325,6 +327,7 @@ export default function Home() {
                         src={game.image}
                         alt={game.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        loading="lazy"
                       />
                       <div className={`absolute inset-0 bg-gradient-to-t ${game.color} opacity-20 group-hover:opacity-30 transition-opacity`}></div>
                     </div>
